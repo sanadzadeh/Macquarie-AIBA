@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Delivery & Risk Portfolio — Khaled Sanad</title>
+<title>AI Delivery Portfolio — Khaled Sanad</title>
 
 <meta
   name="description"
-  content="AI delivery, business analysis, governance and adoption portfolio."
+  content="AI delivery, business analysis, prototyping and adoption portfolio."
 >
 
 <link
@@ -1308,8 +1308,8 @@ tbody tr.clickable:hover{
     <div class="logo"></div>
 
     <div>
-      <h1>Khaled S. — AI Delivery & Risk Portfolio</h1>
-      <p>Discovery · requirements · controls · adoption</p>
+      <h1>Khaled S. — AI Delivery Portfolio</h1>
+      <p>Discovery · requirements · prototyping · implementation · adoption</p>
     </div>
   </div>
 
@@ -1343,47 +1343,47 @@ tbody tr.clickable:hover{
 const SOLUTIONS = [
   {
     id:"A01",
-    name:"Customer complaint summarisation assistant",
-    unit:"Contact Centre",
+    name:"Monthly reporting pack assistant",
+    unit:"Transformation",
     owner:"J. Chen",
     stage:"Pilot",
     status:"At Risk",
-    problem:"Complaint specialists spend significant time reading long correspondence before identifying the issue, customer impact and required action.",
-    current:"Manual review of complaint text followed by free-form case notes.",
-    future:"AI prepares a structured summary and issue classification for advisor review before the case progresses.",
-    requirements:"Preserve vulnerability and accessibility flags; cite source passages; advisor must accept or edit before case close.",
+    problem:"Analysts spend significant time assembling recurring packs from several systems and stakeholder-maintained sources before the story is clear.",
+    current:"Manual extract, reconcile, copy into slides and free-form commentary.",
+    future:"AI prepares a structured draft pack from approved sources for analyst review before circulation.",
+    requirements:"Approved source tables only; figures cited back to source; analyst accepts or edits before the pack is issued.",
     vendor:"Enterprise AI platform",
     vendorStatus:"Configuration review",
-    value:74,
-    readiness:68,
-    complexity:61,
-    adoption:58,
-    reviewLoad:32,
-    ttv:12,
-    hours:16.2,
-    risk:"High",
+    value:78,
+    readiness:66,
+    complexity:58,
+    adoption:61,
+    reviewLoad:28,
+    ttv:8,
+    hours:14.6,
+    risk:"Medium",
     privacy:"Conditional",
-    humanReview:"Conditional",
-    data:"Pass",
-    riskCategory:"Human oversight",
-    dependency:"Complaint taxonomy freeze",
-    issue:"Accessibility flag preservation requires further testing.",
-    benefit:"Reduced reading and drafting effort on written complaints.",
-    lifecycle:[100,100,78,58,18],
-    history:[32,41,49,55,58,57,58,60]
+    humanReview:"Pass",
+    data:"Conditional",
+    riskCategory:"Output reliability",
+    dependency:"Source definition freeze",
+    issue:"Commentary quality is uneven where source notes are incomplete.",
+    benefit:"Less assembly time and earlier review of the actual message.",
+    lifecycle:[100,100,82,54,22],
+    history:[34,42,49,55,58,59,60,61]
   },
 
   {
     id:"A02",
-    name:"Internal policy Q&A assistant",
-    unit:"Compliance",
+    name:"Process and policy Q&A assistant",
+    unit:"Enablement",
     owner:"R. Patel",
     stage:"Production",
     status:"Adopted",
-    problem:"Staff spend time locating the correct policy clause across a large controlled document set.",
-    current:"Manual search across policy repositories and escalation to specialists.",
-    future:"Grounded assistant answers against the approved corpus and cites the relevant policy clause.",
-    requirements:"No unsourced answer; clause citation mandatory; controlled document corpus only.",
+    problem:"Staff spend time locating the right process step or policy clause across a large controlled document set.",
+    current:"Manual search across repositories and escalation to specialists.",
+    future:"Grounded assistant answers against the approved corpus and cites the relevant clause or step.",
+    requirements:"No unsourced answer; citation mandatory; controlled corpus only.",
     vendor:"Enterprise AI platform",
     vendorStatus:"Operational",
     value:91,
@@ -1398,24 +1398,24 @@ const SOLUTIONS = [
     humanReview:"Pass",
     data:"Pass",
     riskCategory:"Output reliability",
-    dependency:"Policy library owner",
+    dependency:"Document library owner",
     issue:"No material open issue.",
-    benefit:"Faster policy search with clause-level traceability.",
+    benefit:"Faster lookup with source-level traceability.",
     lifecycle:[100,100,100,100,100],
     history:[52,61,69,76,81,85,88,91]
   },
 
   {
     id:"A03",
-    name:"Onboarding document triage",
+    name:"Operations document triage",
     unit:"Operations",
     owner:"A. Nguyen",
     stage:"Pilot",
     status:"At Risk",
-    problem:"Operations teams manually classify and route large volumes of customer onboarding documents.",
-    current:"Manual document classification, routing and exception handling.",
-    future:"AI-assisted classification and extraction proposes a document type and destination for operator review.",
-    requirements:"Approved storage only; retention rule enforced; operator confirms classification.",
+    problem:"Operations teams manually classify and route large volumes of inbound documents.",
+    current:"Manual classification, routing and exception handling.",
+    future:"AI proposes a document type and destination for operator confirmation.",
+    requirements:"Approved storage only; retention rule enforced; operator confirms classification before routing.",
     vendor:"Document AI provider",
     vendorStatus:"Privacy review",
     value:79,
@@ -1431,7 +1431,7 @@ const SOLUTIONS = [
     data:"Conditional",
     riskCategory:"Data privacy",
     dependency:"Retention and redaction rule",
-    issue:"Test storage path requires remediation before wider pilot.",
+    issue:"Test storage path requires remediation before a wider pilot.",
     benefit:"Lower manual classification effort and faster routing.",
     lifecycle:[100,100,70,46,10],
     history:[25,32,38,44,47,46,45,47]
@@ -1439,15 +1439,15 @@ const SOLUTIONS = [
 
   {
     id:"A04",
-    name:"Meeting action extractor",
-    unit:"Business Banking",
-    owner:"M. Rossi",
+    name:"Workshop requirements synthesis",
+    unit:"Transformation",
+    owner:"K. Sanad",
     stage:"Production",
     status:"Adopted",
-    problem:"Follow-up actions from internal and customer meetings are inconsistently captured.",
-    current:"Manual note taking and separate action entry.",
-    future:"AI prepares structured actions and owners from approved meeting notes for user confirmation.",
-    requirements:"Consent captured where required; user confirms actions before publishing.",
+    problem:"Workshop notes stay unstructured, so requirements and actions are captured inconsistently.",
+    current:"Manual note-taking and a separate write-up of requirements and owners.",
+    future:"AI prepares structured requirements, open questions and owners from approved notes for facilitator confirmation.",
+    requirements:"Consent captured where required; facilitator confirms items before they enter the backlog.",
     vendor:"Microsoft ecosystem",
     vendorStatus:"Operational",
     value:84,
@@ -1457,157 +1457,157 @@ const SOLUTIONS = [
     reviewLoad:15,
     ttv:3,
     hours:6.7,
-    risk:"Medium",
+    risk:"Low",
     privacy:"Pass",
     humanReview:"Pass",
     data:"Pass",
-    riskCategory:"Data privacy",
-    dependency:"Recording consent",
+    riskCategory:"Human oversight",
+    dependency:"Note-capture standard",
     issue:"No material open issue.",
-    benefit:"More consistent action capture and less manual note processing.",
+    benefit:"Faster conversion of workshops into testable requirements.",
     lifecycle:[100,100,100,100,84],
     history:[40,51,62,70,77,81,84,86]
   },
 
   {
     id:"A05",
-    name:"Fraud alert enrichment assistant",
-    unit:"Financial Crime Risk",
+    name:"Source reconciliation assistant",
+    unit:"Finance",
     owner:"S. Walker",
     stage:"Prototype",
     status:"At Risk",
-    problem:"Analysts spend time gathering context before assessing lower-complexity alerts.",
-    current:"Analyst manually searches customer, transaction and case information.",
-    future:"AI prepares a structured evidence summary while leaving alert disposition with the analyst.",
-    requirements:"No automated closure or risk score; evidence references preserved; analyst remains accountable.",
+    problem:"Analysts spend time investigating breaks between enterprise systems and stakeholder-maintained sources.",
+    current:"Manual extract, compare and email follow-up.",
+    future:"AI groups likely break types and drafts an investigation note while the analyst owns the conclusion.",
+    requirements:"No automatic override of source systems; every suggested break cites both sides; analyst signs off.",
     vendor:"Enterprise AI platform",
-    vendorStatus:"Model risk review",
-    value:88,
-    readiness:52,
-    complexity:82,
-    adoption:34,
-    reviewLoad:45,
-    ttv:16,
-    hours:10.4,
-    risk:"High",
+    vendorStatus:"Data quality review",
+    value:86,
+    readiness:54,
+    complexity:77,
+    adoption:36,
+    reviewLoad:42,
+    ttv:14,
+    hours:9.8,
+    risk:"Medium",
     privacy:"Conditional",
     humanReview:"Pass",
     data:"Conditional",
     riskCategory:"Output reliability",
-    dependency:"Model risk review slot",
-    issue:"Historic test showed one customer note could be over-weighted.",
-    benefit:"Reduced evidence-gathering time on low-complexity alerts.",
-    lifecycle:[100,92,58,28,0],
-    history:[28,32,37,40,39,37,34,33]
+    dependency:"Agreed source hierarchy",
+    issue:"Prototype over-grouped unrelated breaks in one test cycle.",
+    benefit:"Faster investigation of reporting and definition breaks.",
+    lifecycle:[100,88,56,24,0],
+    history:[28,33,38,41,40,38,36,36]
   },
 
   {
     id:"A06",
-    name:"Credit memo first-draft assistant",
-    unit:"Business Banking",
+    name:"Process note first-draft assistant",
+    unit:"Operations",
     owner:"L. Ibrahim",
     stage:"Pilot",
     status:"Adopted",
-    problem:"Credit officers spend substantial time assembling first drafts from structured and narrative information.",
-    current:"Manual first-draft preparation from approved source material.",
-    future:"AI prepares a first draft against the controlled credit template for officer review.",
-    requirements:"Source-linked content; draft watermark; officer accepts and edits before submission.",
+    problem:"Teams spend substantial time turning current-state interviews into a first-draft process note.",
+    current:"Manual write-up from interview notes and existing SOP fragments.",
+    future:"AI prepares a first draft against a controlled template for the process owner to edit.",
+    requirements:"Source-linked content; draft watermark; owner accepts and edits before publication.",
     vendor:"Enterprise AI platform",
     vendorStatus:"Pilot operational",
-    value:86,
+    value:83,
     readiness:85,
-    complexity:58,
-    adoption:78,
+    complexity:52,
+    adoption:76,
     reviewLoad:19,
-    ttv:0,
-    hours:8.3,
-    risk:"Medium",
+    ttv:1,
+    hours:7.6,
+    risk:"Low",
     privacy:"Pass",
     humanReview:"Pass",
     data:"Pass",
     riskCategory:"Human oversight",
-    dependency:"Credit template control",
+    dependency:"Process template control",
     issue:"No material open issue.",
-    benefit:"Reduced first-draft effort while retaining credit officer accountability.",
-    lifecycle:[100,100,100,78,42],
-    history:[46,54,61,67,71,74,77,80]
+    benefit:"Reduced first-draft effort while the process owner stays accountable.",
+    lifecycle:[100,100,100,78,40],
+    history:[46,54,61,67,71,74,76,78]
   },
 
   {
     id:"A07",
-    name:"KYC evidence pack assembler",
-    unit:"Operations",
+    name:"Cross-system intake pack",
+    unit:"Technology",
     owner:"P. Singh",
     stage:"Discovery",
     status:"Paused",
-    problem:"KYC evidence is assembled manually from several systems before review.",
-    current:"Analysts gather images, records and supporting evidence manually.",
-    future:"Controlled workflow assembles an evidence pack for analyst review.",
-    requirements:"Lawful access path; source traceability; no unsupported evidence movement.",
+    problem:"Change intake still requires analysts to gather evidence from several systems before a request is reviewable.",
+    current:"Manual collection of tickets, reports and supporting files.",
+    future:"Controlled workflow assembles an intake pack for analyst review.",
+    requirements:"Lawful access path; source traceability; no unsupported movement of files.",
     vendor:"TBC",
     vendorStatus:"Not selected",
-    value:72,
+    value:71,
     readiness:28,
-    complexity:86,
+    complexity:84,
     adoption:12,
     reviewLoad:18,
     ttv:22,
-    hours:12.5,
+    hours:11.4,
     risk:"High",
     privacy:"Review",
     humanReview:"Conditional",
     data:"Review",
     riskCategory:"Data access",
     dependency:"Source-system access",
-    issue:"Discovery paused pending approved access path.",
-    benefit:"Potential reduction in manual pack assembly effort.",
+    issue:"Discovery paused pending an approved access path.",
+    benefit:"Potential reduction in manual pack assembly before delivery starts.",
     lifecycle:[100,48,0,0,0],
     history:[30,32,31,28,24,20,18,16]
   },
 
   {
     id:"A08",
-    name:"Sanctions alert triage assistant",
-    unit:"Financial Crime Risk",
+    name:"Delivery dependency briefing",
+    unit:"Transformation",
     owner:"K. Sanad",
     stage:"Pilot",
     status:"At Risk",
-    problem:"Analysts spend time gathering evidence for low-complexity sanctions name-match alerts.",
-    current:"Manual review of screening-engine output, customer information and match evidence.",
-    future:"AI-assisted triage presents match evidence and supporting context while disposition remains with the analyst.",
-    requirements:"Cannot clear a match; match logic remains controlled; four-eyes review retained.",
-    vendor:"Screening platform provider",
-    vendorStatus:"Upgrade evaluation",
-    value:93,
-    readiness:63,
-    complexity:88,
-    adoption:46,
-    reviewLoad:49,
-    ttv:10,
-    hours:9.8,
-    risk:"High",
+    problem:"Roadmap conversations stall because dependency, timing and owner information sits in different tools.",
+    current:"Manual collation from project tools, emails and stakeholder updates.",
+    future:"Assistant prepares a briefing snapshot from approved delivery sources for owner confirmation.",
+    requirements:"Approved project sources only; owner confirms content before circulation; no automatic re-baselining.",
+    vendor:"Low-code enterprise platform",
+    vendorStatus:"Pilot integration",
+    value:88,
+    readiness:64,
+    complexity:63,
+    adoption:52,
+    reviewLoad:31,
+    ttv:7,
+    hours:8.9,
+    risk:"Medium",
     privacy:"Pass",
     humanReview:"Pass",
     data:"Conditional",
-    riskCategory:"Model / output risk",
-    dependency:"Screening-engine upgrade",
-    issue:"Pilot constrained to low-complexity name matches pending review.",
-    benefit:"Reduced triage effort while retaining analyst disposition.",
-    lifecycle:[100,100,76,48,10],
-    history:[31,37,42,46,48,47,45,46]
+    riskCategory:"Vendor / tooling",
+    dependency:"Project-tool field quality",
+    issue:"Pilot still depends on inconsistent owner and date fields.",
+    benefit:"Faster, more consistent dependency briefings for planning conversations.",
+    lifecycle:[100,100,74,48,16],
+    history:[36,42,48,53,55,54,52,52]
   },
 
   {
     id:"A09",
-    name:"Vendor contract clause finder",
-    unit:"Compliance",
+    name:"Vendor solution clause finder",
+    unit:"Product Delivery",
     owner:"H. Grant",
     stage:"Pilot",
     status:"Adopted",
-    problem:"Reviewers spend time locating relevant clauses across contract packs.",
-    current:"Manual search and legal review.",
+    problem:"Reviewers spend time locating relevant clauses across vendor packs during solution assessment.",
+    current:"Manual search and specialist review.",
     future:"Retrieval assistant surfaces relevant clauses and source locations for reviewer confirmation.",
-    requirements:"Approved repository only; source clause displayed; lawyer confirms before reliance.",
+    requirements:"Approved repository only; source clause displayed; reviewer confirms before reliance.",
     vendor:"Legal technology provider",
     vendorStatus:"Pilot integration",
     value:82,
@@ -1622,9 +1622,9 @@ const SOLUTIONS = [
     humanReview:"Pass",
     data:"Pass",
     riskCategory:"Vendor / tooling",
-    dependency:"Privilege handling note",
+    dependency:"Repository scope note",
     issue:"No material open issue.",
-    benefit:"Faster clause search with source traceability.",
+    benefit:"Faster vendor comparison with source traceability.",
     lifecycle:[100,100,100,70,32],
     history:[38,46,54,61,66,70,73,76]
   },
@@ -1636,9 +1636,9 @@ const SOLUTIONS = [
     owner:"K. Sanad",
     stage:"Production",
     status:"Adopted",
-    problem:"Teams approach AI opportunities with inconsistent problem definition, control assumptions and success measures.",
+    problem:"Teams approach AI opportunities with inconsistent problem definition, requirements and success measures.",
     current:"Unstructured briefs and repeated clarification cycles.",
-    future:"Reusable discovery pack guides teams through problem, user, data, risk, vendor, metric and adoption questions.",
+    future:"Reusable discovery pack guides teams through problem, user, data, vendor, metric and adoption questions.",
     requirements:"Named business owner; measurable outcome; data boundary; human-review point before delivery.",
     vendor:"Internal enablement",
     vendorStatus:"Operational",
@@ -1663,15 +1663,15 @@ const SOLUTIONS = [
 
   {
     id:"A11",
-    name:"Ops incident post-mortem drafter",
+    name:"Process issue write-up assistant",
     unit:"Operations",
     owner:"D. Okafor",
     stage:"Pilot",
     status:"At Risk",
-    problem:"Incident teams spend time converting operational records into post-mortem drafts.",
-    current:"Manual write-up from incident logs and meeting notes.",
-    future:"AI prepares a structured draft for duty-manager review.",
-    requirements:"Incident record remains source of truth; manager owns published note.",
+    problem:"Teams spend time converting operational records into a usable issue write-up.",
+    current:"Manual write-up from logs, tickets and meeting notes.",
+    future:"AI prepares a structured draft for the process owner to review.",
+    requirements:"Source record remains the source of truth; owner publishes the note; no automatic severity rating.",
     vendor:"Operations tooling",
     vendorStatus:"API review",
     value:76,
@@ -1686,88 +1686,88 @@ const SOLUTIONS = [
     humanReview:"Conditional",
     data:"Conditional",
     riskCategory:"Vendor / tooling",
-    dependency:"Incident platform API access",
+    dependency:"Ticketing platform API access",
     issue:"Pilot volume is still too low to judge factual completeness.",
-    benefit:"Reduced drafting time for incident reviews.",
+    benefit:"Reduced drafting time for process reviews.",
     lifecycle:[100,88,62,44,12],
     history:[40,45,50,52,51,49,47,46]
   },
 
   {
     id:"A12",
-    name:"Complaints root-cause classifier",
-    unit:"Contact Centre",
+    name:"Work-request classifier",
+    unit:"Product Delivery",
     owner:"F. Adeyemi",
     stage:"Prototype",
     status:"Adopted",
-    problem:"Complaint root-cause codes are applied inconsistently.",
-    current:"Advisors select codes manually from the taxonomy.",
-    future:"AI proposes a code against the approved taxonomy for advisor confirmation.",
-    requirements:"Human confirmation on any code that changes remedy path.",
+    problem:"Intake codes and request types are applied inconsistently, which slows triage.",
+    current:"Requestors and analysts select codes manually from the taxonomy.",
+    future:"AI proposes a code against the approved taxonomy for analyst confirmation.",
+    requirements:"Human confirmation on any code that changes owner, pathway or priority.",
     vendor:"Enterprise AI platform",
     vendorStatus:"Prototype operational",
-    value:81,
+    value:80,
     readiness:79,
-    complexity:52,
-    adoption:75,
-    reviewLoad:20,
+    complexity:48,
+    adoption:74,
+    reviewLoad:18,
     ttv:0,
-    hours:7.4,
-    risk:"Medium",
+    hours:6.8,
+    risk:"Low",
     privacy:"Pass",
     humanReview:"Pass",
     data:"Pass",
     riskCategory:"Model / output risk",
     dependency:"Taxonomy v2",
     issue:"No material open issue.",
-    benefit:"More consistent coding while preserving advisor control.",
+    benefit:"More consistent intake coding while the analyst keeps control.",
     lifecycle:[100,100,71,33,0],
-    history:[46,52,58,63,68,72,75,77]
+    history:[46,52,58,63,68,72,74,76]
   },
 
   {
     id:"A13",
-    name:"Collections conversation assist",
-    unit:"Retail Banking",
+    name:"Live customer conversation assist",
+    unit:"Operations",
     owner:"N. Okoye",
     stage:"Discovery",
     status:"Paused",
-    problem:"Collections conversations require accurate hardship and conduct handling.",
-    current:"Advisors rely on scripts, policy and judgement during live conversations.",
-    future:"Potential assistive prompts only after conduct and ethics review.",
-    requirements:"No live assist until conduct risk signs off; no autonomous customer dialogue.",
+    problem:"Live conversations would need accurate handling of customer context, scripts and exceptions.",
+    current:"Staff rely on scripts, process notes and judgement during live conversations.",
+    future:"Potential prompts only after a clear control path exists. No autonomous customer dialogue.",
+    requirements:"No live assist until the control path is agreed; no autonomous customer dialogue.",
     vendor:"TBC",
     vendorStatus:"Not selected",
-    value:67,
-    readiness:24,
+    value:64,
+    readiness:22,
     complexity:91,
-    adoption:8,
+    adoption:6,
     reviewLoad:16,
-    ttv:18,
-    hours:9.1,
+    ttv:20,
+    hours:8.4,
     risk:"High",
     privacy:"Conditional",
     humanReview:"Review",
     data:"Conditional",
     riskCategory:"Human oversight",
-    dependency:"Conduct risk opinion",
+    dependency:"Control-path decision",
     issue:"Discovery paused. Live customer dialogue remains out of scope.",
-    benefit:"Potential support for script adherence and hardship flagging.",
-    lifecycle:[100,20,0,0,0],
-    history:[31,33,32,30,27,24,22,20]
+    benefit:"Possible later support for script adherence, not a current build.",
+    lifecycle:[100,18,0,0,0],
+    history:[31,33,32,30,27,24,21,18]
   },
 
   {
     id:"A14",
-    name:"Branch appointment briefing assistant",
-    unit:"Retail Banking",
+    name:"Executive briefing assembler",
+    unit:"Transformation",
     owner:"K. Sanad",
     stage:"Production",
     status:"Adopted",
-    problem:"Bankers spend time assembling appointment context from several customer information views.",
-    current:"Manual pre-meeting preparation across approved customer records.",
-    future:"Assistant prepares a briefing snapshot for banker confirmation before the meeting.",
-    requirements:"Approved CRM snapshot only; banker confirms content before use.",
+    problem:"Teams spend time assembling meeting context from several approved reports and trackers.",
+    current:"Manual pre-meeting preparation across reporting packs and status sources.",
+    future:"Assistant prepares a briefing snapshot for owner confirmation before the meeting.",
+    requirements:"Approved reporting snapshot only; owner confirms content before use.",
     vendor:"Low-code enterprise platform",
     vendorStatus:"Operational",
     value:85,
@@ -1782,9 +1782,9 @@ const SOLUTIONS = [
     humanReview:"Pass",
     data:"Pass",
     riskCategory:"Vendor / tooling",
-    dependency:"CRM snapshot quality",
+    dependency:"Source-pack quality",
     issue:"No material open issue.",
-    benefit:"Reduced appointment preparation effort.",
+    benefit:"Reduced meeting preparation effort with source-controlled content.",
     lifecycle:[100,100,100,100,100],
     history:[60,67,73,79,84,87,89,91]
   }
@@ -1848,7 +1848,7 @@ let state = {
   view:"command",
   unit:"All",
   status:"All",
-  selected:"A08",
+  selected:"A10",
   scenario:"base"
 };
 
@@ -2702,17 +2702,17 @@ function renderCommand(){
       <div>
 
         <div class="kicker">
-          AI delivery control room
+          Product &amp; delivery control room
         </div>
 
         <h2>
-          Requirements, governance, implementation and adoption in one view.
+          Take an unclear operational problem through requirements, prototype, implementation and adoption.
         </h2>
 
       </div>
 
       <span class="demo-tag">
-        Illustrative portfolio data
+        Illustrative delivery portfolio
       </span>
 
     </section>
@@ -2824,10 +2824,10 @@ function renderCommand(){
         <div class="section-head">
 
           <div>
-            <h3>Risk concentration</h3>
+            <h3>Control themes</h3>
 
             <p>
-              Portfolio exposure by control theme.
+              Where delivery still needs privacy, review, data or vendor attention.
             </p>
           </div>
 
@@ -3416,11 +3416,11 @@ function renderAssurance(){
       <div>
 
         <div class="kicker">
-          Governance & assurance
+          Delivery gates
         </div>
 
         <h2>
-          Controls, evidence and accountability remain visible through delivery.
+          Privacy, human review, data quality and vendor boundaries stay visible through delivery.
         </h2>
 
       </div>
@@ -3477,7 +3477,7 @@ function renderAssurance(){
             </h3>
 
             <p>
-              Risk concentration across the current solution set.
+              Open control questions across the current solution set.
             </p>
           </div>
 
@@ -3580,7 +3580,7 @@ function renderAssurance(){
           ${lineageNode(
             "04",
             "Human decision",
-            "Named business user reviews the output before it is relied upon."
+            "Named business owner reviews the output before it is relied upon."
           )}
 
         </div>
@@ -4076,7 +4076,7 @@ function renderValue(){
       <div>
 
         <div class="kicker">
-          Value & adoption
+          Value &amp; adoption
         </div>
 
         <h2>
