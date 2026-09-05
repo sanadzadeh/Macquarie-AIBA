@@ -1,755 +1,4465 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Solution Delivery Portfolio — Khaled Sanad</title>
-<meta name="description" content="Synthetic demonstration: from business problem to adopted AI solution.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<title>AI Delivery & Risk Portfolio — Khaled Sanad</title>
+
+<meta
+  name="description"
+  content="AI delivery, business analysis, governance and adoption portfolio."
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap"
+  rel="stylesheet"
+>
+
 <style>
 :root{
-  --paper:#f3f5f6;--surface:#fff;--surface-alt:#f7f9fa;--surface-deep:#e9eef1;
-  --border:#d8e0e5;--border-2:#bcc8cf;--ink:#18232c;--ink-2:#55636f;--ink-3:#7b8893;
-  --accent:#0b5d6b;--accent-2:#2f7f7a;--accent-dim:#e4f1f2;--accent-mid:#bddcde;
-  --blue:#4a7897;--blue-dim:#e7eff5;--gold:#b58b48;--ok:#3f7a4c;--ok-dim:#e8f3eb;
-  --warn:#a3720a;--warn-dim:#fbf1dc;--risk:#a23b2e;--risk-dim:#f8e8e5;
-  --shadow:0 7px 22px rgba(34,48,58,.08);--shadow-sm:0 2px 8px rgba(34,48,58,.06);
-  --radius:11px;--serif:'Cormorant Garamond',Georgia,serif;--mono:'DM Mono','Courier New',monospace;
+  --page:#eef2f5;
+  --surface:#ffffff;
+  --surface2:#f7f9fb;
+  --surface3:#e8edf2;
+  --line:#d8e0e7;
+  --line2:#bcc8d3;
+  --text:#17232d;
+  --text2:#51606c;
+  --text3:#7d8993;
+
+  --navy:#173a53;
+  --navySoft:#e4edf4;
+  --cyan:#188da0;
+  --cyanSoft:#e1f2f4;
+  --blue:#547fa2;
+  --blueSoft:#e8f0f6;
+  --violet:#7665a8;
+  --violetSoft:#eeeaf7;
+  --amber:#bf892d;
+  --amberSoft:#fbf0db;
+  --green:#4b8458;
+  --greenSoft:#e8f2e9;
+  --red:#a83d35;
+  --redSoft:#f7e6e4;
+
+  --shadow:0 6px 22px rgba(25,42,56,.07);
+  --shadowLg:0 16px 38px rgba(25,42,56,.11);
+
+  --radius:14px;
+  --mono:"DM Mono",ui-monospace,monospace;
+  --sans:Inter,system-ui,sans-serif;
+  --display:Manrope,Inter,sans-serif;
 }
-:root[data-theme="dark"]{
-  --paper:#11171c;--surface:#182027;--surface-alt:#1e2830;--surface-deep:#25313a;
-  --border:#2f3b44;--border-2:#43525e;--ink:#edf2f4;--ink-2:#aab5be;--ink-3:#81909b;
-  --accent:#61c5bf;--accent-2:#7cd4cf;--accent-dim:#173335;--accent-mid:#27585a;
-  --blue:#7ba9c8;--blue-dim:#1b3040;--gold:#c9a86d;--ok:#7fc98f;--ok-dim:#193425;
-  --warn:#e0ad4c;--warn-dim:#3a2e15;--risk:#e08a7a;--risk-dim:#3c201d;
-  --shadow:0 9px 26px rgba(0,0,0,.27);--shadow-sm:0 2px 10px rgba(0,0,0,.22);
+
+html[data-theme="dark"]{
+  --page:#0e1419;
+  --surface:#161f26;
+  --surface2:#1c2730;
+  --surface3:#26333d;
+  --line:#2b3a45;
+  --line2:#41515d;
+  --text:#edf2f5;
+  --text2:#abb7c0;
+  --text3:#7f8f9a;
+
+  --navy:#76a6c7;
+  --navySoft:#1a3040;
+  --cyan:#62c3ca;
+  --cyanSoft:#173538;
+  --blue:#7da9c9;
+  --blueSoft:#1d3040;
+  --violet:#ae9add;
+  --violetSoft:#2b2540;
+  --amber:#ddb264;
+  --amberSoft:#3a2d18;
+  --green:#84ca91;
+  --greenSoft:#1d3825;
+  --red:#e18075;
+  --redSoft:#3d221f;
+
+  --shadow:0 8px 25px rgba(0,0,0,.26);
+  --shadowLg:0 16px 42px rgba(0,0,0,.34);
 }
+
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif}
-body,.card,.header,.sidebar,.nav,.select,.theme-btn,.node,.tab,.scenario,.heat-cell,.mode-switch button{transition:background-color .18s,color .18s,border-color .18s}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+html,body{
+  margin:0;
+  min-height:100%;
+  background:var(--page);
+  color:var(--text);
+  font-family:var(--sans);
+}
+
+body{
+  font-size:13px;
+  line-height:1.45;
+}
+
 button,select{font:inherit}
 button{cursor:pointer}
-.shell{min-height:100vh;display:grid;grid-template-rows:auto 1fr}
-.header{
-  position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;gap:16px;
-  padding:10px 20px;background:var(--surface);border-bottom:1px solid var(--border)
+svg{display:block;width:100%;height:auto}
+
+button:focus-visible,
+select:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:2px;
 }
-.brand{display:flex;gap:10px;align-items:center;min-width:240px}
-.brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(145deg,var(--accent),var(--blue));position:relative;box-shadow:var(--shadow-sm)}
-.brand-mark:before,.brand-mark:after{content:"";position:absolute;left:8px;right:8px;height:2px;background:#fff;border-radius:2px}
-.brand-mark:before{top:11px}.brand-mark:after{top:20px}
-.brand h1{font:600 1.06rem/1 var(--serif);margin:0}
-.brand p{margin:4px 0 0;font:400 .52rem/1.15 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
-.mode-switch{display:flex;align-items:center;padding:3px;border:1px solid var(--border);border-radius:8px;background:var(--surface-alt);gap:3px}
-.mode-switch button{border:0;background:transparent;color:var(--ink-2);padding:6px 10px;border-radius:6px;font-size:.64rem;font-weight:700}
-.mode-switch button.active{background:var(--surface);color:var(--accent);box-shadow:var(--shadow-sm)}
-.controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-.select,.theme-btn{border:1px solid var(--border);background:var(--surface-alt);color:var(--ink);border-radius:7px;padding:6px 8px;font-size:.64rem}
-.theme-btn{display:flex;align-items:center;gap:7px;font-weight:600}
-.theme-orb{width:10px;height:10px;border-radius:50%;background:#e0a72f;box-shadow:0 0 0 4px rgba(224,167,47,.14)}
-:root[data-theme="dark"] .theme-orb{background:#8bc5ec;box-shadow:0 0 0 4px rgba(139,197,236,.12)}
-.app{display:grid;grid-template-columns:210px minmax(0,1fr)}
-.sidebar{position:sticky;top:56px;height:calc(100vh - 56px);overflow:auto;background:var(--surface);border-right:1px solid var(--border);padding:15px 9px}
-.side-title{font:400 .5rem/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);padding:0 9px 8px}
-.nav{width:100%;display:grid;grid-template-columns:24px 1fr;gap:7px;text-align:left;border:0;border-left:3px solid transparent;background:transparent;color:var(--ink-2);padding:8px 9px;border-radius:7px;margin:2px 0}
-.nav:hover{background:var(--surface-alt);color:var(--ink)}.nav.active{background:var(--accent-dim);border-left-color:var(--accent);color:var(--accent)}
-.nav-num{font:400 .53rem/1.2 var(--mono);color:var(--ink-3)}.nav-label{font-size:.71rem;font-weight:600}
-.side-meta{margin-top:16px;padding:10px 9px;border-top:1px solid var(--border);font-size:.59rem;line-height:1.5;color:var(--ink-2)}
-.main{min-width:0;padding:20px 24px 44px}
-.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:14px}
-.page-title{font:600 1.38rem/1 var(--serif);margin:0 0 5px}
-.page-desc{margin:0;max-width:820px;color:var(--ink-2);font-size:.69rem;line-height:1.45}
-.demo{font:400 .5rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-mid);padding:5px 7px;border-radius:999px;white-space:nowrap}
-.grid{display:grid;gap:10px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:10px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:13px;min-width:0}
-.card.feature{box-shadow:var(--shadow)}
-.eyebrow{font:500 .49rem/1.2 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
-.kpi{display:flex;justify-content:space-between;gap:7px}
-.kpi-value{font:600 1.33rem/.95 var(--serif)}
-.kpi-sub{font-size:.59rem;color:var(--ink-2);line-height:1.35;margin-top:5px}
-.kpi-icon{width:29px;height:29px;border-radius:8px;display:grid;place-items:center;background:var(--accent-dim);color:var(--accent);font:500 .54rem/1 var(--mono)}
-.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 6px;border-radius:999px;font-size:.56rem;font-weight:700}.badge:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
-.good{color:var(--ok);background:var(--ok-dim)}.warn{color:var(--warn);background:var(--warn-dim)}.bad{color:var(--risk);background:var(--risk-dim)}
-.chart-title{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:8px}.chart-title h3{font-size:.75rem;margin:0}.chart-title p{font-size:.56rem;color:var(--ink-3);margin:3px 0 0}
-.legend{display:flex;gap:8px;flex-wrap:wrap;font-size:.54rem;color:var(--ink-2)}.legend span{display:flex;align-items:center;gap:4px}.legend i{width:7px;height:7px;border-radius:50%;display:block}
-.chart-wrap{position:relative}
-.chart{width:100%;height:205px;display:block;overflow:visible}
-.chart-sm{height:145px}
-.gridline{stroke:var(--border);stroke-width:1;stroke-dasharray:3 5}
-.tick{fill:var(--ink-3);font:8px var(--mono)}
-.band{fill:var(--warn-dim);opacity:.85}
-.band-risk{fill:var(--risk-dim);opacity:.8}
-.bar-base{fill:var(--blue)}.bar-eac{fill:var(--gold)}.bar-soft{fill:var(--surface-deep)}
-.line-a{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.line-b{fill:none;stroke:var(--blue);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.line-risk{fill:none;stroke:var(--risk);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.line-gold{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+.shell{min-height:100vh}
+
+/* HEADER */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  display:grid;
+  grid-template-columns:minmax(290px,1fr) auto auto;
+  gap:16px;
+  align-items:center;
+
+  padding:12px 20px;
+
+  background:color-mix(in srgb,var(--surface) 94%,transparent);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(18px);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-width:0;
+}
+
+.logo{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  border-radius:11px;
+  position:relative;
+  background:linear-gradient(145deg,var(--navy),var(--cyan));
+  box-shadow:var(--shadow);
+}
+
+.logo:before{
+  content:"";
+  position:absolute;
+  left:9px;
+  right:9px;
+  top:11px;
+  height:2px;
+  border-radius:3px;
+  background:#fff;
+  box-shadow:0 7px 0 #fff,0 14px 0 #fff;
+}
+
+.brand h1{
+  margin:0;
+  font:700 1rem/1.05 var(--display);
+  letter-spacing:-.02em;
+}
+
+.brand p{
+  margin:4px 0 0;
+  font:400 .48rem/1.2 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--text3);
+}
+
+.primary-nav{
+  display:flex;
+  align-items:center;
+  gap:3px;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface2);
+}
+
+.primary-nav button{
+  border:0;
+  background:transparent;
+  color:var(--text2);
+  padding:7px 11px;
+  border-radius:7px;
+  font-size:.62rem;
+  font-weight:700;
+}
+
+.primary-nav button.active{
+  background:var(--surface);
+  color:var(--navy);
+  box-shadow:var(--shadow);
+}
+
+.header-controls{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.select,
+.theme-btn{
+  border:1px solid var(--line);
+  background:var(--surface2);
+  color:var(--text);
+  border-radius:8px;
+  padding:7px 9px;
+  font-size:.6rem;
+}
+
+.theme-btn{
+  min-width:38px;
+  font-weight:700;
+}
+
+.live-chip{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 9px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--surface2);
+  color:var(--text2);
+  font:500 .5rem/1 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.live-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 0 0 rgba(24,141,160,.45);
+  animation:livePulse 1.9s infinite;
+}
+
+/* PAGE */
+
+.page{
+  max-width:1580px;
+  margin:0 auto;
+  padding:20px 22px 58px;
+}
+
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:18px;
+  margin-bottom:13px;
+}
+
+.kicker{
+  margin-bottom:5px;
+  color:var(--cyan);
+  font:500 .49rem/1.2 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.hero h2{
+  margin:0;
+  font:700 1.35rem/1.08 var(--display);
+  letter-spacing:-.035em;
+}
+
+.demo-tag{
+  flex:0 0 auto;
+  padding:6px 9px;
+  border-radius:999px;
+  background:var(--navySoft);
+  color:var(--navy);
+  border:1px solid color-mix(in srgb,var(--navy) 25%,var(--line));
+  font:500 .48rem/1 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  white-space:nowrap;
+}
+
+/* GRIDS */
+
+.kpi-strip{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.bento{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:10px;
+}
+
+.span12{grid-column:span 12}
+.span8{grid-column:span 8}
+.span7{grid-column:span 7}
+.span6{grid-column:span 6}
+.span5{grid-column:span 5}
+.span4{grid-column:span 4}
+
+/* CARDS */
+
+.card{
+  min-width:0;
+  padding:14px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+
+  opacity:0;
+  transform:translateY(8px);
+  animation:cardIn .45s cubic-bezier(.2,.7,.2,1) forwards;
+}
+
+.card:nth-child(2){animation-delay:.04s}
+.card:nth-child(3){animation-delay:.08s}
+.card:nth-child(4){animation-delay:.12s}
+.card:nth-child(5){animation-delay:.16s}
+.card:nth-child(6){animation-delay:.20s}
+
+.card.feature{
+  box-shadow:var(--shadowLg);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.section-head h3{
+  margin:0;
+  font:700 .76rem/1.2 var(--display);
+}
+
+.section-head p{
+  margin:3px 0 0;
+  color:var(--text3);
+  font-size:.54rem;
+}
+
+.eyebrow{
+  margin-bottom:6px;
+  color:var(--text3);
+  font:500 .47rem/1.2 var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* KPI */
+
+.kpi{min-height:92px}
+
+.kpi-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:8px;
+}
+
+.kpi-value{
+  margin:5px 0 3px;
+  font:700 1.5rem/.95 var(--display);
+  letter-spacing:-.04em;
+}
+
+.kpi-sub{
+  color:var(--text2);
+  font-size:.55rem;
+  line-height:1.4;
+}
+
+.kpi-symbol{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:var(--cyanSoft);
+  color:var(--cyan);
+  font:500 .5rem/1 var(--mono);
+}
+
+/* BADGES */
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:3px 7px;
+  border-radius:999px;
+  font-size:.52rem;
+  font-weight:700;
+}
+
+.badge:before{
+  content:"";
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:currentColor;
+}
+
+.good{color:var(--green);background:var(--greenSoft)}
+.warn{color:var(--amber);background:var(--amberSoft)}
+.bad{color:var(--red);background:var(--redSoft)}
+.info{color:var(--blue);background:var(--blueSoft)}
+
+/* CHARTS */
+
+.chart{
+  width:100%;
+  height:245px;
+}
+
+.chart.tall{
+  height:310px;
+}
+
+.gridline{
+  stroke:var(--line);
+  stroke-width:1;
+  stroke-dasharray:3 5;
+}
+
+.axis-label{
+  fill:var(--text3);
+  font:8px var(--mono);
+}
+
+.chart-line{
+  fill:none;
+  stroke:var(--cyan);
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:1200;
+  stroke-dashoffset:1200;
+  animation:drawLine 1.2s ease-out .12s forwards;
+}
+
+.chart-line-amber{
+  fill:none;
+  stroke:var(--amber);
+  stroke-width:2.4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:1200;
+  stroke-dashoffset:1200;
+  animation:drawLine 1.4s ease-out .2s forwards;
+}
+
+.chart-bar{
+  transform-box:fill-box;
+  transform-origin:center bottom;
+  transform:scaleY(0);
+  animation:growBar .7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.chart-bubble{
+  transform-box:fill-box;
+  transform-origin:center;
+  transform:scale(0);
+  animation:bubbleIn .52s cubic-bezier(.2,.9,.2,1.15) forwards;
+}
+
+/* TOOLTIP */
+
 .tooltip{
-  position:fixed;z-index:1000;pointer-events:none;min-width:150px;max-width:260px;padding:8px 9px;border-radius:7px;
-  background:var(--ink);color:var(--surface);font-size:.57rem;line-height:1.45;box-shadow:0 8px 24px rgba(0,0,0,.2);display:none
+  position:fixed;
+  z-index:500;
+  display:none;
+  pointer-events:none;
+  max-width:280px;
+  padding:8px 10px;
+  color:var(--surface);
+  background:var(--text);
+  border-radius:8px;
+  font-size:.57rem;
+  line-height:1.45;
+  box-shadow:0 12px 30px rgba(0,0,0,.22);
 }
-.tooltip strong{display:block;margin-bottom:3px;font-size:.6rem}
+
+.tooltip strong{
+  display:block;
+  margin-bottom:3px;
+}
+
 .hoverable{cursor:help}
-.metric-stack{display:grid;gap:8px}.metric-bar{display:grid;grid-template-columns:110px 1fr 44px;gap:8px;align-items:center}.metric-bar label{font-size:.59rem;color:var(--ink-2)}
-.track{height:7px;border-radius:999px;background:var(--surface-deep);overflow:hidden}.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--blue))}
-.metric-score{text-align:right;font:400 .55rem/1 var(--mono);color:var(--ink-2)}
-.status-strip{display:flex;height:20px;border-radius:7px;overflow:hidden;border:1px solid var(--border);background:var(--surface-deep)}
-.status-seg{height:100%}.status-seg.ok{background:var(--ok)}.status-seg.warn{background:var(--warn)}.status-seg.bad{background:var(--risk)}
-.status-summary{display:flex;gap:12px;margin-top:8px;font-size:.58rem;color:var(--ink-2);flex-wrap:wrap}.status-summary span{display:flex;align-items:center;gap:5px}.status-summary i{width:7px;height:7px;border-radius:2px}
-.heatmap{display:grid;grid-template-columns:165px repeat(3,1fr);gap:6px;align-items:center}.heat-head{font:400 .48rem/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);text-align:center}
-.heat-label{font-size:.59rem;color:var(--ink-2)}.heat-cell{height:29px;border-radius:5px;display:grid;place-items:center;color:#fff;font:400 .52rem/1 var(--mono)}
-.hi{background:var(--ok)}.mid{background:var(--warn)}.lo{background:var(--risk)}
-.program-matrix{display:grid;gap:5px;margin-top:10px}
-.program-row{display:grid;grid-template-columns:72px 1fr;gap:7px;align-items:center;min-height:26px}
-.program-name{font:400 .47rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.program-heat{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
-.program-chip{min-width:40px;padding:5px 6px;border-radius:6px;border:1px solid var(--border);text-align:center;background:var(--surface-alt);position:relative}
-.program-chip strong{display:block;font:600 .56rem/1 var(--mono)}
-.program-chip span{display:block;margin-top:2px;font-size:.42rem;color:var(--ink-3)}
-.kpi-help{cursor:help}
-.kpi-help:hover{border-color:var(--accent-mid)}
-.guide-pulse{animation:guide-pulse 1s ease-in-out 0s 2}
-@keyframes guide-pulse{0%,100%{box-shadow:0 0 0 0 rgba(11,93,107,0)}50%{box-shadow:0 0 0 5px rgba(11,93,107,.16)}}
-.timeline{position:relative;padding-left:23px}.timeline:before{content:"";position:absolute;left:8px;top:2px;bottom:3px;width:2px;background:var(--border)}
-.tl{position:relative;margin-bottom:12px}.tl:last-child{margin-bottom:0}.tl-dot{position:absolute;left:-21px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
-.tl.warn .tl-dot{border-color:var(--warn)}.tl.bad .tl-dot{border-color:var(--risk)}.tl.good .tl-dot{border-color:var(--ok)}
-.tl strong{font-size:.62rem}.tl p{margin:3px 0 0;font-size:.56rem;line-height:1.4;color:var(--ink-2)}
-.flow{display:flex;gap:6px;align-items:stretch;overflow:auto}.node{min-width:168px;flex:1;padding:10px;border-radius:8px;background:var(--surface-alt);border:1px solid var(--border)}.node.active{background:var(--accent-dim);border-color:var(--accent)}
-.node .nt{font:400 .48rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}.node .nb{font-size:.58rem;line-height:1.4;color:var(--ink-2)}.flow-arrow{align-self:center;color:var(--ink-3)}
-.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}.tab,.scenario{border:1px solid var(--border);background:var(--surface-alt);color:var(--ink-2);border-radius:6px;padding:6px 8px;font-size:.58rem}
-.tab.active,.scenario.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent);font-weight:700}
-.scenarios{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:10px}.scenario{text-align:left}.scenario strong{display:block}.scenario span{display:block;margin-top:3px;color:var(--ink-3);font-size:.51rem;line-height:1.3}
-.decision{border-left:4px solid var(--accent);background:linear-gradient(135deg,var(--surface),var(--surface-alt));border-radius:var(--radius);padding:12px;box-shadow:var(--shadow-sm)}
-.decision h3{font:600 .94rem/1.15 var(--serif);margin:0 0 5px}.decision p{font-size:.59rem;line-height:1.45;color:var(--ink-2);margin:0}
-.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:8px}table{width:100%;border-collapse:collapse;min-width:760px;background:var(--surface)}
-th,td{padding:8px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top;font-size:.59rem}th{font:400 .47rem/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);background:var(--surface-alt)}
-tbody tr:last-child td{border-bottom:0}tbody tr.click:hover{background:var(--surface-alt);cursor:pointer}
-.milestone-grid{display:grid;grid-template-columns:135px 1fr;gap:7px}.mname{font-size:.58rem;color:var(--ink-2);display:flex;align-items:center}.mline{position:relative;height:35px;background:var(--surface-alt);border:1px solid var(--border);border-radius:7px;overflow:hidden}
-.mbase{position:absolute;left:7%;top:11px;height:10px;border-radius:999px;background:var(--surface-deep)}.mactual{position:absolute;left:7%;top:11px;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--blue))}
-.mlabel{position:absolute;right:7px;top:8px;font:400 .48rem/1 var(--mono);color:var(--ink-2)}
-.note{font-size:.54rem;color:var(--ink-3);line-height:1.45;margin-top:6px}
-.crosslink{display:inline-flex;align-items:center;gap:5px;margin-top:7px;border:1px solid var(--accent-mid);background:var(--accent-dim);color:var(--accent);border-radius:6px;padding:5px 7px;font-size:.54rem;font-weight:700}
-@media(max-width:1150px){.kpis,.scenarios{grid-template-columns:repeat(2,1fr)}.three{grid-template-columns:1fr}.header{align-items:flex-start;flex-wrap:wrap}}
-@media(max-width:860px){.app{grid-template-columns:1fr}.sidebar{position:static;height:auto;display:flex;overflow:auto;border-right:0;border-bottom:1px solid var(--border);padding:8px}.side-title,.side-meta{display:none}.nav{width:auto;white-space:nowrap}.main{padding:16px 12px 36px}.two,.kpis,.scenarios{grid-template-columns:1fr}.header{position:static}.mode-switch{order:3;width:100%;justify-content:center}}
+
+/* SCATTER + INSIGHTS */
+
+.scatter-composite{
+  display:grid;
+  gap:12px;
+}
+
+.portfolio-scatter{
+  height:205px;
+}
+
+.portfolio-read{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  padding-top:11px;
+  border-top:1px solid var(--line);
+}
+
+.portfolio-insight{
+  min-height:82px;
+  padding:10px 11px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface2);
+
+  opacity:0;
+  transform:translateY(5px);
+  animation:insightIn .42s ease-out forwards;
+}
+
+.portfolio-insight:nth-child(2){animation-delay:.08s}
+.portfolio-insight:nth-child(3){animation-delay:.16s}
+
+.portfolio-insight.attention{
+  background:linear-gradient(145deg,var(--amberSoft),var(--surface));
+  border-color:color-mix(in srgb,var(--amber) 35%,var(--line));
+}
+
+.insight-label{
+  margin-bottom:5px;
+  color:var(--text3);
+  font:500 .45rem/1.2 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+.portfolio-insight strong{
+  display:block;
+  margin-bottom:4px;
+  font-size:.57rem;
+  line-height:1.3;
+}
+
+.portfolio-insight span{
+  display:block;
+  color:var(--text2);
+  font-size:.49rem;
+  line-height:1.4;
+}
+
+/* DONUT */
+
+.donut-layout{
+  display:grid;
+  grid-template-columns:155px 1fr;
+  align-items:center;
+  gap:14px;
+}
+
+.donut-wrap{
+  position:relative;
+  width:150px;
+  height:150px;
+}
+
+.donut-svg{
+  width:150px;
+  height:150px;
+  transform:rotate(-90deg);
+}
+
+.donut-track{
+  fill:none;
+  stroke:var(--surface3);
+  stroke-width:18;
+}
+
+.donut-seg{
+  fill:none;
+  stroke-width:18;
+  stroke-linecap:butt;
+  animation:donutIn .9s ease-out forwards;
+}
+
+.donut-center{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-content:center;
+  text-align:center;
+  pointer-events:none;
+}
+
+.donut-center strong{
+  font:700 1.3rem/1 var(--display);
+}
+
+.donut-center span{
+  margin-top:2px;
+  color:var(--text3);
+  font:400 .46rem/1.2 var(--mono);
+}
+
+.legend-list{
+  display:grid;
+  gap:8px;
+}
+
+.legend-row{
+  display:grid;
+  grid-template-columns:8px 1fr auto;
+  gap:7px;
+  align-items:center;
+  font-size:.57rem;
+}
+
+.legend-dot{
+  width:7px;
+  height:7px;
+  border-radius:2px;
+}
+
+.legend-row strong{
+  font:500 .54rem/1 var(--mono);
+}
+
+/* LIFECYCLE */
+
+.lifecycle{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+}
+
+.life-stage{
+  min-height:104px;
+  position:relative;
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface2);
+}
+
+.life-stage.active{
+  border-color:var(--cyan);
+  background:linear-gradient(145deg,var(--cyanSoft),var(--surface));
+}
+
+.life-num{
+  color:var(--text3);
+  font:500 .45rem/1 var(--mono);
+}
+
+.life-stage strong{
+  display:block;
+  margin-top:5px;
+  font-size:.62rem;
+}
+
+.life-stage p{
+  margin:5px 0 0;
+  color:var(--text2);
+  font-size:.51rem;
+}
+
+.life-count{
+  position:absolute;
+  right:9px;
+  top:9px;
+  width:27px;
+  height:27px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  font:700 .8rem/1 var(--display);
+}
+
+/* RISK MATRIX */
+
+.risk-matrix{
+  display:grid;
+  grid-template-columns:85px repeat(4,1fr);
+  gap:5px;
+}
+
+.rm-head{
+  display:grid;
+  place-items:center;
+  color:var(--text3);
+  font:500 .44rem/1 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.rm-label{
+  display:flex;
+  align-items:center;
+  color:var(--text2);
+  font-size:.53rem;
+}
+
+.rm-cell{
+  min-height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  border:1px solid var(--line);
+  background:var(--surface2);
+}
+
+.rm-cell.low{
+  background:color-mix(in srgb,var(--greenSoft) 70%,var(--surface));
+}
+
+.rm-cell.med{
+  background:color-mix(in srgb,var(--amberSoft) 75%,var(--surface));
+}
+
+.rm-cell.high{
+  background:color-mix(in srgb,var(--redSoft) 80%,var(--surface));
+}
+
+.rm-count{
+  font:700 .82rem/1 var(--display);
+}
+
+/* QUEUE */
+
+.queue{
+  display:grid;
+  gap:6px;
+}
+
+.queue-row{
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr) auto 64px;
+  gap:8px;
+  align-items:center;
+  padding:8px 9px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  background:var(--surface2);
+  cursor:pointer;
+}
+
+.queue-row:hover{
+  border-color:var(--cyan);
+}
+
+.queue-id{
+  color:var(--text3);
+  font:500 .48rem/1 var(--mono);
+}
+
+.queue-title{
+  min-width:0;
+}
+
+.queue-title strong{
+  display:block;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  font-size:.57rem;
+}
+
+.queue-title span{
+  display:block;
+  margin-top:2px;
+  color:var(--text3);
+  font-size:.48rem;
+}
+
+.queue-score{
+  color:var(--text2);
+  font:500 .5rem/1 var(--mono);
+}
+
+.attention-dot{
+  width:7px;
+  height:7px;
+  display:inline-block;
+  margin-right:5px;
+  border-radius:50%;
+  background:var(--amber);
+  animation:attentionBlink 1.65s infinite;
+}
+
+.attention-dot.red{
+  background:var(--red);
+}
+
+/* SOLUTION STUDIO */
+
+.solution-hero{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:24px;
+  align-items:center;
+}
+
+.solution-title h2{
+  max-width:850px;
+  margin:4px 0 6px;
+  font:700 1.45rem/1.08 var(--display);
+  letter-spacing:-.035em;
+}
+
+.solution-title p{
+  margin:0;
+  color:var(--text2);
+  font-size:.64rem;
+}
+
+.hero-score{
+  min-width:125px;
+  text-align:center;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--surface2);
+}
+
+.hero-score strong{
+  display:block;
+  font:700 2rem/1 var(--display);
+}
+
+.hero-score span{
+  color:var(--text3);
+  font:400 .45rem/1.2 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.solution-tabs{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  margin:11px 0;
+}
+
+.solution-tab{
+  padding:6px 8px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--surface2);
+  color:var(--text2);
+  font:500 .47rem/1 var(--mono);
+}
+
+.solution-tab.active{
+  background:var(--navy);
+  color:#fff;
+  border-color:var(--navy);
+}
+
+/* REQUIREMENTS */
+
+.requirement-grid{
+  display:grid;
+  gap:7px;
+}
+
+.requirement{
+  display:grid;
+  grid-template-columns:105px 1fr;
+  gap:10px;
+  padding:9px 10px;
+  border-radius:9px;
+  background:var(--surface2);
+  border:1px solid var(--line);
+}
+
+.requirement label{
+  color:var(--text3);
+  font:500 .45rem/1.3 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.requirement div{
+  color:var(--text2);
+  font-size:.56rem;
+}
+
+/* GATES */
+
+.gates{
+  display:grid;
+  gap:7px;
+}
+
+.gate{
+  display:grid;
+  grid-template-columns:27px 1fr auto;
+  gap:8px;
+  align-items:center;
+  padding:8px 9px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:var(--surface2);
+}
+
+.gate-icon{
+  width:27px;
+  height:27px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  font:500 .45rem/1 var(--mono);
+}
+
+.gate-icon.good{
+  background:var(--greenSoft);
+  color:var(--green);
+}
+
+.gate-icon.warn{
+  background:var(--amberSoft);
+  color:var(--amber);
+}
+
+.gate-icon.bad{
+  background:var(--redSoft);
+  color:var(--red);
+}
+
+.gate strong{
+  display:block;
+  font-size:.56rem;
+}
+
+.gate span{
+  display:block;
+  margin-top:2px;
+  color:var(--text3);
+  font-size:.48rem;
+}
+
+/* LINEAGE */
+
+.lineage{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+
+.lineage-node{
+  min-height:105px;
+  position:relative;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--surface2);
+}
+
+.lineage-node:not(:last-child):after{
+  content:"→";
+  position:absolute;
+  right:-14px;
+  top:42px;
+  z-index:2;
+  width:20px;
+  text-align:center;
+  color:var(--text3);
+}
+
+.lineage-node strong{
+  display:block;
+  margin:4px 0;
+  font-size:.58rem;
+}
+
+.lineage-node p{
+  margin:0;
+  color:var(--text2);
+  font-size:.5rem;
+}
+
+/* METRICS */
+
+.metric-list{
+  display:grid;
+  gap:9px;
+}
+
+.metric{
+  display:grid;
+  grid-template-columns:125px 1fr 48px;
+  gap:8px;
+  align-items:center;
+}
+
+.metric label{
+  color:var(--text2);
+  font-size:.53rem;
+}
+
+.track{
+  height:7px;
+  position:relative;
+  overflow:hidden;
+  border-radius:999px;
+  background:var(--surface3);
+}
+
+.fill{
+  height:100%;
+  border-radius:999px;
+  transform-origin:left center;
+  transform:scaleX(0);
+  animation:growFill .8s ease-out forwards;
+}
+
+.metric strong{
+  text-align:right;
+  font:500 .5rem/1 var(--mono);
+}
+
+/* SCENARIOS */
+
+.scenario-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+
+.scenario{
+  text-align:left;
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface2);
+  color:var(--text);
+}
+
+.scenario.active{
+  border-color:var(--violet);
+  background:linear-gradient(145deg,var(--violetSoft),var(--surface));
+}
+
+.scenario strong{
+  display:block;
+  font-size:.58rem;
+}
+
+.scenario span{
+  display:block;
+  margin-top:4px;
+  color:var(--text3);
+  font-size:.49rem;
+  line-height:1.35;
+}
+
+/* TABLE */
+
+.table-wrap{
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:10px;
+}
+
+table{
+  width:100%;
+  min-width:860px;
+  border-collapse:collapse;
+  background:var(--surface);
+}
+
+th,td{
+  padding:8px 9px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+  vertical-align:top;
+  font-size:.54rem;
+}
+
+th{
+  background:var(--surface2);
+  color:var(--text3);
+  font:500 .44rem/1.2 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+tbody tr:last-child td{
+  border-bottom:0;
+}
+
+tbody tr.clickable{
+  cursor:pointer;
+}
+
+tbody tr.clickable:hover{
+  background:var(--cyanSoft);
+}
+
+/* MOTION */
+
+@keyframes cardIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes insightIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes drawLine{
+  to{stroke-dashoffset:0}
+}
+
+@keyframes growBar{
+  to{transform:scaleY(1)}
+}
+
+@keyframes growFill{
+  to{transform:scaleX(1)}
+}
+
+@keyframes bubbleIn{
+  to{transform:scale(1)}
+}
+
+@keyframes livePulse{
+  0%{
+    box-shadow:0 0 0 0 rgba(24,141,160,.45);
+  }
+  70%{
+    box-shadow:0 0 0 7px rgba(24,141,160,0);
+  }
+  100%{
+    box-shadow:0 0 0 0 rgba(24,141,160,0);
+  }
+}
+
+@keyframes attentionBlink{
+  0%,100%{opacity:.35}
+  50%{opacity:1}
+}
+
+@keyframes donutIn{
+  from{opacity:.15}
+  to{opacity:1}
+}
+
+/* REDUCED MOTION */
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *:before,
+  *:after{
+    animation:none!important;
+    transition:none!important;
+  }
+
+  .card,
+  .portfolio-insight{
+    opacity:1;
+    transform:none;
+  }
+
+  .chart-line,
+  .chart-line-amber{
+    stroke-dashoffset:0;
+  }
+
+  .chart-bar,
+  .chart-bubble,
+  .fill{
+    transform:none;
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1220px){
+  .topbar{
+    grid-template-columns:1fr auto;
+  }
+
+  .primary-nav{
+    grid-column:1/-1;
+    justify-self:stretch;
+    justify-content:center;
+    order:3;
+  }
+
+  .span8,
+  .span7,
+  .span5,
+  .span4{
+    grid-column:span 6;
+  }
+}
+
+@media(max-width:900px){
+  .page{
+    padding:16px 12px 40px;
+  }
+
+  .topbar{
+    position:static;
+    grid-template-columns:1fr;
+  }
+
+  .primary-nav{
+    overflow:auto;
+    justify-content:flex-start;
+  }
+
+  .header-controls{
+    flex-wrap:wrap;
+  }
+
+  .hero{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .kpi-strip{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .span8,
+  .span7,
+  .span6,
+  .span5,
+  .span4{
+    grid-column:span 12;
+  }
+
+  .lifecycle,
+  .scenario-grid,
+  .lineage{
+    grid-template-columns:1fr;
+  }
+
+  .portfolio-read{
+    grid-template-columns:1fr;
+  }
+
+  .lineage-node:not(:last-child):after{
+    content:"↓";
+    right:auto;
+    left:50%;
+    top:auto;
+    bottom:-17px;
+  }
+
+  .solution-hero{
+    grid-template-columns:1fr;
+  }
+
+  .donut-layout{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+  .kpi-strip{
+    grid-template-columns:1fr;
+  }
+
+  .queue-row{
+    grid-template-columns:34px minmax(0,1fr) auto;
+  }
+
+  .queue-score{
+    display:none;
+  }
+
+  .risk-matrix{
+    grid-template-columns:72px repeat(4,1fr);
+  }
+}
 </style>
 </head>
+
 <body>
+
 <div class="shell">
-<header class="header">
+
+<header class="topbar">
+
   <div class="brand">
-    <div class="brand-mark"></div>
-    <div><h1>Khaled S. - AI Solution Delivery Portfolio</h1><p>Synthetic demonstration: from business problem to adopted AI solution</p></div>
+    <div class="logo"></div>
+
+    <div>
+      <h1>Khaled S. — AI Delivery & Risk Portfolio</h1>
+      <p>Discovery · requirements · controls · adoption</p>
+    </div>
   </div>
-  <div class="mode-switch" id="modeSwitch">
-    <button id="switchDelivery" class="active">Solution Discovery &amp; Delivery</button>
-    <button id="switchNetwork">Business Value &amp; Stakeholder Impact</button>
-  </div>
-  <div class="controls" id="controls"></div>
+
+
+  <nav class="primary-nav" id="primaryNav">
+    <button class="active" data-view="command">Control Room</button>
+    <button data-view="studio">Solution Studio</button>
+    <button data-view="assurance">Assurance</button>
+    <button data-view="value">Value & Adoption</button>
+  </nav>
+
+
+  <div class="header-controls" id="controls"></div>
+
 </header>
 
-<div class="app">
-<nav class="sidebar" id="sidebar"></nav>
-<main class="main" id="main"></main>
-</div>
+
+<main class="page" id="main"></main>
+
 </div>
 
 <div class="tooltip" id="tooltip"></div>
 
+
 <script>
-const DELIVERY=[
-{id:"A01",name:"Customer complaint summarisation agent",program:"Contact Centre",owner:"J. Chen",stage:"Pilot",status:"At Risk",plannedFinish:"Apr 2026",forecastFinish:"Jul 2026",forecastSort:2026.5,scheduleVariance:12,baseline:18.4,actual:6.1,eac:16.2,benefit:"Handle-time −28% on written complaints",benefitStatus:"At risk",history:[42,48,55,58,57,54,52,51],milestones:[["Problem framing",100,"Complete"],["Pilot with 40 advisors",62,"Slipped"],["Adoption gate",24,"At Risk"]],dependencies:[{name:"Complaint taxonomy freeze with CX operations",status:"Blocked",owner:"Contact Centre ops"}],risks:[{id:"R-114",category:"Human-oversight gap",residual:"High",owner:"J. Chen",treatment:"Mandatory advisor accept/edit before case close"}],issues:[{id:"I-041",description:"Summaries omit accessibility flags on 11% of pilot cases",age:21}],metricStatus:{ttv:"Conditional",adoption:"Conditional",review:"Conditional"},relatedKpi:"Advisor adoption",build:"Prompt-driven agent in Copilot Studio, human review before send"},
-{id:"A02",name:"Internal policy Q&A assistant",program:"Compliance",owner:"R. Patel",stage:"Production",status:"Adopted",plannedFinish:"Nov 2025",forecastFinish:"Nov 2025",forecastSort:2025.85,scheduleVariance:-2,baseline:9.6,actual:8.8,eac:10.1,benefit:"Policy search time −61%",benefitStatus:"On track",history:[55,63,71,78,84,88,90,92],milestones:[["Source corpus scoped",100,"Complete"],["Groundedness tests",100,"Complete"],["Production with review log",100,"Complete"]],dependencies:[{name:"Policy library owner sign-off",status:"On track",owner:"Compliance content"}],risks:[{id:"R-208",category:"Model / output risk",residual:"Low",owner:"R. Patel",treatment:"Cite clause IDs; block unsourced answers"}],issues:[],metricStatus:{ttv:"Pass",adoption:"Pass",review:"Pass"},relatedKpi:"Policy self-serve",build:"Iterative prompting + retrieval over approved policy set; human gate on new corpora"},
-{id:"A03",name:"Onboarding document-triage tool",program:"Operations",owner:"A. Nguyen",stage:"Pilot",status:"At Risk",plannedFinish:"Jun 2026",forecastFinish:"Sep 2026",forecastSort:2026.67,scheduleVariance:11,baseline:14.2,actual:3.4,eac:13.0,benefit:"Manual classification hours −40%",benefitStatus:"At risk",history:[38,44,49,53,52,50,48,47],milestones:[["Document types agreed",100,"Complete"],["Pilot on 3 products",48,"Slipped"],["Ops adoption",18,"At Risk"]],dependencies:[{name:"Retention and redaction rule from Privacy",status:"Blocked",owner:"Privacy office"}],risks:[{id:"R-233",category:"Data privacy",residual:"High",owner:"A. Nguyen",treatment:"No raw ID pages stored beyond the approved window"}],issues:[{id:"I-058",description:"Passport images entering a non-approved store in a test run",age:16}],metricStatus:{ttv:"Conditional",adoption:"Conditional",review:"Fail"},relatedKpi:"Onboarding cycle time",build:"Low-code classifier plus extraction prompts; Privacy checkpoint before pilot expand"},
-{id:"A04",name:"Meeting notes and action extractor",program:"Business Banking",owner:"M. Rossi",stage:"Production",status:"Adopted",plannedFinish:"Jan 2026",forecastFinish:"Feb 2026",forecastSort:2026.12,scheduleVariance:3,baseline:6.4,actual:5.9,eac:6.7,benefit:"Follow-up capture +35%",benefitStatus:"On track",history:[48,56,64,72,78,82,85,87],milestones:[["Use-case charter",100,"Complete"],["Relationship-manager pilot",100,"Complete"],["Firmwide opt-in",82,"On Track"]],dependencies:[],risks:[{id:"R-241",category:"Data privacy",residual:"Medium",owner:"M. Rossi",treatment:"Client-named meetings require explicit start-record"}],issues:[],metricStatus:{ttv:"Pass",adoption:"Pass",review:"Pass"},relatedKpi:"RM time recovered",build:"Prompt-driven notes agent; recording consent captured before any transcript"},
-{id:"A05",name:"Fraud-alert enrichment assistant",program:"Retail Banking",owner:"S. Walker",stage:"Prototype",status:"At Risk",plannedFinish:"Aug 2026",forecastFinish:"Dec 2026",forecastSort:2026.92,scheduleVariance:16,baseline:11.8,actual:1.6,eac:10.4,benefit:"Analyst handle-time −22% on low-complexity alerts",benefitStatus:"Not yet due",history:[33,36,40,39,37,36,35,34],milestones:[["Alert types in scope",100,"Complete"],["Prototype on historic alerts",41,"Slipped"],["Four-eyes review design",12,"At Risk"]],dependencies:[{name:"Model-risk review slot",status:"Blocked",owner:"Model risk"}],risks:[{id:"R-155",category:"Model / output risk",residual:"High",owner:"S. Walker",treatment:"Assistant cannot close or score an alert; analyst remains accountable"}],issues:[{id:"I-022",description:"Enrichment draft over-weighted a single customer note in test",age:29}],metricStatus:{ttv:"Conditional",adoption:"Fail",review:"Conditional"},relatedKpi:"Alert cycle time",build:"Prompt-driven enrichment only; no automated disposition"},
-{id:"A06",name:"Credit memo first-draft assistant",program:"Business Banking",owner:"L. Ibrahim",stage:"Pilot",status:"Adopted",plannedFinish:"May 2026",forecastFinish:"May 2026",forecastSort:2026.38,scheduleVariance:0,baseline:8.1,actual:4.7,eac:8.3,benefit:"First-draft time −45%",benefitStatus:"On track",history:[51,58,64,70,74,77,80,82],milestones:[["Credit template locked",100,"Complete"],["Credit-officer pilot",76,"On Track"],["Second-line sample review",40,"On Track"]],dependencies:[],risks:[{id:"R-098",category:"Human-oversight gap",residual:"Medium",owner:"L. Ibrahim",treatment:"Draft watermarked until officer accepts"}],issues:[],metricStatus:{ttv:"Pass",adoption:"Pass",review:"Pass"},relatedKpi:"Credit cycle time",build:"Template-grounded prompting; officer edit log retained"},
-{id:"A07",name:"KYC evidence pack assembler",program:"Operations",owner:"P. Singh",stage:"Discovery",status:"Paused",plannedFinish:"Mar 2027",forecastFinish:"TBC",forecastSort:2027.5,scheduleVariance:22,baseline:12.5,actual:0.4,eac:12.5,benefit:"Pack assembly hours −30%",benefitStatus:"At risk",history:[28,30,29,27,24,22,20,18],milestones:[["Process map",100,"Complete"],["Data-access request",18,"Slipped"]],dependencies:[{name:"Source-system access for evidence images",status:"Blocked",owner:"Operations data"}],risks:[{id:"R-301",category:"Data privacy",residual:"High",owner:"P. Singh",treatment:"Pause until a lawful access path exists"}],issues:[{id:"I-064",description:"Discovery paused pending data-access decision",age:41}],metricStatus:{ttv:"Fail",adoption:"Fail",review:"Conditional"},relatedKpi:"Onboarding cycle time",build:"Not in build. Discovery only."},
-{id:"A08",name:"Branch appointment briefing agent",program:"Retail Banking",owner:"K. Sanad",stage:"Production",status:"Adopted",plannedFinish:"Dec 2025",forecastFinish:"Dec 2025",forecastSort:2025.96,scheduleVariance:-1,baseline:5.2,actual:4.8,eac:5.4,benefit:"Prep time −12 min / appointment",benefitStatus:"On track",history:[60,67,73,79,84,87,89,91],milestones:[["Need statement",100,"Complete"],["Branch pilot",100,"Complete"],["Network rollout",100,"Complete"]],dependencies:[],risks:[{id:"R-176",category:"Vendor / tooling risk",residual:"Low",owner:"K. Sanad",treatment:"Prompt pack versioned; vendor change triggers re-test"}],issues:[],metricStatus:{ttv:"Pass",adoption:"Pass",review:"Pass"},relatedKpi:"Advisor adoption",build:"Low-code agent over CRM snapshot; banker confirms before the meeting"},
-{id:"A09",name:"Ops incident post-mortem drafter",program:"Operations",owner:"D. Okafor",stage:"Pilot",status:"At Risk",plannedFinish:"Jul 2026",forecastFinish:"Oct 2026",forecastSort:2026.75,scheduleVariance:10,baseline:4.6,actual:1.2,eac:4.9,benefit:"Write-up time −50%",benefitStatus:"At risk",history:[40,45,50,52,51,49,47,46],milestones:[["Incident fields mapped",100,"Complete"],["Pilot on Sev-2",44,"Slipped"],["Duty-manager adoption",16,"At Risk"]],dependencies:[{name:"Incident platform API access",status:"Blocked",owner:"Ops tooling"}],risks:[{id:"R-189",category:"Vendor / tooling risk",residual:"Medium",owner:"D. Okafor",treatment:"Manual paste path until API is approved"}],issues:[{id:"I-071",description:"Pilot volume too low to judge factual completeness",age:18}],metricStatus:{ttv:"Conditional",adoption:"Conditional",review:"Conditional"},relatedKpi:"Incident close quality",build:"Prompt-driven draft from the incident record; manager owns the published note"},
-{id:"A10",name:"Complaints root-cause classifier",program:"Contact Centre",owner:"F. Adeyemi",stage:"Prototype",status:"Adopted",plannedFinish:"Apr 2026",forecastFinish:"Apr 2026",forecastSort:2026.29,scheduleVariance:0,baseline:7.3,actual:2.1,eac:7.4,benefit:"Coding consistency +18pp",benefitStatus:"Not yet due",history:[46,52,58,63,68,72,75,77],milestones:[["Taxonomy v2",100,"Complete"],["Offline accuracy test",71,"On Track"],["Advisor-in-the-loop pilot",33,"On Track"]],dependencies:[],risks:[{id:"R-267",category:"Model / output risk",residual:"Medium",owner:"F. Adeyemi",treatment:"Human confirm on any code that changes remedy path"}],issues:[],metricStatus:{ttv:"Pass",adoption:"Pass",review:"Pass"},relatedKpi:"Complaint quality",build:"Classifier prompts against the approved taxonomy; no auto-close"},
-{id:"A11",name:"Vendor contract clause finder",program:"Compliance",owner:"H. Grant",stage:"Pilot",status:"Adopted",plannedFinish:"Jun 2026",forecastFinish:"Jul 2026",forecastSort:2026.54,scheduleVariance:4,baseline:3.8,actual:1.9,eac:3.9,benefit:"Clause search time −70%",benefitStatus:"On track",history:[44,51,59,66,71,75,78,80],milestones:[["Clause library",100,"Complete"],["Legal pilot",64,"On Track"],["Procurement rollout",29,"On Track"]],dependencies:[{name:"Legal privilege handling note",status:"On track",owner:"Legal ops"}],risks:[{id:"R-310",category:"Data privacy",residual:"Low",owner:"H. Grant",treatment:"Contracts stay in the approved repository"}],issues:[],metricStatus:{ttv:"Pass",adoption:"Pass",review:"Pass"},relatedKpi:"Policy self-serve",build:"Retrieval over the clause library; lawyer confirms before reliance"},
-{id:"A12",name:"Collections conversation assist",program:"Retail Banking",owner:"N. Okoye",stage:"Discovery",status:"Paused",plannedFinish:"Jan 2027",forecastFinish:"TBC",forecastSort:2027.2,scheduleVariance:18,baseline:9.1,actual:0.2,eac:9.1,benefit:"Script adherence + hardship flagging",benefitStatus:"At risk",history:[31,33,32,30,27,24,22,20],milestones:[["Hardship policy read",100,"Complete"],["Ethics review",20,"Slipped"]],dependencies:[{name:"Conduct risk opinion",status:"Blocked",owner:"Conduct risk"}],risks:[{id:"R-318",category:"Human-oversight gap",residual:"High",owner:"N. Okoye",treatment:"No live customer assist until conduct risk signs off"}],issues:[{id:"I-083",description:"Discovery paused. Live customer dialogue is out of scope.",age:37}],metricStatus:{ttv:"Fail",adoption:"Fail",review:"Fail"},relatedKpi:"Advisor adoption",build:"Not in build. Discovery only."},
-{id:"A13",name:"Sanctions screening alert triage assistant",program:"Financial Crime Risk",owner:"K. Sanad",stage:"Pilot",status:"At Risk",plannedFinish:"Sep 2026",forecastFinish:"Dec 2026",forecastSort:2026.92,scheduleVariance:10,baseline:10.6,actual:2.4,eac:9.8,benefit:"Analyst triage time −30% on low-complexity name matches",benefitStatus:"At risk",history:[36,41,46,49,48,47,46,45],milestones:[["Match-logic scope agreed",100,"Complete"],["Pilot on low-complexity alerts",52,"Slipped"],["Four-eyes disposition design",28,"At Risk"]],dependencies:[{name:"Vendor screening-engine upgrade evaluation",status:"On track",owner:"Vendor management + Financial Crime Risk"},{name:"Model-risk review slot",status:"Blocked",owner:"Model risk"}],risks:[{id:"R-330",category:"Model / output risk",residual:"High",owner:"K. Sanad",treatment:"Assistant cannot clear or dismiss a match; analyst retains sign-off"}],issues:[{id:"I-091",description:"Pilot held to low-complexity name matches until model-risk review completes",age:14}],metricStatus:{ttv:"Conditional",adoption:"Conditional",review:"Conditional"},relatedKpi:"Alert cycle time",vendor:"Coordinated with incumbent screening vendor on match-threshold recalibration ahead of pilot",build:"Triage support against approved match logic. Four-eyes review retained on every disposition."},
-{id:"A14",name:"AI use-case scoping playbook and prompt pack",program:"Enablement",owner:"K. Sanad",stage:"Production",status:"Adopted",plannedFinish:"Mar 2026",forecastFinish:"Mar 2026",forecastSort:2026.21,scheduleVariance:-1,baseline:3.2,actual:2.8,eac:3.4,benefit:"First-brief cycle −40% when teams scope without a dedicated builder",benefitStatus:"On track",history:[40,48,58,66,74,80,86,90],milestones:[["Playbook v1",100,"Complete"],["Prompt pack",100,"Complete"],["Team briefs",78,"On Track"]],dependencies:[{name:"Content owner in Central Product & Delivery",status:"On track",owner:"Central Product & Delivery"}],risks:[{id:"R-340",category:"Human-oversight gap",residual:"Low",owner:"K. Sanad",treatment:"Named accountable executive before a use case leaves Discovery"}],issues:[],metricStatus:{ttv:"Pass",adoption:"Pass",review:"Pass"},relatedKpi:"Playbook reuse",build:"Reusable pack. Teams draft; Product & Delivery reviews, does not rebuild."}
-];
 
-const DQ=[
-{name:"Use-case register",complete:92,accuracy:90,timely:81,cert:"Conditional"},
-{name:"Human-review log",complete:74,accuracy:88,timely:70,cert:"In remediation"},
-{name:"Prompt and version pack",complete:86,accuracy:91,timely:84,cert:"Conditional"},
-{name:"Adoption and value pack",complete:69,accuracy:82,timely:76,cert:"In remediation"}
-];
+/* =========================================================
+   DATA
+========================================================= */
 
-const DELIVERY_LINEAGE={
-"Time to value":{measure:"Weeks from signed brief to first adopted use",model:"fact_usecase",transform:"Demo is not production.",source:"AI enablement register",owner:"Product & Delivery",refresh:"Weekly",validation:"Named user group required.",recon:"7 pass · 3 cond · 2 paused",statusKey:"ttv",how:"Brief → prototype → human review → gate"},
-"Adoption rate":{measure:"Reviewed users / intended group, 28 days",model:"fact_usage",transform:"Open session is not use.",source:"Usage extract",owner:"Sponsor",refresh:"Weekly",validation:"Intended group locked at pilot.",recon:"6 pass · 4 cond",statusKey:"adoption",how:"Counts after accept or edit"},
-"Human-review rate":{measure:"Edited or rejected / generated",model:"fact_review",transform:"Auto-accept is a control break.",source:"Review log",owner:"Accountable executive",refresh:"Daily",validation:"Named reviewer before exit.",recon:"8 pass · 2 open",statusKey:"review",how:"Person, not a model score"},
-"How this was built":{measure:"Method and gate on the record",model:"fact_build",transform:"How it was made, who signed.",source:"Build log",owner:"Product owner",refresh:"At each gate",validation:"Human gate before production.",recon:"14 recorded",statusKey:null,how:"Prototype against the brief, then a named review"}
-};
+const SOLUTIONS = [
+  {
+    id:"A01",
+    name:"Customer complaint summarisation assistant",
+    unit:"Contact Centre",
+    owner:"J. Chen",
+    stage:"Pilot",
+    status:"At Risk",
+    problem:"Complaint specialists spend significant time reading long correspondence before identifying the issue, customer impact and required action.",
+    current:"Manual review of complaint text followed by free-form case notes.",
+    future:"AI prepares a structured summary and issue classification for advisor review before the case progresses.",
+    requirements:"Preserve vulnerability and accessibility flags; cite source passages; advisor must accept or edit before case close.",
+    vendor:"Enterprise AI platform",
+    vendorStatus:"Configuration review",
+    value:74,
+    readiness:68,
+    complexity:61,
+    adoption:58,
+    reviewLoad:32,
+    ttv:12,
+    hours:16.2,
+    risk:"High",
+    privacy:"Conditional",
+    humanReview:"Conditional",
+    data:"Pass",
+    riskCategory:"Human oversight",
+    dependency:"Complaint taxonomy freeze",
+    issue:"Accessibility flag preservation requires further testing.",
+    benefit:"Reduced reading and drafting effort on written complaints.",
+    lifecycle:[100,100,78,58,18],
+    history:[32,41,49,55,58,57,58,60]
+  },
 
-const DELIVERY_SCENARIOS={
-base:{name:"Base case",shift:0,uplift:0,series:[58,62,66,70,73,76,79,82],note:"Current path."},
-accelerated:{name:"Accelerated rollout",shift:-6,uplift:0,series:[58,64,71,78,84,89,93,96],note:"Gates clear in one cycle. TTV −6w."},
-resistance:{name:"Adoption resistance",shift:8,uplift:0,series:[58,60,61,62,63,64,65,66],note:"Optional use. Value stays on paper."},
-review:{name:"Human-review bottleneck",shift:4,uplift:0,series:[58,61,63,64,64,63,62,61],note:"Reviewers outrun. Queues grow."}
-};
+  {
+    id:"A02",
+    name:"Internal policy Q&A assistant",
+    unit:"Compliance",
+    owner:"R. Patel",
+    stage:"Production",
+    status:"Adopted",
+    problem:"Staff spend time locating the correct policy clause across a large controlled document set.",
+    current:"Manual search across policy repositories and escalation to specialists.",
+    future:"Grounded assistant answers against the approved corpus and cites the relevant policy clause.",
+    requirements:"No unsourced answer; clause citation mandatory; controlled document corpus only.",
+    vendor:"Enterprise AI platform",
+    vendorStatus:"Operational",
+    value:91,
+    readiness:94,
+    complexity:46,
+    adoption:89,
+    reviewLoad:11,
+    ttv:-2,
+    hours:10.1,
+    risk:"Low",
+    privacy:"Pass",
+    humanReview:"Pass",
+    data:"Pass",
+    riskCategory:"Output reliability",
+    dependency:"Policy library owner",
+    issue:"No material open issue.",
+    benefit:"Faster policy search with clause-level traceability.",
+    lifecycle:[100,100,100,100,100],
+    history:[52,61,69,76,81,85,88,91]
+  },
 
-const MODES={
-"Retail Banking":{journeys:4.20,prior:3.55,forecast:4.00,targetJourneys:4.40,otr:71.0,otrTarget:75.0,completion:88.4,pml:.62,csat:74,complaints:14.2,util:69},
-"Business Banking":{journeys:1.85,prior:1.42,forecast:1.78,targetJourneys:2.00,otr:82.0,otrTarget:80.0,completion:91.2,pml:.21,csat:79,complaints:8.6,util:64},
-"Operations":{journeys:2.40,prior:1.90,forecast:2.55,targetJourneys:2.80,otr:54.0,otrTarget:70.0,completion:76.5,pml:.88,csat:61,complaints:19.4,util:58},
-"Compliance":{journeys:0.92,prior:0.61,forecast:0.95,targetJourneys:1.10,otr:88.0,otrTarget:85.0,completion:93.0,pml:.09,csat:81,complaints:5.1,util:72},
-"Contact Centre":{journeys:3.10,prior:2.20,forecast:3.40,targetJourneys:3.60,otr:63.0,otrTarget:78.0,completion:81.6,pml:.74,csat:68,complaints:22.8,util:77},
-"Financial Crime Risk":{journeys:1.15,prior:0.88,forecast:1.22,targetJourneys:1.40,otr:49.0,otrTarget:65.0,completion:72.0,pml:.55,csat:63,complaints:16.8,util:51}
-};
+  {
+    id:"A03",
+    name:"Onboarding document triage",
+    unit:"Operations",
+    owner:"A. Nguyen",
+    stage:"Pilot",
+    status:"At Risk",
+    problem:"Operations teams manually classify and route large volumes of customer onboarding documents.",
+    current:"Manual document classification, routing and exception handling.",
+    future:"AI-assisted classification and extraction proposes a document type and destination for operator review.",
+    requirements:"Approved storage only; retention rule enforced; operator confirms classification.",
+    vendor:"Document AI provider",
+    vendorStatus:"Privacy review",
+    value:79,
+    readiness:59,
+    complexity:72,
+    adoption:47,
+    reviewLoad:38,
+    ttv:11,
+    hours:13.0,
+    risk:"High",
+    privacy:"Review",
+    humanReview:"Pass",
+    data:"Conditional",
+    riskCategory:"Data privacy",
+    dependency:"Retention and redaction rule",
+    issue:"Test storage path requires remediation before wider pilot.",
+    benefit:"Lower manual classification effort and faster routing.",
+    lifecycle:[100,100,70,46,10],
+    history:[25,32,38,44,47,46,45,47]
+  },
 
-const PERIODS=["P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11","P12"];
-const NETWORK_SERIES=[
-{p:"P1",journeys:8.4,otr:61.0,complaints:18.2},
-{p:"P2",journeys:8.9,otr:63.4,complaints:17.6},
-{p:"P3",journeys:9.2,otr:64.1,complaints:17.1},
-{p:"P4",journeys:9.8,otr:66.8,complaints:16.4},
-{p:"P5",journeys:10.4,otr:68.2,complaints:15.9},
-{p:"P6",journeys:10.1,otr:65.0,complaints:18.8},
-{p:"P7",journeys:11.0,otr:69.4,complaints:15.2},
-{p:"P8",journeys:11.3,otr:71.1,complaints:14.8},
-{p:"P9",journeys:11.8,otr:72.6,complaints:14.1},
-{p:"P10",journeys:12.2,otr:74.0,complaints:13.6},
-{p:"P11",journeys:11.6,otr:70.2,complaints:16.0},
-{p:"P12",journeys:12.6,otr:75.4,complaints:13.2}
-];
+  {
+    id:"A04",
+    name:"Meeting action extractor",
+    unit:"Business Banking",
+    owner:"M. Rossi",
+    stage:"Production",
+    status:"Adopted",
+    problem:"Follow-up actions from internal and customer meetings are inconsistently captured.",
+    current:"Manual note taking and separate action entry.",
+    future:"AI prepares structured actions and owners from approved meeting notes for user confirmation.",
+    requirements:"Consent captured where required; user confirms actions before publishing.",
+    vendor:"Microsoft ecosystem",
+    vendorStatus:"Operational",
+    value:84,
+    readiness:90,
+    complexity:39,
+    adoption:84,
+    reviewLoad:15,
+    ttv:3,
+    hours:6.7,
+    risk:"Medium",
+    privacy:"Pass",
+    humanReview:"Pass",
+    data:"Pass",
+    riskCategory:"Data privacy",
+    dependency:"Recording consent",
+    issue:"No material open issue.",
+    benefit:"More consistent action capture and less manual note processing.",
+    lifecycle:[100,100,100,100,84],
+    history:[40,51,62,70,77,81,84,86]
+  },
 
-const CUSTOMER_BASELINE=[
-{category:"Rework / correction",baseline:31,post:22},
-{category:"Search and lookup",baseline:24,post:14},
-{category:"Drafting and notes",baseline:18,post:11},
-{category:"Handoffs between teams",baseline:12,post:13},
-{category:"Waiting on review",baseline:9,post:16},
-{category:"Other admin",baseline:6,post:5}
-];
+  {
+    id:"A05",
+    name:"Fraud alert enrichment assistant",
+    unit:"Financial Crime Risk",
+    owner:"S. Walker",
+    stage:"Prototype",
+    status:"At Risk",
+    problem:"Analysts spend time gathering context before assessing lower-complexity alerts.",
+    current:"Analyst manually searches customer, transaction and case information.",
+    future:"AI prepares a structured evidence summary while leaving alert disposition with the analyst.",
+    requirements:"No automated closure or risk score; evidence references preserved; analyst remains accountable.",
+    vendor:"Enterprise AI platform",
+    vendorStatus:"Model risk review",
+    value:88,
+    readiness:52,
+    complexity:82,
+    adoption:34,
+    reviewLoad:45,
+    ttv:16,
+    hours:10.4,
+    risk:"High",
+    privacy:"Conditional",
+    humanReview:"Pass",
+    data:"Conditional",
+    riskCategory:"Output reliability",
+    dependency:"Model risk review slot",
+    issue:"Historic test showed one customer note could be over-weighted.",
+    benefit:"Reduced evidence-gathering time on low-complexity alerts.",
+    lifecycle:[100,92,58,28,0],
+    history:[28,32,37,40,39,37,34,33]
+  },
 
-const NETWORK_LINEAGE={
-"Advisor adoption":{measure:"Reviewed users / intended advisors, 28 days",model:"fact_usage",transform:"Opens without review excluded.",source:"Usage extract",owner:"Contact Centre",refresh:"Weekly",validation:"Group locked at pilot.",recon:"5 pass · 1 open",relatedInitiative:"A01",how:"Counts after accept or edit"},
-"Policy self-serve":{measure:"In-tool resolutions without a specialist ticket",model:"fact_query",transform:"Uncited = unresolved.",source:"Policy log",owner:"Compliance",refresh:"Daily",validation:"Clause citation required.",recon:"11 pass",relatedInitiative:"A02",how:"Approved corpus only"},
-"Onboarding cycle time":{measure:"Median days, pack in to decision-ready",model:"fact_case",transform:"Paused cases out of median.",source:"Work-stack",owner:"Operations",refresh:"Daily",validation:"Privacy flags survive triage.",recon:"4 pass · 2 open",relatedInitiative:"A03",how:"Suggestion only. Operator owns."},
-"Alert cycle time":{measure:"Median hours, raise to disposition",model:"fact_alert",transform:"Enrichment time kept separate.",source:"Alert work-stack",owner:"Financial crime operations",refresh:"Hourly",validation:"Assistant cannot dispose.",recon:"3 pass · 2 open",relatedInitiative:"A05",how:"Enrichment draft only"},
-"Playbook reuse":{measure:"Team-written briefs / new use cases",model:"fact_brief",transform:"Team must complete the pages.",source:"Use-case register",owner:"Product & Delivery",refresh:"Monthly",validation:"Central rewrite ≠ reuse.",recon:"9 briefs · 1 pack rev",relatedInitiative:"A14",how:"Teams write. Central reviews."}
-};
+  {
+    id:"A06",
+    name:"Credit memo first-draft assistant",
+    unit:"Business Banking",
+    owner:"L. Ibrahim",
+    stage:"Pilot",
+    status:"Adopted",
+    problem:"Credit officers spend substantial time assembling first drafts from structured and narrative information.",
+    current:"Manual first-draft preparation from approved source material.",
+    future:"AI prepares a first draft against the controlled credit template for officer review.",
+    requirements:"Source-linked content; draft watermark; officer accepts and edits before submission.",
+    vendor:"Enterprise AI platform",
+    vendorStatus:"Pilot operational",
+    value:86,
+    readiness:85,
+    complexity:58,
+    adoption:78,
+    reviewLoad:19,
+    ttv:0,
+    hours:8.3,
+    risk:"Medium",
+    privacy:"Pass",
+    humanReview:"Pass",
+    data:"Pass",
+    riskCategory:"Human oversight",
+    dependency:"Credit template control",
+    issue:"No material open issue.",
+    benefit:"Reduced first-draft effort while retaining credit officer accountability.",
+    lifecycle:[100,100,100,78,42],
+    history:[46,54,61,67,71,74,77,80]
+  },
 
-const NETWORK_SCENARIOS={
-base:{name:"Base case",journeyFactor:1,pmlFactor:1,series:[68,70,72,73,74,75,76,77],note:"Current capacity."},
-service:{name:"Sponsored rollout",journeyFactor:1.12,pmlFactor:.82,series:[68,71,75,79,83,86,88,90],note:"Sponsors in the huddle."},
-disruption:{name:"Review capacity shock",journeyFactor:.94,pmlFactor:1.28,series:[68,67,65,63,62,61,60,59],note:"Reviewers pulled to BAU."},
-demand:{name:"Demand spike",journeyFactor:1.18,pmlFactor:1.15,series:[68,70,73,76,78,79,80,80],note:"Volume outruns review."}
-};
+  {
+    id:"A07",
+    name:"KYC evidence pack assembler",
+    unit:"Operations",
+    owner:"P. Singh",
+    stage:"Discovery",
+    status:"Paused",
+    problem:"KYC evidence is assembled manually from several systems before review.",
+    current:"Analysts gather images, records and supporting evidence manually.",
+    future:"Controlled workflow assembles an evidence pack for analyst review.",
+    requirements:"Lawful access path; source traceability; no unsupported evidence movement.",
+    vendor:"TBC",
+    vendorStatus:"Not selected",
+    value:72,
+    readiness:28,
+    complexity:86,
+    adoption:12,
+    reviewLoad:18,
+    ttv:22,
+    hours:12.5,
+    risk:"High",
+    privacy:"Review",
+    humanReview:"Conditional",
+    data:"Review",
+    riskCategory:"Data access",
+    dependency:"Source-system access",
+    issue:"Discovery paused pending approved access path.",
+    benefit:"Potential reduction in manual pack assembly effort.",
+    lifecycle:[100,48,0,0,0],
+    history:[30,32,31,28,24,20,18,16]
+  },
 
-let state={
-  dashboard:"delivery",
-  deliveryView:"overview",
-  networkView:"command",
-  program:"All",
-  status:"All",
-  selected:"A01",
-  deliveryMetric:"Time to value",
-  deliveryScenario:"base",
-  mode:"All",
-  period:"4w",
-  region:"GS",
-  networkMetric:"Advisor adoption",
-  networkScenario:"base"
-};
+  {
+    id:"A08",
+    name:"Sanctions alert triage assistant",
+    unit:"Financial Crime Risk",
+    owner:"K. Sanad",
+    stage:"Pilot",
+    status:"At Risk",
+    problem:"Analysts spend time gathering evidence for low-complexity sanctions name-match alerts.",
+    current:"Manual review of screening-engine output, customer information and match evidence.",
+    future:"AI-assisted triage presents match evidence and supporting context while disposition remains with the analyst.",
+    requirements:"Cannot clear a match; match logic remains controlled; four-eyes review retained.",
+    vendor:"Screening platform provider",
+    vendorStatus:"Upgrade evaluation",
+    value:93,
+    readiness:63,
+    complexity:88,
+    adoption:46,
+    reviewLoad:49,
+    ttv:10,
+    hours:9.8,
+    risk:"High",
+    privacy:"Pass",
+    humanReview:"Pass",
+    data:"Conditional",
+    riskCategory:"Model / output risk",
+    dependency:"Screening-engine upgrade",
+    issue:"Pilot constrained to low-complexity name matches pending review.",
+    benefit:"Reduced triage effort while retaining analyst disposition.",
+    lifecycle:[100,100,76,48,10],
+    history:[31,37,42,46,48,47,45,46]
+  },
 
-function money(n){return n.toFixed(1)+"k hrs"}
-function statusClass(s){if(["Adopted","Complete","Certified","Low","On track","Pass","Production"].includes(s))return"good";if(["At Risk","Conditional","Medium","At risk","Not yet due","Pilot","Prototype"].includes(s))return"warn";return"bad"}
-function badge(s){return `<span class="badge ${statusClass(s)}">${s}</span>`}
-function heatClass(v){return v>=90?"hi":v>=80?"mid":"lo"}
-function filteredDelivery(){return DELIVERY.filter(d=>(state.program==="All"||d.program===state.program)&&(state.status==="All"||d.status===state.status))}
-function normalizeSelection(){
-  if(state.dashboard!=="delivery")return;
-  const list=filteredDelivery();
-  if(list.length && !list.some(d=>d.id===state.selected)) state.selected=list[0].id;
-}
-function scaleFactor(){return state.period==="qtd"?1.35:state.period==="ytd"?3.4:1}
-function regionFactor(){return state.region==="REG"?0.22:state.region==="ALL"?1:1}
-function selectedModes(){return state.mode==="All"?Object.keys(MODES):[state.mode]}
-function modeAgg(){
-  const keys=selectedModes();
-  const journeys=keys.reduce((s,k)=>s+MODES[k].journeys,0)*scaleFactor()*regionFactor();
-  const prior=keys.reduce((s,k)=>s+MODES[k].prior,0)*scaleFactor()*regionFactor();
-  const forecast=keys.reduce((s,k)=>s+MODES[k].forecast,0)*scaleFactor()*regionFactor();
-  const base=keys.reduce((s,k)=>s+MODES[k].journeys,0)||1;
-  const wt=key=>keys.reduce((s,k)=>s+MODES[k][key]*MODES[k].journeys,0)/base;
-  return {journeys,prior,forecast,otr:wt("otr"),otrTarget:wt("otrTarget"),completion:wt("completion"),csat:wt("csat"),complaints:wt("complaints"),util:wt("util"),pml:keys.reduce((s,k)=>s+MODES[k].pml,0)*scaleFactor()*regionFactor()};
-}
-function quarterLabel(x){const y=Math.floor(x),f=x-y,q=f<.25?"Q1":f<.5?"Q2":f<.75?"Q3":"Q4";return `${q} ${y}`}
-function smoothPath(points){
-  if(points.length<2)return"";
-  let d=`M ${points[0][0]} ${points[0][1]}`;
-  for(let i=0;i<points.length-1;i++){
-    const p0=points[i],p1=points[i+1];
-    const mx=(p0[0]+p1[0])/2;
-    d+=` C ${mx} ${p0[1]}, ${mx} ${p1[1]}, ${p1[0]} ${p1[1]}`;
+  {
+    id:"A09",
+    name:"Vendor contract clause finder",
+    unit:"Compliance",
+    owner:"H. Grant",
+    stage:"Pilot",
+    status:"Adopted",
+    problem:"Reviewers spend time locating relevant clauses across contract packs.",
+    current:"Manual search and legal review.",
+    future:"Retrieval assistant surfaces relevant clauses and source locations for reviewer confirmation.",
+    requirements:"Approved repository only; source clause displayed; lawyer confirms before reliance.",
+    vendor:"Legal technology provider",
+    vendorStatus:"Pilot integration",
+    value:82,
+    readiness:84,
+    complexity:49,
+    adoption:72,
+    reviewLoad:16,
+    ttv:4,
+    hours:3.9,
+    risk:"Low",
+    privacy:"Pass",
+    humanReview:"Pass",
+    data:"Pass",
+    riskCategory:"Vendor / tooling",
+    dependency:"Privilege handling note",
+    issue:"No material open issue.",
+    benefit:"Faster clause search with source traceability.",
+    lifecycle:[100,100,100,70,32],
+    history:[38,46,54,61,66,70,73,76]
+  },
+
+  {
+    id:"A10",
+    name:"AI use-case scoping playbook",
+    unit:"Enablement",
+    owner:"K. Sanad",
+    stage:"Production",
+    status:"Adopted",
+    problem:"Teams approach AI opportunities with inconsistent problem definition, control assumptions and success measures.",
+    current:"Unstructured briefs and repeated clarification cycles.",
+    future:"Reusable discovery pack guides teams through problem, user, data, risk, vendor, metric and adoption questions.",
+    requirements:"Named business owner; measurable outcome; data boundary; human-review point before delivery.",
+    vendor:"Internal enablement",
+    vendorStatus:"Operational",
+    value:89,
+    readiness:96,
+    complexity:31,
+    adoption:90,
+    reviewLoad:8,
+    ttv:-1,
+    hours:3.4,
+    risk:"Low",
+    privacy:"Pass",
+    humanReview:"Pass",
+    data:"Pass",
+    riskCategory:"Governance",
+    dependency:"Business owner participation",
+    issue:"No material open issue.",
+    benefit:"Faster and more consistent use-case discovery.",
+    lifecycle:[100,100,100,100,90],
+    history:[42,51,60,68,76,82,87,91]
+  },
+
+  {
+    id:"A11",
+    name:"Ops incident post-mortem drafter",
+    unit:"Operations",
+    owner:"D. Okafor",
+    stage:"Pilot",
+    status:"At Risk",
+    problem:"Incident teams spend time converting operational records into post-mortem drafts.",
+    current:"Manual write-up from incident logs and meeting notes.",
+    future:"AI prepares a structured draft for duty-manager review.",
+    requirements:"Incident record remains source of truth; manager owns published note.",
+    vendor:"Operations tooling",
+    vendorStatus:"API review",
+    value:76,
+    readiness:55,
+    complexity:64,
+    adoption:44,
+    reviewLoad:36,
+    ttv:10,
+    hours:4.9,
+    risk:"Medium",
+    privacy:"Pass",
+    humanReview:"Conditional",
+    data:"Conditional",
+    riskCategory:"Vendor / tooling",
+    dependency:"Incident platform API access",
+    issue:"Pilot volume is still too low to judge factual completeness.",
+    benefit:"Reduced drafting time for incident reviews.",
+    lifecycle:[100,88,62,44,12],
+    history:[40,45,50,52,51,49,47,46]
+  },
+
+  {
+    id:"A12",
+    name:"Complaints root-cause classifier",
+    unit:"Contact Centre",
+    owner:"F. Adeyemi",
+    stage:"Prototype",
+    status:"Adopted",
+    problem:"Complaint root-cause codes are applied inconsistently.",
+    current:"Advisors select codes manually from the taxonomy.",
+    future:"AI proposes a code against the approved taxonomy for advisor confirmation.",
+    requirements:"Human confirmation on any code that changes remedy path.",
+    vendor:"Enterprise AI platform",
+    vendorStatus:"Prototype operational",
+    value:81,
+    readiness:79,
+    complexity:52,
+    adoption:75,
+    reviewLoad:20,
+    ttv:0,
+    hours:7.4,
+    risk:"Medium",
+    privacy:"Pass",
+    humanReview:"Pass",
+    data:"Pass",
+    riskCategory:"Model / output risk",
+    dependency:"Taxonomy v2",
+    issue:"No material open issue.",
+    benefit:"More consistent coding while preserving advisor control.",
+    lifecycle:[100,100,71,33,0],
+    history:[46,52,58,63,68,72,75,77]
+  },
+
+  {
+    id:"A13",
+    name:"Collections conversation assist",
+    unit:"Retail Banking",
+    owner:"N. Okoye",
+    stage:"Discovery",
+    status:"Paused",
+    problem:"Collections conversations require accurate hardship and conduct handling.",
+    current:"Advisors rely on scripts, policy and judgement during live conversations.",
+    future:"Potential assistive prompts only after conduct and ethics review.",
+    requirements:"No live assist until conduct risk signs off; no autonomous customer dialogue.",
+    vendor:"TBC",
+    vendorStatus:"Not selected",
+    value:67,
+    readiness:24,
+    complexity:91,
+    adoption:8,
+    reviewLoad:16,
+    ttv:18,
+    hours:9.1,
+    risk:"High",
+    privacy:"Conditional",
+    humanReview:"Review",
+    data:"Conditional",
+    riskCategory:"Human oversight",
+    dependency:"Conduct risk opinion",
+    issue:"Discovery paused. Live customer dialogue remains out of scope.",
+    benefit:"Potential support for script adherence and hardship flagging.",
+    lifecycle:[100,20,0,0,0],
+    history:[31,33,32,30,27,24,22,20]
+  },
+
+  {
+    id:"A14",
+    name:"Branch appointment briefing assistant",
+    unit:"Retail Banking",
+    owner:"K. Sanad",
+    stage:"Production",
+    status:"Adopted",
+    problem:"Bankers spend time assembling appointment context from several customer information views.",
+    current:"Manual pre-meeting preparation across approved customer records.",
+    future:"Assistant prepares a briefing snapshot for banker confirmation before the meeting.",
+    requirements:"Approved CRM snapshot only; banker confirms content before use.",
+    vendor:"Low-code enterprise platform",
+    vendorStatus:"Operational",
+    value:85,
+    readiness:92,
+    complexity:42,
+    adoption:91,
+    reviewLoad:12,
+    ttv:-1,
+    hours:5.4,
+    risk:"Low",
+    privacy:"Pass",
+    humanReview:"Pass",
+    data:"Pass",
+    riskCategory:"Vendor / tooling",
+    dependency:"CRM snapshot quality",
+    issue:"No material open issue.",
+    benefit:"Reduced appointment preparation effort.",
+    lifecycle:[100,100,100,100,100],
+    history:[60,67,73,79,84,87,89,91]
   }
+];
+
+
+const ADOPTION_SERIES = [
+  {p:"P1",users:5.8,adoption:46,review:22},
+  {p:"P2",users:6.4,adoption:50,review:21},
+  {p:"P3",users:7.2,adoption:56,review:19},
+  {p:"P4",users:8.1,adoption:61,review:18},
+  {p:"P5",users:9.4,adoption:67,review:17},
+  {p:"P6",users:9.8,adoption:64,review:24},
+  {p:"P7",users:10.5,adoption:70,review:21},
+  {p:"P8",users:11.3,adoption:74,review:18}
+];
+
+
+const WORK_MIX = [
+  {name:"Search / lookup",before:25,after:14},
+  {name:"Drafting",before:21,after:13},
+  {name:"Manual classification",before:19,after:11},
+  {name:"Review / correction",before:13,after:21},
+  {name:"Handoffs",before:12,after:13},
+  {name:"Other",before:10,after:8}
+];
+
+
+const SCENARIOS = {
+  base:{
+    name:"Base",
+    note:"Current review capacity and delivery path.",
+    adoption:[52,57,62,67,71,74,77,80]
+  },
+
+  accelerated:{
+    name:"Accelerated",
+    note:"Governance gates clear one cycle earlier.",
+    adoption:[52,60,68,76,82,87,91,94]
+  },
+
+  reviewShock:{
+    name:"Review constraint",
+    note:"Human-review capacity becomes the binding constraint.",
+    adoption:[52,56,59,60,60,59,58,57]
+  },
+
+  cautious:{
+    name:"Controlled rollout",
+    note:"Smaller user cohort and lower exception load.",
+    adoption:[52,55,59,63,67,70,73,75]
+  }
+};
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let state = {
+  view:"command",
+  unit:"All",
+  status:"All",
+  selected:"A08",
+  scenario:"base"
+};
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function esc(value){
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;");
+}
+
+
+function filtered(){
+  return SOLUTIONS.filter(item =>
+    (state.unit === "All" || item.unit === state.unit) &&
+    (state.status === "All" || item.status === state.status)
+  );
+}
+
+
+function selected(){
+  return SOLUTIONS.find(item => item.id === state.selected) || SOLUTIONS[0];
+}
+
+
+function normalize(){
+  const list = filtered();
+
+  if(list.length && !list.some(item => item.id === state.selected)){
+    state.selected = list[0].id;
+  }
+}
+
+
+function statusClass(value){
+  if(["Adopted","Pass","Low"].includes(value)) return "good";
+  if(["At Risk","Conditional","Medium"].includes(value)) return "warn";
+  return "bad";
+}
+
+
+function badge(value){
+  return `<span class="badge ${statusClass(value)}">${value}</span>`;
+}
+
+
+function kpi(label,value,sub,symbol){
+  return `
+    <div class="card kpi">
+      <div class="kpi-top">
+        <div class="eyebrow">${label}</div>
+        <span class="kpi-symbol">${symbol}</span>
+      </div>
+
+      <div class="kpi-value">${value}</div>
+      <div class="kpi-sub">${sub}</div>
+    </div>
+  `;
+}
+
+
+function smooth(points){
+  if(points.length < 2) return "";
+
+  let d = `M ${points[0][0]} ${points[0][1]}`;
+
+  for(let i=0;i<points.length-1;i++){
+    const a = points[i];
+    const b = points[i+1];
+    const m = (a[0] + b[0]) / 2;
+
+    d += ` C ${m} ${a[1]}, ${m} ${b[1]}, ${b[0]} ${b[1]}`;
+  }
+
   return d;
 }
-function bindTooltips(){
-  const tip=document.getElementById("tooltip");
-  document.querySelectorAll("[data-tip]").forEach(el=>{
-    el.addEventListener("mouseenter",e=>{tip.innerHTML=el.dataset.tip;tip.style.display="block"});
-    el.addEventListener("mousemove",e=>{
-      const pad=12, gap=14;
-      const r=tip.getBoundingClientRect();
-      let left=e.clientX+gap, top=e.clientY+gap;
-      if(left+r.width+pad>window.innerWidth) left=e.clientX-r.width-gap;
-      if(top+r.height+pad>window.innerHeight) top=e.clientY-r.height-gap;
-      tip.style.left=Math.max(pad,left)+"px";
-      tip.style.top=Math.max(pad,top)+"px";
-    });
-    el.addEventListener("mouseleave",()=>tip.style.display="none");
-  });
-}
-function attachMetricHelp(){
-  const help={
-    "Active solutions":"Filtered use-case count.",
-    "Avg time-to-value variance":"Mean weeks vs planned adoption gate.",
-    "Forecast hours displaced":"Synthetic hours off manual work. Not a $ claim.",
-    "Governance blockers":"Open privacy or review gates.",
-    "Status":"Adopted, at risk or paused.",
-    "Time-to-value variance":"Weeks vs planned adoption gate.",
-    "Hours displaced":"Synthetic annualised hours off manual work.",
-    "Benefit status":"On track, at risk or not yet due.",
-    "Estimated adoption gate":"Latest finish under the scenario.",
-    "TTV breaches":">8 weeks late after the scenario.",
-    "Review breaches":"Human-review not Pass.",
-    "Active users":"Reviewed outputs in the selected cut.",
-    "Adoption rate":"Reviewed users / intended group.",
-    "Process completion":"Assisted cases that reached a reviewed outcome.",
-    "Escalation hours":"Review, correction and exception hours.",
-    "CSAT":"Synthetic stakeholder score.",
-    "Review tickets / 100":"Corrections per 100 assisted cases.",
-    "Demand vs forecast":"Active users vs adoption forecast.",
-    "Illustrative elasticity":"Synthetic. No causal model.",
-    "Forecast users":"Scenario-adjusted active users.",
-    "Adoption reference":"Current unit adoption baseline.",
-    "Completion":"Current process-completion baseline."
-  };
-  document.querySelectorAll(".kpis .card").forEach(card=>{
-    const label=card.querySelector(".eyebrow")?.textContent.trim();
-    if(!label||!help[label]) return;
-    card.classList.add("kpi-help","hoverable");
-    card.dataset.tip=`<strong>${label}</strong>${help[label]}`;
-  });
-}
-function lineComboChart(data,{highlightStart=5,highlightEnd=6}={}){
-  const w=650,h=230,pL=38,pR=34,pT=18,pB=28;
-  const maxJ=Math.max(...data.map(d=>d.journeys))*1.08;
-  const minO=55,maxO=82;
-  const slot=(w-pL-pR)/data.length;
-  const bars=data.map((d,i)=>{
-    const x=pL+i*slot+slot*.18;
-    const bh=(d.journeys/maxJ)*(h-pT-pB);
-    const y=h-pB-bh;
-    return `<rect class="hoverable" data-tip="<strong>${d.p}</strong>Active users ${d.journeys.toFixed(1)}k<br>Adoption ${d.otr.toFixed(1)}%<br>Review tickets ${d.complaints.toFixed(1)} / 100" x="${x}" y="${y}" width="${slot*.44}" height="${bh}" rx="4" fill="var(--blue)" opacity=".68"/>`;
-  }).join("");
-  const pts=data.map((d,i)=>{
-    const x=pL+i*slot+slot*.4;
-    const y=pT+(maxO-d.otr)/(maxO-minO)*(h-pT-pB);
-    return [x,y];
-  });
-  const path=smoothPath(pts);
-  const bandX=pL+highlightStart*slot;
-  const bandW=(highlightEnd-highlightStart+1)*slot;
-  return `<div class="chart-wrap"><svg class="chart" viewBox="0 0 ${w} ${h}">
-    <rect class="band-risk hoverable" data-tip="<strong>Review bottleneck window</strong>Named reviewers were pulled back to BAU. Adoption flattened and tickets rose." x="${bandX}" y="${pT}" width="${bandW}" height="${h-pT-pB}" rx="6"/>
-    ${[0,1,2,3].map(i=>`<line class="gridline" x1="${pL}" y1="${pT+i*(h-pT-pB)/3}" x2="${w-pR}" y2="${pT+i*(h-pT-pB)/3}"/>`).join("")}
-    ${bars}
-    <path d="${path}" class="line-a"/>
-    ${pts.map((p,i)=>`<circle class="hoverable" data-tip="<strong>${data[i].p}</strong>Adoption ${data[i].otr.toFixed(1)}%<br>Users ${data[i].journeys.toFixed(1)}k" cx="${p[0]}" cy="${p[1]}" r="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>`).join("")}
-    <text class="tick" x="${pL}" y="${h-8}">P1</text><text class="tick" x="${pL+5*slot}" y="${h-8}">P6</text><text class="tick" x="${pL+11*slot}" y="${h-8}">P12</text>
-  </svg></div>`;
-}
-function deliveryComboChart(data){
-  const w=650,h=230,pL=45,pR=35,pT=18,pB=28;
-  const series=data.slice(0,8);
-  if(!series.length) return `<div class="note">No solutions in the current filter.</div>`;
-  const maxCost=Math.max(...series.map(d=>Math.max(d.eac,d.baseline,0.1)))*1.1;
-  const maxVar=Math.max(...series.map(d=>Math.max(d.scheduleVariance,0)),1)*1.15;
-  const slot=(w-pL-pR)/series.length;
-  const bars=series.map((d,i)=>{
-    const x=pL+i*slot+slot*.12;
-    const bH=d.baseline/maxCost*(h-pT-pB), eH=d.eac/maxCost*(h-pT-pB);
-    return `<rect class="hoverable" data-tip="<strong>${d.id} · ${d.name}</strong>Planned ${money(d.baseline)}<br>Forecast ${money(d.eac)}<br>TTV ${d.scheduleVariance>=0?"+":""}${d.scheduleVariance}w" x="${x}" y="${h-pB-bH}" width="${slot*.28}" height="${bH}" rx="3" fill="var(--blue)" opacity=".75"/><rect class="hoverable" data-tip="<strong>${d.id}</strong>Forecast hours ${money(d.eac)}" x="${x+slot*.31}" y="${h-pB-eH}" width="${slot*.28}" height="${eH}" rx="3" fill="var(--gold)" opacity=".85"/>`;
-  }).join("");
-  const pts=series.map((d,i)=>{
-    const x=pL+i*slot+slot*.42;
-    const y=pT+(maxVar-Math.max(d.scheduleVariance,0))/maxVar*(h-pT-pB);
-    return [x,y];
-  });
-  return `<div class="chart-wrap"><svg class="chart" viewBox="0 0 ${w} ${h}">
-    <rect class="band hoverable" data-tip="<strong>Adoption-gate review window</strong>Illustrative period where time-to-value slips should be explained before the next steerco." x="${pL+slot*4}" y="${pT}" width="${slot*2}" height="${h-pT-pB}" rx="6"/>
-    ${[0,1,2,3].map(i=>`<line class="gridline" x1="${pL}" y1="${pT+i*(h-pT-pB)/3}" x2="${w-pR}" y2="${pT+i*(h-pT-pB)/3}"/>`).join("")}
-    ${bars}
-    <path d="${smoothPath(pts)}" class="line-risk"/>
-    ${pts.map((p,i)=>`<circle class="hoverable" data-tip="<strong>${series[i].id}</strong>Time-to-value variance ${series[i].scheduleVariance>=0?"+":""}${series[i].scheduleVariance} weeks" cx="${p[0]}" cy="${p[1]}" r="4" fill="var(--surface)" stroke="var(--risk)" stroke-width="2"/>`).join("")}
-    ${series.map((d,i)=>`<text class="tick" x="${pL+i*slot+slot*.2}" y="${h-8}">${d.id}</text>`).join("")}
-  </svg></div>`;
-}
-function customerComparisonChart(){
-  const w=650,h=220,pL=150,pR=28,pT=18,pB=16;
-  const max=40;
-  const row=(h-pT-pB)/CUSTOMER_BASELINE.length;
-  return `<svg class="chart" viewBox="0 0 ${w} ${h}">
-    ${CUSTOMER_BASELINE.map((d,i)=>{
-      const y=pT+i*row;
-      return `<text class="tick" x="0" y="${y+15}">${d.category}</text>
-      <rect class="bar-soft" x="${pL}" y="${y+2}" width="${w-pL-pR}" height="18" rx="5"/>
-      <rect class="hoverable" data-tip="<strong>${d.category}</strong>Before ${d.baseline}%<br>After ${d.post}%" x="${pL}" y="${y+4}" width="${(w-pL-pR)*d.baseline/max}" height="6" rx="3" fill="var(--blue)"/>
-      <rect class="hoverable" data-tip="<strong>${d.category}</strong>After ${d.post}%<br>Movement ${(d.post-d.baseline)>=0?"+":""}${d.post-d.baseline}pp" x="${pL}" y="${y+12}" width="${(w-pL-pR)*d.post/max}" height="6" rx="3" fill="var(--gold)"/>`;
-    }).join("")}
-  </svg>`;
-}
-function scenarioMultiChart(dict,selected){
-  const colors=["var(--accent)","var(--blue)","var(--risk)","var(--gold)"];
-  const w=650,h=220,p=22;
-  const all=Object.values(dict).flatMap(s=>s.series),min=Math.min(...all)-2,max=Math.max(...all)+2;
-  return `<svg class="chart" viewBox="0 0 ${w} ${h}">${[45,95,145,195].map(y=>`<line class="gridline" x1="${p}" y1="${y}" x2="${w-p}" y2="${y}"/>`).join("")}${Object.entries(dict).map(([k,s],i)=>{
-    const pts=s.series.map((v,idx)=>[p+(idx/(s.series.length-1))*(w-2*p),h-p-((v-min)/(max-min))*(h-2*p)]);
-    return `<path d="${smoothPath(pts)}" fill="none" stroke="${colors[i]}" stroke-width="${k===selected?4:2}" opacity="${k===selected?1:.42}" stroke-linecap="round" stroke-linejoin="round"/>`;
-  }).join("")}</svg>`;
-}
-function buildApproachFlow(){
-  return `<div class="flow">
-    <div class="node"><div class="nt">01 Problem</div><div class="nb">User group and decision.</div></div>
-    <div class="flow-arrow">›</div>
-    <div class="node"><div class="nt">02 Scope</div><div class="nb">Data, oversight, must-nots.</div></div>
-    <div class="flow-arrow">›</div>
-    <div class="node active"><div class="nt">03 Prototype</div><div class="nb">Build and test against the brief.</div></div>
-    <div class="flow-arrow">›</div>
-    <div class="node"><div class="nt">04 Gate</div><div class="nb">Named human review.</div></div>
-    <div class="flow-arrow">›</div>
-    <div class="node"><div class="nt">05 Adopt</div><div class="nb">Use, hours, escalation.</div></div>
-  </div>`;
-}
 
-function renderDeliveryOverview(){
-  const d=filteredDelivery();
-  const on=d.filter(x=>x.status==="Adopted").length,risk=d.filter(x=>x.status==="At Risk").length,hold=d.filter(x=>x.status==="Paused").length;
-  const base=d.reduce((s,x)=>s+x.baseline,0),eac=d.reduce((s,x)=>s+x.eac,0),avg=d.length?d.reduce((s,x)=>s+x.scheduleVariance,0)/d.length:0;
-  const blocked=d.filter(x=>x.dependencies.some(z=>z.status==="Blocked")).length;
-  const programs=[...new Set(d.map(x=>x.program))];
-  const recommended=[...d].sort((a,b)=>{
-    const score=x=>x.scheduleVariance+(x.dependencies.some(z=>z.status==="Blocked")?20:0)+(x.metricStatus.review!=="Pass"?10:0);
-    return score(b)-score(a);
-  })[0];
-  return `
-  <div class="page-head"><div><h2 class="page-title">Portfolio overview</h2><p class="page-desc">Delivery and reusable enablement.</p></div><span class="demo">Synthetic demonstration</span></div>
-  <section class="grid kpis">
-    <div class="card"><div class="kpi"><div><div class="eyebrow">Active solutions</div><div class="kpi-value">${d.length}</div><div class="kpi-sub">${risk+hold} outside tolerance</div></div><div class="kpi-icon">AI</div></div></div>
-    <div class="card"><div class="kpi"><div><div class="eyebrow">Avg time-to-value variance</div><div class="kpi-value">${avg>=0?"+":""}${avg.toFixed(0)}w</div><div class="kpi-sub">Against planned adoption gate</div></div><div class="kpi-icon">TTV</div></div></div>
-    <div class="card"><div class="kpi"><div><div class="eyebrow">Forecast hours displaced</div><div class="kpi-value">${money(eac)}</div><div class="kpi-sub">${base?((eac-base)/base*100).toFixed(1):"0.0"}% vs plan</div></div><div class="kpi-icon">HR</div></div></div>
-    <div class="card"><div class="kpi"><div><div class="eyebrow">Governance blockers</div><div class="kpi-value">${blocked}</div><div class="kpi-sub">Privacy, review or access gates</div></div><div class="kpi-icon">GV</div></div></div>
-  </section>
-  <section class="card feature" style="margin-bottom:10px">
-    <div class="chart-title"><div><h3>Solution path</h3><p>Problem to adopted use.</p></div></div>
-    ${buildApproachFlow()}
-  </section>
-  <section class="grid two" style="margin-bottom:10px">
-    <div class="decision">
-      <div class="eyebrow">Governance</div>
-      <h3>${DELIVERY.length} solutions · named review gate on every live path</h3>
-      <p>A07 / A12 paused in discovery. A13 cannot clear a match.</p>
-      <button class="crosslink" data-delivery-view-jump="assurance">Governance view</button>
-    </div>
-    <div class="card">
-      <div class="chart-title"><div><h3>Enablement · A14</h3><p>Reuse only if the team writes the brief.</p></div></div>
-      <div class="metric-stack">
-        <div class="metric-bar"><label>Team briefs</label><div class="track"><div class="fill" style="width:75%"></div></div><span class="metric-score">9</span></div>
-        <div class="metric-bar"><label>Pack modules</label><div class="track"><div class="fill" style="width:62%"></div></div><span class="metric-score">5</span></div>
-        <div class="metric-bar"><label>Central rewrites</label><div class="track"><div class="fill" style="width:12%;background:var(--gold)"></div></div><span class="metric-score">1</span></div>
-      </div>
-      <button class="crosslink" data-open="A14">Open A14</button>
-    </div>
-  </section>
-  <section class="grid two" style="margin-bottom:10px">
-    <div class="card feature">
-      <div class="chart-title"><div><h3>Hours and TTV exceptions</h3><p>Plan vs forecast. Line is TTV variance.</p></div><div class="legend"><span><i style="background:var(--blue)"></i>Plan</span><span><i style="background:var(--gold)"></i>Forecast</span><span><i style="background:var(--risk)"></i>TTV</span></div></div>
-      ${deliveryComboChart(d)}
-    </div>
-    <div class="card">
-      <div class="chart-title"><div><h3>Status mix</h3><p>Hover the bar for counts.</p></div></div>
-      <div class="status-strip">
-        <div class="status-seg ok hoverable" data-tip="<strong>Adopted</strong>${on} solutions" style="width:${d.length?on/d.length*100:0}%"></div>
-        <div class="status-seg warn hoverable" data-tip="<strong>At risk</strong>${risk} solutions" style="width:${d.length?risk/d.length*100:0}%"></div>
-        <div class="status-seg bad hoverable" data-tip="<strong>Paused</strong>${hold} solutions" style="width:${d.length?hold/d.length*100:0}%"></div>
-      </div>
-    </div>
-  </section>
-  <section class="grid two" style="margin-bottom:10px">
-    <div class="decision"><div class="eyebrow">Focus</div>${recommended?`<h3>${recommended.id} · ${recommended.scheduleVariance>=0?"+":""}${recommended.scheduleVariance}w TTV</h3><p>${recommended.name}</p><button class="crosslink" data-open="${recommended.id}">Open ${recommended.id}</button>`:`<h3>No exception</h3>`}</div>
-    <div class="card">
-      <div class="chart-title"><div><h3>Filtered solution register</h3><p>Click a row.</p></div></div>
-      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Solution</th><th>Owner</th><th>Status</th><th>Stage</th><th>TTV</th><th>Hours</th></tr></thead><tbody>
-      ${d.map(x=>`<tr class="click" data-open="${x.id}"><td>${x.id}</td><td>${x.name}</td><td>${x.owner}</td><td>${badge(x.status)}</td><td>${x.stage}</td><td>${x.scheduleVariance>=0?"+":""}${x.scheduleVariance}w</td><td>${money(x.eac)}</td></tr>`).join("")}
-      </tbody></table></div>
-    </div>
-  </section>`;
-}
 
-function renderDeliveryDetail(){
-  normalizeSelection();
-  const list=filteredDelivery();
-  const x=DELIVERY.find(d=>d.id===state.selected)||DELIVERY[0];
-  const adopt=Math.max(8, Math.min(96, 70-x.scheduleVariance*1.2+(x.status==="Adopted"?18:0)));
-  const esc=Math.max(4, Math.min(48, 12+x.scheduleVariance*0.6+(x.status==="At Risk"?8:0)));
-  return `
-  <div class="page-head"><div><h2 class="page-title">Solution detail</h2><p class="page-desc">Stage, value and gates.</p></div><span class="demo">${x.id}</span></div>
-  <div class="tabs">${list.map(d=>`<button class="tab ${d.id===x.id?"active":""}" data-select="${d.id}">${d.id}</button>`).join("")}</div>
-  <section class="grid kpis">
-    <div class="card"><div class="eyebrow">Status</div>${badge(x.status)}<div class="kpi-sub">${x.program} · ${x.stage}</div></div>
-    <div class="card"><div class="eyebrow">Time-to-value variance</div><div class="kpi-value">${x.scheduleVariance>=0?"+":""}${x.scheduleVariance}w</div><div class="kpi-sub">${x.plannedFinish} → ${x.forecastFinish}</div></div>
-    <div class="card"><div class="eyebrow">Hours displaced</div><div class="kpi-value">${money(x.eac)}</div><div class="kpi-sub">Plan ${money(x.baseline)}</div></div>
-    <div class="card"><div class="eyebrow">Benefit status</div>${badge(x.benefitStatus)}<div class="kpi-sub">${x.benefit}</div></div>
-  </section>
-  <section class="grid two" style="margin-bottom:10px">
-    <div class="card feature"><div class="chart-title"><div><h3>Adoption trend</h3><p>Band = review window.</p></div></div>
-      <div class="chart-wrap"><svg class="chart chart-sm" viewBox="0 0 640 190">
-        <rect class="band" x="325" y="18" width="110" height="144" rx="6"/>
-        ${[45,95,145].map(y=>`<line class="gridline" x1="22" y1="${y}" x2="618" y2="${y}"/>`).join("")}
-        ${(()=>{const pts=x.history.map((v,i)=>[22+(i/(x.history.length-1))*596,160-((v-Math.min(...x.history)+2)/(Math.max(...x.history)-Math.min(...x.history)+4))*138]);return `<path d="${smoothPath(pts)}" class="line-a"/>${pts.map((p,i)=>`<circle class="hoverable" data-tip="<strong>Period ${i+1}</strong>Confidence index ${x.history[i]}" cx="${p[0]}" cy="${p[1]}" r="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>`).join("")}`})()}
-      </svg></div>
-    </div>
-    <div class="card feature"><div class="chart-title"><div><h3>Stage gates</h3><p>Discovery → Prototype → Pilot → Production.</p></div></div>
-      <div class="milestone-grid">${x.milestones.map(m=>`<div class="mname">${m[0]}</div><div class="mline hoverable" data-tip="<strong>${m[0]}</strong>Progress ${m[1]}%<br>Status ${m[2]}"><div class="mbase" style="width:${Math.max(14,m[1]*.8)}%"></div><div class="mactual" style="width:${m[1]}%"></div><div class="mlabel">${m[1]}% · ${m[2]}</div></div>`).join("")}</div>
-      <div class="metric-stack" style="margin-top:12px">
-        <div class="metric-bar"><label>Adoption (intended group)</label><div class="track"><div class="fill" style="width:${adopt}%"></div></div><span class="metric-score">${adopt.toFixed(0)}%</span></div>
-        <div class="metric-bar"><label>Human-review / escalation</label><div class="track"><div class="fill" style="width:${esc}%;background:var(--gold)"></div></div><span class="metric-score">${esc.toFixed(0)}%</span></div>
-      </div>
-    </div>
-  </section>
-  <section class="grid two">
-    <div class="card"><div class="chart-title"><div><h3>Dependencies, issues, risk</h3><p>${x.owner} · hover a chip</p></div></div>
-      <div class="program-heat">${(x.dependencies.length?x.dependencies.map(d=>`<span class="program-chip hoverable" data-tip="<strong>${d.name}</strong>${d.status} · ${d.owner}" style="border-color:${d.status==="Blocked"?"var(--risk)":"var(--ok)"}"><strong>${d.status==="Blocked"?"Blocked":"Dep"}</strong><span>${d.status}</span></span>`):[`<span class="program-chip hoverable" data-tip="No blocking dependencies" style="border-color:var(--ok)"><strong>Clear</strong><span>Deps</span></span>`]).join("")}${x.issues.map(i=>`<span class="program-chip hoverable" data-tip="<strong>${i.id}</strong>${i.description} · ${i.age}d" style="border-color:var(--warn)"><strong>${i.id}</strong><span>${i.age}d</span></span>`).join("")}${x.risks.map(r=>`<span class="program-chip hoverable" data-tip="<strong>${r.category}</strong>${r.residual} · ${r.treatment}" style="border-color:${r.residual==="High"?"var(--risk)":r.residual==="Medium"?"var(--warn)":"var(--ok)"}"><strong>${r.category.split(" / ")[0]}</strong><span>${r.residual}</span></span>`).join("")}</div>
-    </div>
-    <div class="card"><div class="chart-title"><div><h3>Validation and value</h3><p class="hoverable" data-tip="${x.build}${x.vendor?" · "+x.vendor:""}">Hover for method</p></div></div>
-      <div class="metric-stack">
-        <div class="metric-bar"><label>Plan hours</label><div class="track"><div class="fill" style="width:${x.baseline/Math.max(x.eac,x.baseline)*100}%"></div></div><span class="metric-score">${money(x.baseline)}</span></div>
-        <div class="metric-bar"><label>Realised so far</label><div class="track"><div class="fill" style="width:${x.actual/Math.max(x.eac,x.baseline)*100}%"></div></div><span class="metric-score">${money(x.actual)}</span></div>
-        <div class="metric-bar"><label>Forecast</label><div class="track"><div class="fill" style="width:${x.eac/Math.max(x.eac,x.baseline)*100}%"></div></div><span class="metric-score">${money(x.eac)}</span></div>
-      </div>
-      <button class="crosslink" data-network-link="${x.relatedKpi}">Open related measure · ${x.relatedKpi}</button>
-    </div>
-  </section>`;
-}
-
-function renderDeliveryAssurance(){
-  const x=DELIVERY.find(d=>d.id===state.selected)||DELIVERY[0],L=DELIVERY_LINEAGE[state.deliveryMetric],status=L.statusKey?x.metricStatus[L.statusKey]:null;
-  const issues=DELIVERY.flatMap(d=>d.issues.map(i=>({...i,name:d.name})));
-  return `
-  <div class="page-head"><div><h2 class="page-title">Governance &amp; assurance</h2><p class="page-desc">Controls and lineage.</p></div><span class="demo">Selected ${x.id}</span></div>
-  <section class="grid two" style="margin-bottom:10px">
-    <div class="card feature"><div class="chart-title"><div><h3>Control quality heatmap</h3><p>Register completeness, accuracy and timeliness.</p></div></div>
-      <div class="heatmap"><div></div><div class="heat-head">Complete</div><div class="heat-head">Accuracy</div><div class="heat-head">Timely</div>
-      ${DQ.map(q=>`<div class="heat-label">${q.name}<span class="sub">${q.cert}</span></div><div class="heat-cell ${heatClass(q.complete)} hoverable" data-tip="<strong>${q.name}</strong>Completeness ${q.complete}%">${q.complete}</div><div class="heat-cell ${heatClass(q.accuracy)} hoverable" data-tip="<strong>${q.name}</strong>Accuracy ${q.accuracy}%">${q.accuracy}</div><div class="heat-cell ${heatClass(q.timely)} hoverable" data-tip="<strong>${q.name}</strong>Timeliness ${q.timely}%">${q.timely}</div>`).join("")}</div>
-    </div>
-    <div class="card"><div class="chart-title"><div><h3>Open control issues</h3><p>Ageing across the portfolio.</p></div></div>
-      <div class="metric-stack">${[["0–30 days",issues.filter(i=>i.age<=30).length],["31–60 days",issues.filter(i=>i.age>30&&i.age<=60).length],["61–90 days",issues.filter(i=>i.age>60&&i.age<=90).length],[">90 days",issues.filter(i=>i.age>90).length]].map(([l,v])=>`<div class="metric-bar"><label>${l}</label><div class="track"><div class="fill" style="width:${Math.max(5,v/Math.max(1,issues.length)*100)}%"></div></div><span class="metric-score">${v}</span></div>`).join("")}</div>
-      <div class="note hoverable" data-tip="${issues.sort((a,b)=>b.age-a.age)[0]?.description||"None"}">Oldest: ${issues.sort((a,b)=>b.age-a.age)[0]?.id||"none"}</div>
-    </div>
-  </section>
-  <section class="card feature">
-    <div class="chart-title"><div><h3>Lineage</h3><p>Select a measure.</p></div></div>
-    <div class="tabs">${Object.keys(DELIVERY_LINEAGE).map(k=>`<button class="tab ${k===state.deliveryMetric?"active":""}" data-delivery-metric="${k}">${k}</button>`).join("")}</div>
-    <div class="flow"><div class="node active"><div class="nt">Build method</div><div class="nb">${L.how}</div></div><div class="flow-arrow">›</div><div class="node"><div class="nt">Validation checkpoint</div><div class="nb">${L.validation}</div></div><div class="flow-arrow">›</div><div class="node"><div class="nt">Human review point</div><div class="nb">${L.owner}</div></div><div class="flow-arrow">›</div><div class="node"><div class="nt">Production / source</div><div class="nb">${L.source}</div></div></div>
-    <div class="grid three" style="margin-top:10px"><div class="card" style="box-shadow:none"><div class="eyebrow">Measure</div><div class="note">${L.measure}<br>${L.refresh}</div></div><div class="card" style="box-shadow:none"><div class="eyebrow">Transformation</div><div class="note">${L.transform}</div></div><div class="card" style="box-shadow:none"><div class="eyebrow">Test evidence</div><div class="note">${L.recon}<br>${status?`${x.id}: ${status}`:"Documented at portfolio level"}</div></div></div>
-  </section>`;
-}
-
-function renderDeliveryForecast(){
-  const universe=filteredDelivery();
-  const s=DELIVERY_SCENARIOS[state.deliveryScenario];
-  const blocked=universe.filter(d=>d.dependencies.some(z=>z.status==="Blocked"));
-  const inBuild=universe.filter(d=>d.stage==="Pilot"||d.stage==="Production");
-  let total=0,breachS=0,breachB=0,latest=0;
-  universe.forEach(d=>{let adjW=d.scheduleVariance+(blocked.includes(d)?s.shift:0),adjE=d.eac*(1+(inBuild.includes(d)?s.uplift:0)),fin=d.forecastSort+(blocked.includes(d)?s.shift/52:0);total+=adjE;if(adjW>8)breachS++;if(d.metricStatus.review!=="Pass")breachB++;latest=Math.max(latest,fin)});
-  return `
-  <div class="page-head"><div><h2 class="page-title">Adoption scenarios</h2><p class="page-desc">Inspectable assumptions. No ML forecast layer.</p></div><span class="demo">Synthetic demonstration</span></div>
-  <div class="scenarios">${Object.entries(DELIVERY_SCENARIOS).map(([k,v])=>`<button class="scenario ${k===state.deliveryScenario?"active":""}" data-delivery-scenario="${k}"><strong>${v.name}</strong><span>${v.note}</span></button>`).join("")}</div>
-  <section class="grid kpis">
-    <div class="card"><div class="eyebrow">Forecast hours displaced</div><div class="kpi-value">${money(total)}</div><div class="kpi-sub">${universe.length} filtered solutions</div></div>
-    <div class="card"><div class="eyebrow">Estimated adoption gate</div><div class="kpi-value" style="font-size:1.08rem">${universe.length?quarterLabel(latest):"No data"}</div><div class="kpi-sub">Latest adjusted finish</div></div>
-    <div class="card"><div class="eyebrow">TTV breaches</div><div class="kpi-value">${breachS}</div><div class="kpi-sub">More than 8 weeks late</div></div>
-    <div class="card"><div class="eyebrow">Review breaches</div><div class="kpi-value">${breachB}</div><div class="kpi-sub">Human-review control not Pass</div></div>
-  </section>
-  <section class="grid two">
-    <div class="card feature"><div class="chart-title"><div><h3>Scenario trajectories</h3><p>Selected scenario is emphasised.</p></div></div>${scenarioMultiChart(DELIVERY_SCENARIOS,state.deliveryScenario)}</div>
-    <div class="card"><div class="chart-title"><div><h3>Assumption</h3><p>${s.name}</p></div></div><div class="decision"><div class="eyebrow">Rule</div><h3>${s.name}</h3><p>${s.note} No ML forecast.</p></div>
-      <div class="program-heat" style="margin-top:10px">
-        <span class="program-chip hoverable" data-tip="Filtered solutions in this scenario" style="border-color:var(--ok)"><strong>${universe.length}</strong><span>in scope</span></span>
-        <span class="program-chip hoverable" data-tip="Sit behind a governance gate" style="border-color:var(--warn)"><strong>${blocked.length}</strong><span>blocked</span></span>
-      </div></div>
-  </section>`;
-}
-
-function renderNetworkCommand(){
-  const a=modeAgg();
-  return `
-  <div class="page-head"><div><h2 class="page-title">Value command centre</h2><p class="page-desc">Adoption and review load by unit.</p></div><span class="demo">Synthetic demonstration</span></div>
-  <section class="grid kpis">
-    <div class="card"><div class="kpi"><div><div class="eyebrow">Active users</div><div class="kpi-value">${a.journeys.toFixed(2)}k</div><div class="kpi-sub">${((a.journeys-a.prior)/a.prior*100).toFixed(1)}% vs prior</div></div><div class="kpi-icon">USR</div></div></div>
-    <div class="card"><div class="kpi"><div><div class="eyebrow">Adoption rate</div><div class="kpi-value">${a.otr.toFixed(1)}%</div><div class="kpi-sub">Target ${a.otrTarget.toFixed(1)}%</div></div><div class="kpi-icon">AD</div></div></div>
-    <div class="card"><div class="kpi"><div><div class="eyebrow">Process completion</div><div class="kpi-value">${a.completion.toFixed(1)}%</div><div class="kpi-sub">Reviewed outcomes</div></div><div class="kpi-icon">PC</div></div></div>
-    <div class="card"><div class="kpi"><div><div class="eyebrow">Escalation hours</div><div class="kpi-value">${a.pml.toFixed(2)}k</div><div class="kpi-sub">Human review load</div></div><div class="kpi-icon">RV</div></div></div>
-  </section>
-  <section class="grid two" style="margin-bottom:10px">
-    <div class="card feature">
-      <div class="chart-title"><div><h3>Users and adoption by period</h3><p>Combination chart. Band is a review-capacity shock.</p></div><div class="legend"><span><i style="background:var(--blue)"></i>Users</span><span><i style="background:var(--accent)"></i>Adoption</span></div></div>
-      ${lineComboChart(NETWORK_SERIES,{highlightStart:5,highlightEnd:6})}
-    </div>
-    <div class="card">
-      <div class="chart-title"><div><h3>Stakeholder indicators</h3><p>Selected unit aggregate.</p></div></div>
-      <div class="metric-stack"><div class="metric-bar"><label>CSAT</label><div class="track"><div class="fill" style="width:${a.csat}%"></div></div><span class="metric-score">${a.csat.toFixed(0)}</span></div><div class="metric-bar"><label>Review tickets / 100</label><div class="track"><div class="fill" style="width:${Math.min(100,a.complaints*3)}%"></div></div><span class="metric-score">${a.complaints.toFixed(1)}</span></div><div class="metric-bar"><label>Utilisation of intended group</label><div class="track"><div class="fill" style="width:${a.util}%"></div></div><span class="metric-score">${a.util.toFixed(0)}%</span></div></div>
-      <div class="decision" style="margin-top:14px"><div class="eyebrow">Linked solution</div><h3>A01 · complaint summarisation</h3><button class="crosslink" data-delivery-link="A01">Open A01</button></div>
-    </div>
-  </section>`;
-}
-
-function renderNetworkPerformance(){
-  const a=modeAgg();
-  return `
-  <div class="page-head"><div><h2 class="page-title">Unit performance</h2><p class="page-desc">Selected unit.</p></div><span class="demo">${state.mode}</span></div>
-  <section class="grid two" style="margin-bottom:10px">
-    <div class="card feature"><div class="chart-title"><div><h3>Adoption and demand</h3><p>Users as bars, adoption as the line.</p></div></div>${lineComboChart(NETWORK_SERIES,{highlightStart:2,highlightEnd:3})}</div>
-    <div class="card"><div class="chart-title"><div><h3>Current unit metrics</h3><p>Weighted selected-unit values.</p></div></div>
-      <div class="metric-stack"><div class="metric-bar"><label>Adoption</label><div class="track"><div class="fill" style="width:${a.otr}%"></div></div><span class="metric-score">${a.otr.toFixed(1)}%</span></div><div class="metric-bar"><label>Completion</label><div class="track"><div class="fill" style="width:${a.completion}%"></div></div><span class="metric-score">${a.completion.toFixed(1)}%</span></div><div class="metric-bar"><label>Utilisation</label><div class="track"><div class="fill" style="width:${a.util}%"></div></div><span class="metric-score">${a.util.toFixed(0)}%</span></div></div>
-    </div>
-  </section>`;
-}
-
-function renderNetworkCustomer(){
-  const a=modeAgg();
-  return `
-  <div class="page-head"><div><h2 class="page-title">Stakeholder impact</h2><p class="page-desc">Work mix before and after assist.</p></div><span class="demo">${state.mode}</span></div>
-  <section class="grid kpis">
-    <div class="card"><div class="eyebrow">CSAT</div><div class="kpi-value">${a.csat.toFixed(0)} / 100</div><div class="kpi-sub">Selected unit</div></div>
-    <div class="card"><div class="eyebrow">Review tickets / 100</div><div class="kpi-value">${a.complaints.toFixed(1)}</div><div class="kpi-sub">Human correction load</div></div>
-    <div class="card"><div class="eyebrow">Demand vs forecast</div><div class="kpi-value">${(a.journeys-a.forecast>=0?"+":"")+(a.journeys-a.forecast).toFixed(2)}k</div><div class="kpi-sub">Active users</div></div>
-    <div class="card"><div class="eyebrow">Illustrative elasticity</div><div class="kpi-value">−0.18</div><div class="kpi-sub">Synthetic example only</div></div>
-  </section>
-  <section class="grid two" style="margin-bottom:10px">
-    <div class="card feature"><div class="chart-title"><div><h3>Work mix before and after assist</h3><p>Blue is before. Gold is after.</p></div></div>${customerComparisonChart()}</div>
-    <div class="card"><div class="chart-title"><div><h3>Confounders</h3><p>Hover a tag.</p></div></div>
-      <div class="program-heat">
-        <span class="program-chip hoverable" data-tip="<strong>Release week</strong>Pack change can lift tickets before quality." style="border-color:var(--warn)"><strong>Release</strong><span>week</span></span>
-        <span class="program-chip hoverable" data-tip="<strong>Peak BAU</strong>Reviewers pulled to queues." style="border-color:var(--warn)"><strong>Peak</strong><span>BAU</span></span>
-        <span class="program-chip hoverable" data-tip="<strong>Control tightening</strong>New review rule raises tickets by design." style="border-color:var(--risk)"><strong>Control</strong><span>rule</span></span>
-      </div>
-      <button class="crosslink" data-delivery-link="A03">Open A03</button>
-    </div>
-  </section>`;
-}
-
-function renderNetworkAssurance(){
-  const L=NETWORK_LINEAGE[state.networkMetric];
-  return `
-  <div class="page-head"><div><h2 class="page-title">Value-measure lineage</h2><p class="page-desc">Measure to source.</p></div><span class="demo">${state.networkMetric}</span></div>
-  <div class="tabs">${Object.keys(NETWORK_LINEAGE).map(k=>`<button class="tab ${k===state.networkMetric?"active":""}" data-network-metric="${k}">${k}</button>`).join("")}</div>
-  <section class="card feature" style="margin-bottom:10px">
-    <div class="flow"><div class="node active"><div class="nt">Report measure</div><div class="nb">${L.measure}</div></div><div class="flow-arrow">›</div><div class="node"><div class="nt">Validation</div><div class="nb">${L.validation}</div></div><div class="flow-arrow">›</div><div class="node"><div class="nt">Human review</div><div class="nb">${L.how}</div></div><div class="flow-arrow">›</div><div class="node"><div class="nt">Source</div><div class="nb">${L.source}</div></div></div>
-  </section>
-  <section class="grid three"><div class="card"><div class="eyebrow">Owner</div><div class="note">${L.owner}</div></div><div class="card"><div class="eyebrow">Refresh</div><div class="note">${L.refresh}</div></div><div class="card"><div class="eyebrow">Evidence</div><div class="note">${L.recon}</div></div></section>
-  <button class="crosslink" data-delivery-link="${L.relatedInitiative}">Open related solution · ${L.relatedInitiative}</button>`;
-}
-
-function renderNetworkForecast(){
-  const s=NETWORK_SCENARIOS[state.networkScenario],a=modeAgg(),j=a.journeys*s.journeyFactor,pml=a.pml*s.pmlFactor;
-  return `
-  <div class="page-head"><div><h2 class="page-title">Value scenarios</h2><p class="page-desc">Visible assumptions only.</p></div><span class="demo">Scenario modelling</span></div>
-  <div class="scenarios">${Object.entries(NETWORK_SCENARIOS).map(([k,v])=>`<button class="scenario ${k===state.networkScenario?"active":""}" data-network-scenario="${k}"><strong>${v.name}</strong><span>${v.note}</span></button>`).join("")}</div>
-  <section class="grid kpis">
-    <div class="card"><div class="eyebrow">Forecast users</div><div class="kpi-value">${j.toFixed(2)}k</div><div class="kpi-sub">${s.name}</div></div>
-    <div class="card"><div class="eyebrow">Escalation hours</div><div class="kpi-value">${pml.toFixed(2)}k</div><div class="kpi-sub">Scenario-adjusted</div></div>
-    <div class="card"><div class="eyebrow">Adoption reference</div><div class="kpi-value">${a.otr.toFixed(1)}%</div><div class="kpi-sub">Current baseline</div></div>
-    <div class="card"><div class="eyebrow">Completion</div><div class="kpi-value">${a.completion.toFixed(1)}%</div><div class="kpi-sub">Current reference</div></div>
-  </section>
-  <section class="grid two"><div class="card feature"><div class="chart-title"><div><h3>Scenario trajectories</h3><p>Smooth scenario lines.</p></div></div>${scenarioMultiChart(NETWORK_SCENARIOS,state.networkScenario)}</div><div class="decision"><div class="eyebrow">Scenario rule</div><h3>${s.name}</h3><p>${s.note} No causal prediction or machine-learning output is implied.</p></div></section>`;
-}
+/* =========================================================
+   CONTROLS
+========================================================= */
 
 function renderControls(){
-  const c=document.getElementById("controls");
-  if(state.dashboard==="delivery"){
-    c.innerHTML=`<select class="select" id="programFilter"><option value="All">All units</option><option>Enablement</option><option>Contact Centre</option><option>Operations</option><option>Compliance</option><option>Financial Crime Risk</option><option>Retail Banking</option><option>Business Banking</option></select><select class="select" id="statusFilter"><option value="All">All statuses</option><option>Adopted</option><option>At Risk</option><option>Paused</option></select><button class="theme-btn" id="themeBtn"><span class="theme-orb"></span><span id="themeText"></span></button>`;
-    document.getElementById("programFilter").value=state.program;document.getElementById("statusFilter").value=state.status;
-    document.getElementById("programFilter").onchange=e=>{state.program=e.target.value;normalizeSelection();render()};
-    document.getElementById("statusFilter").onchange=e=>{state.status=e.target.value;normalizeSelection();render()};
-  }else{
-    c.innerHTML=`<select class="select" id="periodFilter"><option value="4w">Current 4 weeks</option><option value="qtd">Quarter to date</option><option value="ytd">Year to date</option></select><select class="select" id="modeFilter"><option value="All">All units</option><option>Retail Banking</option><option>Business Banking</option><option>Operations</option><option>Compliance</option><option>Contact Centre</option><option>Financial Crime Risk</option></select><select class="select" id="regionFilter"><option value="GS">AU franchise</option><option value="REG">International books</option><option value="ALL">Group-wide</option></select><button class="theme-btn" id="themeBtn"><span class="theme-orb"></span><span id="themeText"></span></button>`;
-    document.getElementById("periodFilter").value=state.period;document.getElementById("modeFilter").value=state.mode;document.getElementById("regionFilter").value=state.region;
-    document.getElementById("periodFilter").onchange=e=>{state.period=e.target.value;render()};
-    document.getElementById("modeFilter").onchange=e=>{state.mode=e.target.value;render()};
-    document.getElementById("regionFilter").onchange=e=>{state.region=e.target.value;render()};
-  }
-  bindTheme();
+  const controls = document.getElementById("controls");
+  const units = ["All",...new Set(SOLUTIONS.map(item => item.unit))];
+
+  controls.innerHTML = `
+    <div class="live-chip">
+      <span class="live-dot"></span>
+      interactive
+    </div>
+
+    <select class="select" id="unitFilter">
+      ${units.map(unit => `
+        <option value="${unit}">
+          ${unit === "All" ? "All units" : unit}
+        </option>
+      `).join("")}
+    </select>
+
+    <select class="select" id="statusFilter">
+      <option value="All">All statuses</option>
+      <option value="Adopted">Adopted</option>
+      <option value="At Risk">At Risk</option>
+      <option value="Paused">Paused</option>
+    </select>
+
+    <button class="theme-btn" id="themeBtn">
+      ${document.documentElement.dataset.theme === "dark" ? "☀" : "◐"}
+    </button>
+  `;
+
+  const unitFilter = document.getElementById("unitFilter");
+  const statusFilter = document.getElementById("statusFilter");
+
+  unitFilter.value = state.unit;
+  statusFilter.value = state.status;
+
+  unitFilter.onchange = event => {
+    state.unit = event.target.value;
+    normalize();
+    render();
+  };
+
+  statusFilter.onchange = event => {
+    state.status = event.target.value;
+    normalize();
+    render();
+  };
+
+  document.getElementById("themeBtn").onclick = () => {
+    const next = document.documentElement.dataset.theme === "dark"
+      ? "light"
+      : "dark";
+
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem("aiRiskTheme",next);
+    renderControls();
+  };
 }
-function renderSidebar(){
-  const side=document.getElementById("sidebar");
-  if(state.dashboard==="delivery"){
-    const items=[["overview","Portfolio overview"],["assurance","Governance & assurance"],["detail","Solution detail"],["forecast","Adoption scenarios"]];
-    side.innerHTML=`<div class="side-title">Discovery &amp; delivery</div>${items.map((x,i)=>`<button class="nav ${state.deliveryView===x[0]?"active":""}" data-delivery-view="${x[0]}"><span class="nav-num">0${i+1}</span><span class="nav-label">${x[1]}</span></button>`).join("")}<div class="side-meta">Unit: ${state.program}<br>Status: ${state.status}<br>Selected: ${state.selected}<br><br>Synthetic demonstration.</div>`;
-    side.querySelectorAll("[data-delivery-view]").forEach(b=>b.onclick=()=>{state.deliveryView=b.dataset.deliveryView;render()});
-  }else{
-    const items=[["command","Value command"],["performance","Unit performance"],["customer","Stakeholder impact"],["assurance","Measure lineage"],["forecast","Value scenarios"]];
-    side.innerHTML=`<div class="side-title">Value &amp; impact</div>${items.map((x,i)=>`<button class="nav ${state.networkView===x[0]?"active":""}" data-network-view="${x[0]}"><span class="nav-num">0${i+1}</span><span class="nav-label">${x[1]}</span></button>`).join("")}<div class="side-meta">Period: ${state.period}<br>Unit: ${state.mode}<br>Book: ${state.region}<br><br>Synthetic demonstration.</div>`;
-    side.querySelectorAll("[data-network-view]").forEach(b=>b.onclick=()=>{state.networkView=b.dataset.networkView;render()});
-  }
-}
-function renderMain(){
-  normalizeSelection();
-  const m=document.getElementById("main");
-  if(state.dashboard==="delivery"){
-    m.innerHTML=state.deliveryView==="overview"?renderDeliveryOverview():state.deliveryView==="detail"?renderDeliveryDetail():state.deliveryView==="assurance"?renderDeliveryAssurance():renderDeliveryForecast();
-  }else{
-    m.innerHTML=state.networkView==="command"?renderNetworkCommand():state.networkView==="performance"?renderNetworkPerformance():state.networkView==="customer"?renderNetworkCustomer():state.networkView==="assurance"?renderNetworkAssurance():renderNetworkForecast();
-  }
-  bindDynamic();attachMetricHelp();bindTooltips();
-}
-function bindDynamic(){
-  document.querySelectorAll("[data-delivery-view-jump]").forEach(b=>b.onclick=()=>{state.deliveryView=b.dataset.deliveryViewJump;render()});
-  document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>{state.selected=b.dataset.open;state.deliveryView="detail";render()});
-  document.querySelectorAll("[data-select]").forEach(b=>b.onclick=()=>{state.selected=b.dataset.select;render()});
-  document.querySelectorAll("[data-delivery-metric]").forEach(b=>b.onclick=()=>{state.deliveryMetric=b.dataset.deliveryMetric;state.deliveryView="assurance";render()});
-  document.querySelectorAll("[data-delivery-scenario]").forEach(b=>b.onclick=()=>{state.deliveryScenario=b.dataset.deliveryScenario;render()});
-  document.querySelectorAll("[data-network-metric]").forEach(b=>b.onclick=()=>{state.networkMetric=b.dataset.networkMetric;state.networkView="assurance";render()});
-  document.querySelectorAll("[data-network-scenario]").forEach(b=>b.onclick=()=>{state.networkScenario=b.dataset.networkScenario;render()});
-  document.querySelectorAll("[data-network-link]").forEach(b=>b.onclick=()=>{
-    state.dashboard="network";
-    const k=b.dataset.networkLink;
-    state.networkMetric = NETWORK_LINEAGE[k] ? k : "Advisor adoption";
-    state.networkView="assurance";render();
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+function renderNav(){
+  document.querySelectorAll("[data-view]").forEach(button => {
+    button.classList.toggle(
+      "active",
+      button.dataset.view === state.view
+    );
   });
-  document.querySelectorAll("[data-delivery-link]").forEach(b=>b.onclick=()=>{state.dashboard="delivery";state.selected=b.dataset.deliveryLink;state.deliveryView="detail";render()});
 }
-function bindTheme(){
-  const btn=document.getElementById("themeBtn"),txt=document.getElementById("themeText");
-  const dark=document.documentElement.getAttribute("data-theme")==="dark";txt.textContent=dark?"Light mode":"Dark mode";
-  btn.onclick=()=>{const isDark=document.documentElement.getAttribute("data-theme")==="dark";document.documentElement.setAttribute("data-theme",isDark?"light":"dark");localStorage.setItem("aiPortfolioTheme",isDark?"light":"dark");renderControls();};
+
+
+/* =========================================================
+   DYNAMIC DONUT
+========================================================= */
+
+function donut(list){
+  const total = Math.max(1,list.length);
+
+  const adopted = list.filter(x => x.status === "Adopted").length;
+  const risk = list.filter(x => x.status === "At Risk").length;
+  const paused = list.filter(x => x.status === "Paused").length;
+
+  const values = [adopted,risk,paused];
+  const colours = ["var(--green)","var(--amber)","var(--red)"];
+
+  let offset = 0;
+
+  const segments = values.map((value,index) => {
+    const pct = value / total * 100;
+
+    const circle = `
+      <circle
+        class="donut-seg"
+        cx="75"
+        cy="75"
+        r="55"
+        pathLength="100"
+        stroke="${colours[index]}"
+        stroke-dasharray="${pct} ${100-pct}"
+        stroke-dashoffset="${-offset}"
+      ></circle>
+    `;
+
+    offset += pct;
+    return circle;
+  }).join("");
+
+  return `
+    <div class="donut-layout">
+
+      <div class="donut-wrap">
+        <svg class="donut-svg" viewBox="0 0 150 150">
+          <circle
+            class="donut-track"
+            cx="75"
+            cy="75"
+            r="55"
+          ></circle>
+
+          ${segments}
+        </svg>
+
+        <div class="donut-center">
+          <strong>${list.length}</strong>
+          <span>solutions</span>
+        </div>
+      </div>
+
+      <div class="legend-list">
+        ${legendRow("var(--green)","Adopted",adopted)}
+        ${legendRow("var(--amber)","At Risk",risk)}
+        ${legendRow("var(--red)","Paused",paused)}
+      </div>
+
+    </div>
+  `;
 }
+
+
+function legendRow(colour,label,value){
+  return `
+    <div class="legend-row">
+      <i
+        class="legend-dot"
+        style="background:${colour}"
+      ></i>
+
+      <span>${label}</span>
+      <strong>${value}</strong>
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   SCATTER + PORTFOLIO READ
+========================================================= */
+
+function scatter(list){
+  const width = 780;
+  const height = 205;
+
+  const left = 48;
+  const right = 25;
+  const top = 22;
+  const bottom = 30;
+
+  const x = value =>
+    left +
+    value / 100 *
+    (width-left-right);
+
+  const y = value =>
+    top +
+    (100-value) / 100 *
+    (height-top-bottom);
+
+
+  const highestValue = [...list]
+    .sort((a,b) => b.value-a.value)[0];
+
+
+  const strongestReady = [...list]
+    .filter(item => item.readiness >= 80)
+    .sort((a,b) => b.value-a.value)[0];
+
+
+  const biggestConstraint = [...list]
+    .sort((a,b) => {
+      const score = item =>
+        (item.value-item.readiness) +
+        Math.max(0,item.ttv) +
+        (item.status === "Paused" ? 20 : 0) +
+        (item.status === "At Risk" ? 10 : 0);
+
+      return score(b)-score(a);
+    })[0];
+
+
+  const highValueLowReadiness = list.filter(item =>
+    item.value >= 80 &&
+    item.readiness < 65
+  ).length;
+
+
+  const insightOne = highestValue ? `
+    <div class="portfolio-insight">
+      <div class="insight-label">
+        Highest expected value
+      </div>
+
+      <strong>
+        ${highestValue.id} · ${esc(highestValue.name)}
+      </strong>
+
+      <span>
+        Value ${highestValue.value}/100 ·
+        readiness ${highestValue.readiness}/100
+      </span>
+    </div>
+  ` : "";
+
+
+  const insightTwo = strongestReady ? `
+    <div class="portfolio-insight">
+      <div class="insight-label">
+        Best positioned to progress
+      </div>
+
+      <strong>
+        ${strongestReady.id} · ${esc(strongestReady.name)}
+      </strong>
+
+      <span>
+        ${strongestReady.status} ·
+        readiness ${strongestReady.readiness}/100
+      </span>
+    </div>
+  ` : `
+    <div class="portfolio-insight">
+      <div class="insight-label">
+        Readiness
+      </div>
+
+      <strong>
+        No solution above the 80 readiness threshold
+      </strong>
+
+      <span>
+        Current filter contains no highly ready solution.
+      </span>
+    </div>
+  `;
+
+
+  const insightThree = biggestConstraint ? `
+    <div class="portfolio-insight attention">
+
+      <div class="insight-label">
+        <i class="attention-dot"></i>
+        Delivery attention
+      </div>
+
+      <strong>
+        ${biggestConstraint.id} · ${esc(biggestConstraint.name)}
+      </strong>
+
+      <span>
+        ${biggestConstraint.status} ·
+        ${biggestConstraint.ttv >= 0 ? "+" : ""}
+        ${biggestConstraint.ttv}w TTV ·
+        ${highValueLowReadiness}
+        high-value / lower-readiness
+      </span>
+
+    </div>
+  ` : "";
+
+
+  return `
+    <div class="scatter-composite">
+
+      <svg
+        class="chart portfolio-scatter"
+        viewBox="0 0 ${width} ${height}"
+      >
+
+        <rect
+          x="${left}"
+          y="${top}"
+          width="${(width-left-right)/2}"
+          height="${(height-top-bottom)/2}"
+          fill="var(--cyanSoft)"
+          opacity=".5"
+        ></rect>
+
+        <rect
+          x="${left+(width-left-right)/2}"
+          y="${top}"
+          width="${(width-left-right)/2}"
+          height="${(height-top-bottom)/2}"
+          fill="var(--violetSoft)"
+          opacity=".5"
+        ></rect>
+
+
+        <line
+          class="gridline"
+          x1="${left+(width-left-right)/2}"
+          y1="${top}"
+          x2="${left+(width-left-right)/2}"
+          y2="${height-bottom}"
+        ></line>
+
+
+        <line
+          class="gridline"
+          x1="${left}"
+          y1="${top+(height-top-bottom)/2}"
+          x2="${width-right}"
+          y2="${top+(height-top-bottom)/2}"
+        ></line>
+
+
+        <text
+          class="axis-label"
+          x="${left}"
+          y="${height-7}"
+        >
+          Lower complexity
+        </text>
+
+
+        <text
+          class="axis-label"
+          text-anchor="end"
+          x="${width-right}"
+          y="${height-7}"
+        >
+          Higher complexity
+        </text>
+
+
+        <text
+          class="axis-label"
+          x="${left}"
+          y="12"
+        >
+          Higher expected value
+        </text>
+
+
+        ${list.map((item,index) => {
+          const radius = 7 + Math.min(10,item.hours/2);
+
+          const colour =
+            item.status === "Adopted"
+              ? "var(--green)"
+              : item.status === "At Risk"
+              ? "var(--amber)"
+              : "var(--red)";
+
+          return `
+            <g
+              class="hoverable"
+              data-open="${item.id}"
+              data-tip="
+                <strong>${item.id} · ${esc(item.name)}</strong>
+                Expected value ${item.value}/100<br>
+                Readiness ${item.readiness}/100<br>
+                Complexity ${item.complexity}/100<br>
+                Review load ${item.reviewLoad}%
+              "
+            >
+
+              <circle
+                class="chart-bubble"
+                style="animation-delay:${.08+index*.045}s"
+                cx="${x(item.complexity)}"
+                cy="${y(item.value)}"
+                r="${radius}"
+                fill="${colour}"
+                opacity=".84"
+              ></circle>
+
+              <text
+                x="${x(item.complexity)}"
+                y="${y(item.value)+3}"
+                text-anchor="middle"
+                fill="#fff"
+                font-size="8"
+                font-family="DM Mono,monospace"
+              >
+                ${item.id}
+              </text>
+
+            </g>
+          `;
+        }).join("")}
+
+      </svg>
+
+
+      <div class="portfolio-read">
+        ${insightOne}
+        ${insightTwo}
+        ${insightThree}
+      </div>
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   LIFECYCLE
+========================================================= */
+
+function lifecycle(list){
+  const stages = [
+    ["Discovery","Problem and current state"],
+    ["Definition","Requirements and controls"],
+    ["Prototype","Build and test"],
+    ["Pilot","Users and exceptions"],
+    ["Adoption","Operational use and value"]
+  ];
+
+  const counts = [
+    list.filter(x => x.stage === "Discovery").length,
+    list.filter(x => ["Discovery","Prototype"].includes(x.stage)).length,
+    list.filter(x => x.stage === "Prototype").length,
+    list.filter(x => x.stage === "Pilot").length,
+    list.filter(x => x.stage === "Production").length
+  ];
+
+  return `
+    <div class="lifecycle">
+
+      ${stages.map((stage,index) => `
+        <div class="life-stage ${index === 2 ? "active" : ""}">
+
+          <span class="life-num">
+            0${index+1}
+          </span>
+
+          <span class="life-count">
+            ${counts[index]}
+          </span>
+
+          <strong>
+            ${stage[0]}
+          </strong>
+
+          <p>
+            ${stage[1]}
+          </p>
+
+        </div>
+      `).join("")}
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   RISK MATRIX
+========================================================= */
+
+function riskMatrix(list){
+  const rows = [
+    "Data / privacy",
+    "Output reliability",
+    "Human oversight",
+    "Vendor / tooling"
+  ];
+
+  const levels = [
+    "Low",
+    "Medium",
+    "High",
+    "Review"
+  ];
+
+  const mapCategory = item => {
+    const value = item.riskCategory.toLowerCase();
+
+    if(
+      value.includes("privacy") ||
+      value.includes("data access")
+    ){
+      return "Data / privacy";
+    }
+
+    if(
+      value.includes("output") ||
+      value.includes("model")
+    ){
+      return "Output reliability";
+    }
+
+    if(
+      value.includes("human") ||
+      value.includes("governance")
+    ){
+      return "Human oversight";
+    }
+
+    return "Vendor / tooling";
+  };
+
+  return `
+    <div class="risk-matrix">
+
+      <div></div>
+
+      ${levels.map(level => `
+        <div class="rm-head">
+          ${level}
+        </div>
+      `).join("")}
+
+
+      ${rows.map(row => {
+        const relevant = list.filter(
+          item => mapCategory(item) === row
+        );
+
+        return `
+          <div class="rm-label">
+            ${row}
+          </div>
+
+          ${levels.map(level => {
+            const count = relevant.filter(item => {
+              if(level === "Review"){
+                return (
+                  item.privacy === "Review" ||
+                  item.data === "Review"
+                );
+              }
+
+              return item.risk === level;
+            }).length;
+
+            const cls =
+              level === "Low"
+                ? "low"
+                : level === "Medium"
+                ? "med"
+                : "high";
+
+            return `
+              <div
+                class="rm-cell ${cls} hoverable"
+                data-tip="
+                  <strong>${row}</strong>
+                  ${level}: ${count} solutions
+                "
+              >
+                <span class="rm-count">
+                  ${count}
+                </span>
+              </div>
+            `;
+          }).join("")}
+        `;
+      }).join("")}
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   ATTENTION QUEUE
+========================================================= */
+
+function priorityQueue(list){
+  const scored = list
+    .map(item => {
+      let score =
+        item.value -
+        item.readiness +
+        Math.max(0,item.ttv);
+
+      if(item.status === "At Risk") score += 15;
+      if(item.status === "Paused") score += 20;
+
+      return {
+        ...item,
+        score
+      };
+    })
+    .sort((a,b) => b.score-a.score)
+    .slice(0,6);
+
+
+  return `
+    <div class="queue">
+
+      ${scored.map(item => {
+        const indicator =
+          item.status === "Adopted"
+            ? ""
+            : `
+              <i
+                class="attention-dot
+                ${item.status === "Paused" ? "red" : ""}"
+              ></i>
+            `;
+
+        return `
+          <div
+            class="queue-row"
+            data-open="${item.id}"
+          >
+
+            <span class="queue-id">
+              ${item.id}
+            </span>
+
+            <div class="queue-title">
+
+              <strong>
+                ${indicator}
+                ${esc(item.name)}
+              </strong>
+
+              <span>
+                ${item.unit} · ${item.stage}
+              </span>
+
+            </div>
+
+            ${badge(item.status)}
+
+            <span class="queue-score">
+              P${item.score.toFixed(0)}
+            </span>
+
+          </div>
+        `;
+      }).join("")}
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+function solutionTable(list){
+  return `
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Solution</th>
+            <th>Unit</th>
+            <th>Stage</th>
+            <th>Status</th>
+            <th>Value</th>
+            <th>Readiness</th>
+            <th>TTV</th>
+            <th>Vendor</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          ${list.map(item => `
+            <tr
+              class="clickable"
+              data-open="${item.id}"
+            >
+
+              <td>${item.id}</td>
+
+              <td>
+                ${esc(item.name)}
+              </td>
+
+              <td>
+                ${item.unit}
+              </td>
+
+              <td>
+                ${item.stage}
+              </td>
+
+              <td>
+                ${badge(item.status)}
+              </td>
+
+              <td>
+                ${item.value}
+              </td>
+
+              <td>
+                ${item.readiness}
+              </td>
+
+              <td>
+                ${item.ttv >= 0 ? "+" : ""}
+                ${item.ttv}w
+              </td>
+
+              <td>
+                ${item.vendor}
+              </td>
+
+            </tr>
+          `).join("")}
+
+        </tbody>
+
+      </table>
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   CONTROL ROOM
+========================================================= */
+
+function renderCommand(){
+  const list = filtered();
+
+  const adopted =
+    list.filter(item => item.status === "Adopted").length;
+
+  const atRisk =
+    list.filter(item => item.status === "At Risk").length;
+
+  const averageReadiness =
+    list.length
+      ? list.reduce(
+          (total,item) => total + item.readiness,
+          0
+        ) / list.length
+      : 0;
+
+  const hours =
+    list.reduce(
+      (total,item) => total + item.hours,
+      0
+    );
+
+
+  return `
+    <section class="hero">
+
+      <div>
+
+        <div class="kicker">
+          AI delivery control room
+        </div>
+
+        <h2>
+          Requirements, governance, implementation and adoption in one view.
+        </h2>
+
+      </div>
+
+      <span class="demo-tag">
+        Illustrative portfolio data
+      </span>
+
+    </section>
+
+
+    <section class="kpi-strip">
+
+      ${kpi(
+        "Active solutions",
+        list.length,
+        "Filtered portfolio",
+        "AI"
+      )}
+
+      ${kpi(
+        "Adopted",
+        adopted,
+        `${
+          list.length
+            ? (adopted/list.length*100).toFixed(0)
+            : 0
+        }% of portfolio`,
+        "AD"
+      )}
+
+      ${kpi(
+        "At risk",
+        atRisk,
+        "Requires delivery attention",
+        "RK"
+      )}
+
+      ${kpi(
+        "Avg readiness",
+        `${averageReadiness.toFixed(0)}%`,
+        `${hours.toFixed(1)}k hours displaced`,
+        "RD"
+      )}
+
+    </section>
+
+
+    <section class="bento">
+
+      <div class="card feature span8">
+
+        <div class="section-head">
+
+          <div>
+            <h3>Opportunity portfolio</h3>
+
+            <p>
+              Expected value vs delivery complexity.
+              Bubble size reflects expected hours displaced.
+            </p>
+          </div>
+
+          <span class="badge info">
+            click a bubble
+          </span>
+
+        </div>
+
+        ${scatter(list)}
+
+      </div>
+
+
+      <div class="card span4">
+
+        <div class="section-head">
+
+          <div>
+            <h3>Portfolio status</h3>
+
+            <p>
+              Updates with the current filters.
+            </p>
+          </div>
+
+        </div>
+
+        ${donut(list)}
+
+      </div>
+
+
+      <div class="card span12">
+
+        <div class="section-head">
+
+          <div>
+            <h3>Delivery lifecycle</h3>
+
+            <p>
+              Discovery through operational adoption.
+            </p>
+          </div>
+
+        </div>
+
+        ${lifecycle(list)}
+
+      </div>
+
+
+      <div class="card span7">
+
+        <div class="section-head">
+
+          <div>
+            <h3>Risk concentration</h3>
+
+            <p>
+              Portfolio exposure by control theme.
+            </p>
+          </div>
+
+        </div>
+
+        ${riskMatrix(list)}
+
+      </div>
+
+
+      <div class="card span5">
+
+        <div class="section-head">
+
+          <div>
+            <h3>Attention queue</h3>
+
+            <p>
+              Higher value, lower readiness and delivery exceptions rise to the top.
+            </p>
+          </div>
+
+        </div>
+
+        ${priorityQueue(list)}
+
+      </div>
+
+
+      <div class="card span12">
+
+        <div class="section-head">
+
+          <div>
+            <h3>Solution register</h3>
+
+            <p>
+              Select a row for the delivery drill-down.
+            </p>
+          </div>
+
+        </div>
+
+        ${solutionTable(list)}
+
+      </div>
+
+    </section>
+  `;
+}
+
+
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
+
+function requirement(label,value){
+  return `
+    <div class="requirement">
+      <label>${label}</label>
+      <div>${esc(value)}</div>
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   GATE
+========================================================= */
+
+function gate(icon,title,status,description){
+  return `
+    <div class="gate">
+
+      <div class="gate-icon ${statusClass(status)}">
+        ${icon}
+      </div>
+
+      <div>
+        <strong>${title}</strong>
+        <span>${description}</span>
+      </div>
+
+      ${badge(status)}
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   ADOPTION HISTORY
+========================================================= */
+
+function historyChart(series){
+  const width = 760;
+  const height = 220;
+
+  const left = 24;
+  const right = 24;
+  const top = 20;
+  const bottom = 26;
+
+  const minimum = Math.min(...series)-5;
+  const maximum = Math.max(...series)+5;
+
+  const points = series.map((value,index) => [
+    left +
+    index/(series.length-1) *
+    (width-left-right),
+
+    top +
+    (maximum-value)/(maximum-minimum) *
+    (height-top-bottom)
+  ]);
+
+  return `
+    <svg
+      class="chart"
+      viewBox="0 0 ${width} ${height}"
+    >
+
+      ${[0,1,2,3].map(index => {
+        const y =
+          top +
+          index *
+          (height-top-bottom) /
+          3;
+
+        return `
+          <line
+            class="gridline"
+            x1="${left}"
+            y1="${y}"
+            x2="${width-right}"
+            y2="${y}"
+          ></line>
+        `;
+      }).join("")}
+
+
+      <path
+        class="chart-line"
+        d="${smooth(points)}"
+      ></path>
+
+
+      ${points.map((point,index) => `
+        <circle
+          class="hoverable chart-bubble"
+          style="animation-delay:${.12+index*.06}s"
+          data-tip="
+            <strong>Period ${index+1}</strong>
+            Adoption index ${series[index]}
+          "
+          cx="${point[0]}"
+          cy="${point[1]}"
+          r="4"
+          fill="var(--surface)"
+          stroke="var(--cyan)"
+          stroke-width="2"
+        ></circle>
+      `).join("")}
+
+    </svg>
+  `;
+}
+
+
+/* =========================================================
+   SOLUTION LIFECYCLE
+========================================================= */
+
+function lifecycleProgress(item){
+  const labels = [
+    "Discovery",
+    "Requirements",
+    "Prototype",
+    "Pilot",
+    "Adoption"
+  ];
+
+  return `
+    <div class="lifecycle">
+
+      ${labels.map((label,index) => {
+        const value = item.lifecycle[index];
+
+        const colour =
+          value >= 90
+            ? "var(--green)"
+            : value >= 50
+            ? "var(--blue)"
+            : value > 0
+            ? "var(--amber)"
+            : "var(--surface3)";
+
+        return `
+          <div class="life-stage">
+
+            <span class="life-num">
+              0${index+1}
+            </span>
+
+            <strong>
+              ${label}
+            </strong>
+
+            <div
+              class="track"
+              style="margin-top:10px"
+            >
+
+              <div
+                class="fill"
+                style="
+                  width:${value}%;
+                  background:${colour};
+                  animation-delay:${index*.08}s
+                "
+              ></div>
+
+            </div>
+
+            <p>
+              ${value}% complete
+            </p>
+
+          </div>
+        `;
+      }).join("")}
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   SOLUTION STUDIO
+========================================================= */
+
+function renderStudio(){
+  normalize();
+
+  const list = filtered();
+  const item = selected();
+
+  return `
+    <section class="hero">
+
+      <div class="solution-hero">
+
+        <div class="solution-title">
+
+          <div class="kicker">
+            ${item.id} · ${item.unit}
+          </div>
+
+          <h2>
+            ${esc(item.name)}
+          </h2>
+
+          <p>
+            ${esc(item.problem)}
+          </p>
+
+        </div>
+
+
+        <div
+          class="hero-score hoverable"
+          data-tip="
+            <strong>Expected value context</strong>
+            Expected value ${item.value}/100<br>
+            Readiness ${item.readiness}/100<br>
+            Complexity ${item.complexity}/100<br>
+            Review load ${item.reviewLoad}%
+          "
+        >
+
+          <strong>
+            ${item.value}
+          </strong>
+
+          <span>
+            expected value
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="solution-tabs">
+
+      ${list.map(solution => `
+        <button
+          class="solution-tab
+          ${solution.id === item.id ? "active" : ""}"
+          data-select="${solution.id}"
+        >
+          ${solution.id}
+        </button>
+      `).join("")}
+
+    </div>
+
+
+    <section class="kpi-strip">
+
+      ${kpi(
+        "Stage",
+        item.stage,
+        item.status,
+        "ST"
+      )}
+
+      ${kpi(
+        "Readiness",
+        `${item.readiness}%`,
+        "Delivery readiness",
+        "RD"
+      )}
+
+      ${kpi(
+        "Adoption",
+        `${item.adoption}%`,
+        "Intended users",
+        "AD"
+      )}
+
+      ${kpi(
+        "TTV variance",
+        `${item.ttv >= 0 ? "+" : ""}${item.ttv}w`,
+        item.vendorStatus,
+        "TT"
+      )}
+
+    </section>
+
+
+    <section class="bento">
+
+      <div class="card feature span7">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Current state → future state
+            </h3>
+
+            <p>
+              Business analysis before build.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="requirement-grid">
+
+          ${requirement(
+            "Current state",
+            item.current
+          )}
+
+          ${requirement(
+            "Future state",
+            item.future
+          )}
+
+          ${requirement(
+            "Requirements",
+            item.requirements
+          )}
+
+          ${requirement(
+            "Business outcome",
+            item.benefit
+          )}
+
+        </div>
+
+      </div>
+
+
+      <div class="card span5">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Delivery gates
+            </h3>
+
+            <p>
+              Controls that determine whether the solution progresses.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="gates">
+
+          ${gate(
+            "PR",
+            "Privacy",
+            item.privacy,
+            "Data handling and exposure"
+          )}
+
+          ${gate(
+            "HR",
+            "Human review",
+            item.humanReview,
+            "Named reviewer before reliance"
+          )}
+
+          ${gate(
+            "DQ",
+            "Data quality",
+            item.data,
+            "Source integrity and traceability"
+          )}
+
+          ${gate(
+            "VN",
+            "Vendor",
+            item.vendorStatus === "Operational"
+              ? "Pass"
+              : "Conditional",
+            item.vendorStatus
+          )}
+
+        </div>
+
+      </div>
+
+
+      <div class="card span8">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Adoption trajectory
+            </h3>
+
+            <p>
+              User uptake through the delivery cycle.
+            </p>
+          </div>
+
+        </div>
+
+        ${historyChart(item.history)}
+
+      </div>
+
+
+      <div class="card span4">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Open dependency
+            </h3>
+
+            <p>
+              ${item.owner}
+            </p>
+          </div>
+
+        </div>
+
+        <div
+          style="
+            font:700 .9rem/1.25 var(--display);
+            margin-bottom:7px
+          "
+        >
+          ${esc(item.dependency)}
+        </div>
+
+        <div
+          style="
+            font-size:.56rem;
+            color:var(--text2);
+            line-height:1.5
+          "
+        >
+          ${esc(item.issue)}
+        </div>
+
+      </div>
+
+
+      <div class="card span12">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Delivery path
+            </h3>
+
+            <p>
+              Progress by stage.
+            </p>
+          </div>
+
+        </div>
+
+        ${lifecycleProgress(item)}
+
+      </div>
+
+    </section>
+  `;
+}
+
+
+/* =========================================================
+   LINEAGE
+========================================================= */
+
+function lineageNode(number,title,body){
+  return `
+    <div class="lineage-node">
+
+      <div class="eyebrow">
+        ${number}
+      </div>
+
+      <strong>
+        ${title}
+      </strong>
+
+      <p>
+        ${esc(body)}
+      </p>
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   ASSURANCE
+========================================================= */
+
+function renderAssurance(){
+  const item = selected();
+
+  const privacyOpen =
+    SOLUTIONS.filter(
+      x => x.privacy !== "Pass"
+    ).length;
+
+  const reviewOpen =
+    SOLUTIONS.filter(
+      x => x.humanReview !== "Pass"
+    ).length;
+
+  const dataOpen =
+    SOLUTIONS.filter(
+      x => x.data !== "Pass"
+    ).length;
+
+  const vendorOpen =
+    SOLUTIONS.filter(
+      x =>
+        ![
+          "Operational",
+          "Pilot operational"
+        ].includes(x.vendorStatus)
+    ).length;
+
+
+  return `
+    <section class="hero">
+
+      <div>
+
+        <div class="kicker">
+          Governance & assurance
+        </div>
+
+        <h2>
+          Controls, evidence and accountability remain visible through delivery.
+        </h2>
+
+      </div>
+
+      <span class="demo-tag">
+        Selected ${item.id}
+      </span>
+
+    </section>
+
+
+    <section class="kpi-strip">
+
+      ${kpi(
+        "Privacy open",
+        privacyOpen,
+        "Portfolio controls",
+        "PR"
+      )}
+
+      ${kpi(
+        "Review open",
+        reviewOpen,
+        "Human-review exceptions",
+        "HR"
+      )}
+
+      ${kpi(
+        "Data open",
+        dataOpen,
+        "Source / quality controls",
+        "DQ"
+      )}
+
+      ${kpi(
+        "Vendor actions",
+        vendorOpen,
+        "Evaluation or integration",
+        "VN"
+      )}
+
+    </section>
+
+
+    <section class="bento">
+
+      <div class="card feature span7">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Portfolio control matrix
+            </h3>
+
+            <p>
+              Risk concentration across the current solution set.
+            </p>
+          </div>
+
+        </div>
+
+        ${riskMatrix(filtered())}
+
+      </div>
+
+
+      <div class="card span5">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Selected solution gates
+            </h3>
+
+            <p>
+              ${item.id} · ${esc(item.name)}
+            </p>
+          </div>
+
+        </div>
+
+        <div class="gates">
+
+          ${gate(
+            "PR",
+            "Privacy",
+            item.privacy,
+            "Customer and operational data"
+          )}
+
+          ${gate(
+            "HR",
+            "Human review",
+            item.humanReview,
+            "Named reviewer before reliance"
+          )}
+
+          ${gate(
+            "DQ",
+            "Data quality",
+            item.data,
+            "Source and transformation checks"
+          )}
+
+          ${gate(
+            "VN",
+            "Vendor",
+            item.vendorStatus === "Operational"
+              ? "Pass"
+              : "Conditional",
+            item.vendorStatus
+          )}
+
+        </div>
+
+      </div>
+
+
+      <div class="card span12">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Evidence lineage
+            </h3>
+
+            <p>
+              Requirement through source, AI output and accountable review.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="lineage">
+
+          ${lineageNode(
+            "01",
+            "Business requirement",
+            item.requirements
+          )}
+
+          ${lineageNode(
+            "02",
+            "Approved source",
+            "Controlled business and operational data within the agreed boundary."
+          )}
+
+          ${lineageNode(
+            "03",
+            "AI-assisted output",
+            item.future
+          )}
+
+          ${lineageNode(
+            "04",
+            "Human decision",
+            "Named business user reviews the output before it is relied upon."
+          )}
+
+        </div>
+
+      </div>
+
+
+      <div class="card span6">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Vendor & technology boundary
+            </h3>
+
+            <p>
+              Provider, dependency and business accountability.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="requirement-grid">
+
+          ${requirement(
+            "Provider",
+            item.vendor
+          )}
+
+          ${requirement(
+            "Status",
+            item.vendorStatus
+          )}
+
+          ${requirement(
+            "Dependency",
+            item.dependency
+          )}
+
+          ${requirement(
+            "Accountability",
+            "Business owner retains control of the operational outcome and acceptance criteria."
+          )}
+
+        </div>
+
+      </div>
+
+
+      <div class="card span6">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              AI output checks
+            </h3>
+
+            <p>
+              Applied before stakeholder reliance.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="requirement-grid">
+
+          ${requirement(
+            "Source check",
+            "Compare AI output with the underlying approved source data."
+          )}
+
+          ${requirement(
+            "Logic check",
+            "Challenge reasoning or calculations that do not hold up under scrutiny."
+          )}
+
+          ${requirement(
+            "Human review",
+            "Keep a person reviewing the output before it reaches a stakeholder."
+          )}
+
+        </div>
+
+      </div>
+
+    </section>
+  `;
+}
+
+
+/* =========================================================
+   VALUE & ADOPTION CHART
+========================================================= */
+
+function adoptionCombo(){
+  const width = 780;
+  const height = 285;
+
+  const left = 38;
+  const right = 28;
+  const top = 18;
+  const bottom = 28;
+
+  const maximumUsers =
+    Math.max(
+      ...ADOPTION_SERIES.map(
+        item => item.users
+      )
+    ) * 1.1;
+
+  const slot =
+    (width-left-right) /
+    ADOPTION_SERIES.length;
+
+  const adoptionPoints = [];
+  const reviewPoints = [];
+
+
+  const bars = ADOPTION_SERIES.map(
+    (item,index) => {
+
+      const barHeight =
+        item.users /
+        maximumUsers *
+        (height-top-bottom);
+
+      const x =
+        left +
+        index*slot +
+        slot*.17;
+
+      const y =
+        height -
+        bottom -
+        barHeight;
+
+      const centre =
+        left +
+        index*slot +
+        slot*.43;
+
+
+      adoptionPoints.push([
+        centre,
+        top +
+        (100-item.adoption)/100 *
+        (height-top-bottom)
+      ]);
+
+
+      reviewPoints.push([
+        centre,
+        top +
+        (100-item.review)/100 *
+        (height-top-bottom)
+      ]);
+
+
+      return `
+        <rect
+          class="chart-bar hoverable"
+          style="animation-delay:${.08+index*.05}s"
+          data-tip="
+            <strong>${item.p}</strong>
+            Users ${item.users}k<br>
+            Adoption ${item.adoption}%<br>
+            Review load ${item.review}%
+          "
+          x="${x}"
+          y="${y}"
+          width="${slot*.48}"
+          height="${barHeight}"
+          rx="4"
+          fill="var(--blue)"
+          opacity=".68"
+        ></rect>
+      `;
+    }
+  ).join("");
+
+
+  return `
+    <svg
+      class="chart"
+      viewBox="0 0 ${width} ${height}"
+    >
+
+      ${[0,1,2,3].map(index => {
+        const y =
+          top +
+          index *
+          (height-top-bottom) /
+          3;
+
+        return `
+          <line
+            class="gridline"
+            x1="${left}"
+            y1="${y}"
+            x2="${width-right}"
+            y2="${y}"
+          ></line>
+        `;
+      }).join("")}
+
+
+      ${bars}
+
+
+      <path
+        class="chart-line"
+        d="${smooth(adoptionPoints)}"
+      ></path>
+
+
+      <path
+        class="chart-line-amber"
+        d="${smooth(reviewPoints)}"
+      ></path>
+
+
+      ${ADOPTION_SERIES.map((item,index) => `
+        <text
+          class="axis-label"
+          text-anchor="middle"
+          x="${left+index*slot+slot*.43}"
+          y="${height-8}"
+        >
+          ${item.p}
+        </text>
+      `).join("")}
+
+    </svg>
+  `;
+}
+
+
+/* =========================================================
+   WORK MIX
+========================================================= */
+
+function workMix(){
+  const width = 650;
+  const height = 245;
+
+  const left = 145;
+  const right = 28;
+  const top = 15;
+
+  const rowHeight = 35;
+  const maximum = 30;
+
+
+  return `
+    <svg
+      class="chart"
+      viewBox="0 0 ${width} ${height}"
+    >
+
+      ${WORK_MIX.map((item,index) => {
+        const y =
+          top +
+          index*rowHeight;
+
+        return `
+          <text
+            class="axis-label"
+            x="0"
+            y="${y+11}"
+          >
+            ${item.name}
+          </text>
+
+
+          <rect
+            class="chart-bar"
+            style="animation-delay:${index*.06}s"
+            x="${left}"
+            y="${y}"
+            width="${
+              (width-left-right) *
+              item.before /
+              maximum
+            }"
+            height="7"
+            rx="3"
+            fill="var(--blue)"
+          ></rect>
+
+
+          <rect
+            class="chart-bar"
+            style="animation-delay:${.12+index*.06}s"
+            x="${left}"
+            y="${y+11}"
+            width="${
+              (width-left-right) *
+              item.after /
+              maximum
+            }"
+            height="7"
+            rx="3"
+            fill="${
+              item.after > item.before
+                ? "var(--amber)"
+                : "var(--violet)"
+            }"
+          ></rect>
+        `;
+      }).join("")}
+
+    </svg>
+  `;
+}
+
+
+/* =========================================================
+   SCENARIO CHART
+========================================================= */
+
+function scenarioChart(){
+  const width = 650;
+  const height = 245;
+  const pad = 24;
+
+  const colours = {
+    base:"var(--blue)",
+    accelerated:"var(--cyan)",
+    reviewShock:"var(--red)",
+    cautious:"var(--violet)"
+  };
+
+
+  return `
+    <svg
+      class="chart"
+      viewBox="0 0 ${width} ${height}"
+    >
+
+      ${[50,100,150,200].map(y => `
+        <line
+          class="gridline"
+          x1="${pad}"
+          y1="${y}"
+          x2="${width-pad}"
+          y2="${y}"
+        ></line>
+      `).join("")}
+
+
+      ${Object.entries(SCENARIOS).map(
+        ([key,scenario]) => {
+
+          const points =
+            scenario.adoption.map(
+              (value,index) => [
+                pad +
+                index /
+                (scenario.adoption.length-1) *
+                (width-pad*2),
+
+                height -
+                pad -
+                ((value-45)/55) *
+                (height-pad*2)
+              ]
+            );
+
+          return `
+            <path
+              class="chart-line"
+              style="
+                stroke:${colours[key]};
+                stroke-width:${
+                  key === state.scenario
+                    ? 4
+                    : 2
+                };
+                opacity:${
+                  key === state.scenario
+                    ? 1
+                    : .32
+                }
+              "
+              d="${smooth(points)}"
+            ></path>
+          `;
+        }
+      ).join("")}
+
+    </svg>
+  `;
+}
+
+
+/* =========================================================
+   ADOPTION BY SOLUTION
+========================================================= */
+
+function adoptionBySolution(){
+  const list = [...SOLUTIONS]
+    .sort((a,b) => b.adoption-a.adoption);
+
+
+  return `
+    <div class="metric-list">
+
+      ${list.map((item,index) => `
+        <div
+          class="metric hoverable"
+          data-tip="
+            <strong>${item.id} · ${esc(item.name)}</strong>
+            Adoption ${item.adoption}%<br>
+            Review load ${item.reviewLoad}%
+          "
+        >
+
+          <label>
+            ${item.id} · ${item.unit}
+          </label>
+
+
+          <div class="track">
+
+            <div
+              class="fill"
+              style="
+                width:${item.adoption}%;
+                background:var(--blue);
+                animation-delay:${index*.035}s
+              "
+            ></div>
+
+
+            <div
+              style="
+                position:absolute;
+                top:0;
+                bottom:0;
+                left:${item.reviewLoad}%;
+                width:2px;
+                background:var(--amber)
+              "
+            ></div>
+
+          </div>
+
+
+          <strong>
+            ${item.adoption}%
+          </strong>
+
+        </div>
+      `).join("")}
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   VALUE & ADOPTION
+========================================================= */
+
+function renderValue(){
+  const averageAdoption =
+    SOLUTIONS.reduce(
+      (total,item) =>
+        total + item.adoption,
+      0
+    ) / SOLUTIONS.length;
+
+  const averageReview =
+    SOLUTIONS.reduce(
+      (total,item) =>
+        total + item.reviewLoad,
+      0
+    ) / SOLUTIONS.length;
+
+  const hours =
+    SOLUTIONS.reduce(
+      (total,item) =>
+        total + item.hours,
+      0
+    );
+
+
+  return `
+    <section class="hero">
+
+      <div>
+
+        <div class="kicker">
+          Value & adoption
+        </div>
+
+        <h2>
+          Adoption, review load and work mix sit beside delivery progress.
+        </h2>
+
+      </div>
+
+      <span class="demo-tag">
+        Scenario model
+      </span>
+
+    </section>
+
+
+    <section class="kpi-strip">
+
+      ${kpi(
+        "Avg adoption",
+        `${averageAdoption.toFixed(0)}%`,
+        "Across solution set",
+        "AD"
+      )}
+
+      ${kpi(
+        "Avg review load",
+        `${averageReview.toFixed(0)}%`,
+        "Human intervention",
+        "RV"
+      )}
+
+      ${kpi(
+        "Production",
+        SOLUTIONS.filter(
+          item => item.stage === "Production"
+        ).length,
+        "Operational use",
+        "PR"
+      )}
+
+      ${kpi(
+        "Hours displaced",
+        `${hours.toFixed(1)}k`,
+        "Illustrative portfolio measure",
+        "HR"
+      )}
+
+    </section>
+
+
+    <section class="bento">
+
+      <div class="card feature span8">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Users, adoption and review load
+            </h3>
+
+            <p>
+              Bars = users. Cyan = adoption. Amber = review load.
+            </p>
+          </div>
+
+        </div>
+
+        ${adoptionCombo()}
+
+      </div>
+
+
+      <div class="card span4">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Scenario
+            </h3>
+
+            <p>
+              Select an assumption set.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div
+          class="scenario-grid"
+          style="grid-template-columns:1fr"
+        >
+
+          ${Object.entries(SCENARIOS).map(
+            ([key,scenario]) => `
+              <button
+                class="scenario
+                ${state.scenario === key ? "active" : ""}"
+                data-scenario="${key}"
+              >
+
+                <strong>
+                  ${scenario.name}
+                </strong>
+
+                <span>
+                  ${scenario.note}
+                </span>
+
+              </button>
+            `
+          ).join("")}
+
+        </div>
+
+      </div>
+
+
+      <div class="card span6">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Work mix before and after assist
+            </h3>
+
+            <p>
+              Blue is before. Violet or amber is after.
+            </p>
+          </div>
+
+        </div>
+
+        ${workMix()}
+
+      </div>
+
+
+      <div class="card span6">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Scenario trajectories
+            </h3>
+
+            <p>
+              Selected scenario is emphasised.
+            </p>
+          </div>
+
+        </div>
+
+        ${scenarioChart()}
+
+      </div>
+
+
+      <div class="card span12">
+
+        <div class="section-head">
+
+          <div>
+            <h3>
+              Adoption by solution
+            </h3>
+
+            <p>
+              Adoption and review burden should be read together.
+            </p>
+          </div>
+
+        </div>
+
+        ${adoptionBySolution()}
+
+      </div>
+
+    </section>
+  `;
+}
+
+
+/* =========================================================
+   DYNAMIC EVENTS
+========================================================= */
+
+function bindDynamic(){
+  document.querySelectorAll("[data-open]")
+    .forEach(element => {
+      element.onclick = () => {
+        state.selected = element.dataset.open;
+        state.view = "studio";
+        render();
+      };
+    });
+
+
+  document.querySelectorAll("[data-select]")
+    .forEach(element => {
+      element.onclick = () => {
+        state.selected = element.dataset.select;
+        render();
+      };
+    });
+
+
+  document.querySelectorAll("[data-scenario]")
+    .forEach(element => {
+      element.onclick = () => {
+        state.scenario = element.dataset.scenario;
+        render();
+      };
+    });
+}
+
+
+/* =========================================================
+   TOOLTIPS
+========================================================= */
+
+function bindTooltips(){
+  const tooltip =
+    document.getElementById("tooltip");
+
+
+  document.querySelectorAll("[data-tip]")
+    .forEach(element => {
+
+      element.onmouseenter = event => {
+        tooltip.innerHTML =
+          element.dataset.tip;
+
+        tooltip.style.display =
+          "block";
+
+        moveTooltip(
+          event,
+          tooltip
+        );
+      };
+
+
+      element.onmousemove = event => {
+        moveTooltip(
+          event,
+          tooltip
+        );
+      };
+
+
+      element.onmouseleave = () => {
+        tooltip.style.display =
+          "none";
+      };
+
+    });
+}
+
+
+function moveTooltip(event,tooltip){
+  const gap = 14;
+  const padding = 10;
+
+  const rect =
+    tooltip.getBoundingClientRect();
+
+  let left =
+    event.clientX + gap;
+
+  let top =
+    event.clientY + gap;
+
+
+  if(
+    left +
+    rect.width +
+    padding >
+    window.innerWidth
+  ){
+    left =
+      event.clientX -
+      rect.width -
+      gap;
+  }
+
+
+  if(
+    top +
+    rect.height +
+    padding >
+    window.innerHeight
+  ){
+    top =
+      event.clientY -
+      rect.height -
+      gap;
+  }
+
+
+  tooltip.style.left =
+    Math.max(
+      padding,
+      left
+    ) + "px";
+
+
+  tooltip.style.top =
+    Math.max(
+      padding,
+      top
+    ) + "px";
+}
+
+
+/* =========================================================
+   RENDER
+========================================================= */
+
 function render(){
-  document.getElementById("switchDelivery").classList.toggle("active",state.dashboard==="delivery");
-  document.getElementById("switchNetwork").classList.toggle("active",state.dashboard==="network");
-  renderControls();renderSidebar();renderMain();
+  normalize();
+  renderNav();
+  renderControls();
+
+  const main =
+    document.getElementById("main");
+
+
+  if(state.view === "command"){
+    main.innerHTML =
+      renderCommand();
+  }
+
+  else if(state.view === "studio"){
+    main.innerHTML =
+      renderStudio();
+  }
+
+  else if(state.view === "assurance"){
+    main.innerHTML =
+      renderAssurance();
+  }
+
+  else{
+    main.innerHTML =
+      renderValue();
+  }
+
+
+  bindDynamic();
+  bindTooltips();
 }
-document.getElementById("switchDelivery").onclick=()=>{state.dashboard="delivery";render()};
-document.getElementById("switchNetwork").onclick=()=>{state.dashboard="network";render()};
-document.documentElement.setAttribute("data-theme",localStorage.getItem("aiPortfolioTheme")||"light");
-if(!localStorage.getItem("aiPortfolioGuided")){
-  const sw=document.getElementById("modeSwitch");
-  sw.classList.add("guide-pulse");
-  setTimeout(()=>sw.classList.remove("guide-pulse"),2300);
-  const clearGuide=()=>{localStorage.setItem("aiPortfolioGuided","1");sw.classList.remove("guide-pulse")};
-  sw.addEventListener("click",clearGuide,{once:true});
-}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+document.querySelectorAll("[data-view]")
+  .forEach(button => {
+
+    button.onclick = () => {
+      state.view =
+        button.dataset.view;
+
+      render();
+    };
+
+  });
+
+
+document.documentElement.dataset.theme =
+  localStorage.getItem("aiRiskTheme") ||
+  "light";
+
+
 render();
+
 </script>
+
 </body>
 </html>
