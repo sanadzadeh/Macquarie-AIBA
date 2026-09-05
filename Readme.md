@@ -1,9 +1,9 @@
 # AI Solution Delivery Portfolio
 
-**Khaled S.** · work sample for **AI Business Analyst - Delivery and Enablement**  
+**Khaled S.** · work sample for **AI Business Analyst — Delivery and Enablement**  
 (The listing also describes the role as AI Delivery Analyst.)
 
-Synthetic demonstration: from a named business problem to an adopted AI solution, with governance and reusable enablement on the same page.
+Synthetic demonstration: from a named business problem to an adopted AI solution, with requirements, delivery gates and reusable enablement on the same page.
 
 Not a Macquarie product. Not NAB data. Not a live agent platform.
 
@@ -13,18 +13,26 @@ Open `ai-solution-delivery-portfolio.html` in a browser. No build step, no backe
 
 ## What this is
 
-A two-mode internal analytics prototype for a Risk Management Group product-and-delivery portfolio.
+A four-view internal analytics prototype for an AI delivery portfolio.
 
-**Solution Discovery & Delivery** follows each use case from problem framing through prototype, pilot, production and adoption.  
-**Business Value & Stakeholder Impact** shows whether the intended users actually use the thing, and what that does to hours, review load and satisfaction.
+**Control Room** is the portfolio view: value vs complexity, status, lifecycle, control themes and an attention queue.
+
+**Solution Studio** follows each use case from current state through requirements, prototype, pilot and adoption.
+
+**Delivery Gates** keeps privacy, human review, data quality and vendor boundaries visible for the selected solution.
+
+**Value & Adoption** shows whether intended users actually use the thing, and what that does to hours, review load and work mix.
 
 The sample is built to show judgement:
 
 - some solutions are adopted
-- some are at risk because a privacy, model-output or human-oversight gate is blocked
-- A07 and A12 are paused in Discovery on purpose (no lawful data-access path; live customer dialogue unsigned)
-- A13 cannot clear a sanctions match
-- A14 is not another point solution. It is a reusable scoping playbook other teams write their own brief from
+- some are at risk because a source, privacy, vendor or review gate is still open
+- **A07** is paused in Discovery — no approved access path across source systems
+- **A13** is paused in Discovery — live customer dialogue is out of scope
+- **A10** is not another point solution. It is a reusable scoping playbook other teams write their own brief from
+- named items (**A04**, **A08**, **A10**, **A14**) are the delivery pattern: workshop synthesis, dependency briefing, scoping pack, executive briefing
+
+Use cases sit in Transformation, Operations, Finance, Enablement, Product Delivery and Technology. They are illustrative delivery problems, not a risk register.
 
 ---
 
@@ -41,4 +49,3 @@ The sample is built to show judgement:
 ## Run it
 
 ```text
-ai-solution-delivery-portfolio.html
