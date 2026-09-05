@@ -7,7 +7,7 @@ Synthetic demonstration: from a named business problem to an adopted AI solution
 
 Not a Macquarie product. Not NAB data. Not a live agent platform.
 
-Open `ai-solution-delivery-portfolio.html` in a browser. No build step, no backend, no npm install.
+Open in a browser. No build step, no backend, no npm install.
 
 ---
 
