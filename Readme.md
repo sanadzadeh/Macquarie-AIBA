@@ -2,7 +2,7 @@
 
 Synthetic demonstration of a COO **AI, Data and Analytics** strategy working book.
 
-Live path: [sanadzadeh.github.io/Portfolio](https://sanadzadeh.github.io/Portfolio)
+Live path: [sanadzadeh.github.io/ManagerAI](https://sanadzadeh.github.io/ManagerAI)
 
 This is **not** a Commonwealth Bank system of record, a production dashboard, or a claim of employment at CBA. Every number, owner, initiative and measure is synthetic. The artefact exists to show a method: problem → options → control gates → adoption measures → park-or-progress.
 
